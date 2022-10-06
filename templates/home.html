@@ -1,5 +1,38 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+{% load static %}
+<div class="container-fluid">
+    <div class="container-xxl">
+        <!--Hero section-->
+        <div class="d-flex flex-column pt-5 min-vh-100 justify-content-center">
+                <div class="container-fluid text-center m-3">
+                    <h1 style="font-size: 4em">DataBerry</h1>
+                </div>
+                <div class="row flex-lg-row-reverse justify-content-between g-5 py-5">
+                    <div class="col-10 col-sm-8 col-lg-6">
+                        <img src="{% static 'images/hero_section.svg' %}" alt="My Happy SVG" class="d-block mx-lg-auto img-fluid"/>
+                    </div>
+                    <div class="col-lg-5 d-grid gap-4">
+                        <img src="{% static 'images/hero_section_decorator.svg'%}" alt="decorator" class="img-fluid pt-3">
+                        <h2 style="font-size: 3em">Keep track of the weather.</h2>
+                        <p class="lead">This service provides a worldwide weather tracking. We provide
+                            meteorologic and climatology data.
+                            We keep the meteorologic situation under control every day.
+                        </p>
+                        <div class="container-fluid">
+                            <button class="btn btn-primary btn-lg px-4 me-md-2">Try it out!</button>
+                        </div>
+                        <img src="{% static 'images/hero_section_decorator_two.svg'%}" alt="" class="img-fluid">
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <a class="nav-link active p-2" href="#"><img src="{% static 'images/icon_instagram.svg' %}" alt="Instagram" width=30px height=30px class="col-sm-auto"></a>
+                    <a class="nav-link active p-2" href="#"><img src="{% static 'images/icon_instagram.svg' %}" alt="Instagram" width=30px height=30px class="col-sm-auto"></a>
+                    <a class="nav-link active p-2" href="#"><img src="{% static 'images/icon_instagram.svg' %}" alt="Instagram" width=30px height=30px class="col-sm-auto"></a>
+                    <a class="nav-link active p-2" href="#"><img src="{% static 'images/icon_instagram.svg' %}" alt="Instagram" width=30px height=30px class="col-sm-auto"></a>
+                </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}
