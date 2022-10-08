@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "weathertest.apps.WeathertestConfig",
+    "compressor",
 ]
 
 MIDDLEWARE = [
@@ -118,6 +119,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = "static/"
+STATIC_ROOT = "static"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -126,5 +128,12 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
-    '/var/www/static/',
+    "/var/www/static/",
 ]
+
+STATICFILES_FINDERS = [
+    "compressor.finders.CompressorFinder",  # for SASS bootstrap
+]
+
+# for SASS bootstrap
+COMPRESS_PRECOMPILERS = (("text/x-scss", "django_libsass.SassCompiler"),)

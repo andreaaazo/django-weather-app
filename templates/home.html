@@ -2,7 +2,7 @@
 
 {% block content %}
 {% load static %}
-<div class="container-fluid">
+<div class="container-fluid body">
     <div class="container-xxl">
         <!--Hero section-->
         <div class="d-flex flex-column pt-5 min-vh-100 justify-content-center">
@@ -10,7 +10,7 @@
                     <h1 style="font-size: 4em">DataBerry</h1>
                 </div>
                 <div class="row flex-lg-row-reverse justify-content-between g-5 py-5">
-                    <div class="col-10 col-sm-8 col-lg-6">
+                    <div class="col">
                         <img src="{% static 'images/hero_section.svg' %}" alt="My Happy SVG" class="d-block mx-lg-auto img-fluid"/>
                     </div>
                     <div class="col-lg-5 d-grid gap-4">
@@ -33,6 +33,78 @@
                     <a class="nav-link active p-2" href="#"><img src="{% static 'images/icon_instagram.svg' %}" alt="Instagram" width=30px height=30px class="col-sm-auto"></a>
                 </div>
         </div>
+    </div>
+    <div class="container-xxl min-vh-100">
+        <div class="d-flex flex-column text-start my-5">
+            <h2>Features</h2>
+            <img src="{% static 'images/features_section_decorator.svg'%}" class="d-block me-auto img-fluid">
+        </div>
+        <div class="row row-cols-sm-2 row-cols-1 row-cols-lg-4 my-5">
+            <div class="col">
+                <p>image</p>
+                <p>title</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quae asperiores quisquam ipsam ad vitae omnis velit accusantium excepturi nesciunt fugit.</p>
+            </div>
+            <div class="col">
+                <p>image</p>
+                <p>title</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quae asperiores quisquam ipsam ad vitae omnis velit accusantium excepturi nesciunt fugit.</p>
+            </div>
+            <div class="col">
+                <p>image</p>
+                <p>title</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quae asperiores quisquam ipsam ad vitae omnis velit accusantium excepturi nesciunt fugit.</p>
+            </div>
+            <div class="col">
+                <p>image</p>
+                <p>title</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quae asperiores quisquam ipsam ad vitae omnis velit accusantium excepturi nesciunt fugit.</p>
+            </div>
+        </div>
+        <div class="d-flex flex-column text-start my-5">
+            <h3>We also provide</h3>
+            <div class="row row-cols-4 my-4">
+                <div class="col text-center">
+                    <p>sunrise</p>
+                </div>
+                <div class="col text-center">
+                    <p>sunrise</p>
+                </div>
+                <div class="col text-center">
+                    <p>sunrise</p>
+                </div>
+                <div class="col text-center">
+                    <p>sunrise</p>
+                </div>
+                <div class="col text-center">
+                    <p>sunrise</p>
+                </div>
+                <div class="col text-center">
+                    <p>sunrise</p>
+                </div>
+                <div class="col text-center">
+                    <p>sunrise</p>
+                </div>
+                <div class="col text-center">
+                    <p>sunrise</p>
+                </div>
+                <div class="col text-center">
+                    <p>sunrise</p>
+                </div>
+                <div class="col text-center">
+                    <p>sunrise</p>
+                </div>
+                <div class="col text-center">
+                    <p>sunrise</p>
+                </div>
+                <div class="col text-center">
+                    <p>sunrise</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-xxl vh- justify-content-center text-center" style="background: blue;">
+        <h2>Remember to take the umbrella</h2>
     </div>
 </div>
 {% endblock content %}
