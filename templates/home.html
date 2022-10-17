@@ -2,118 +2,139 @@
 
 {% block content %}
 {% load static %}
-<div class="container-fluid">
-    <!--Hero section-->
-    <div class="container-xxl">
-        <div class="d-flex flex-column pt-5 min-vh-100 justify-content-center">
-                <div class="container-fluid text-center m-3">
-                    <h1 style="font-size: 4em">DataBerry</h1>
-                </div>
-                <div class="row flex-lg-row-reverse justify-content-between g-5 py-5">
-                    <div class="col">
-                        <img src="{% static 'images/hero_section.svg' %}" alt="My Happy SVG" class="d-block mx-lg-auto img-fluid"/>
-                    </div>
-                    <div class="col-lg-5 d-grid gap-4">
-                        <img src="{% static 'images/hero_section_decorator.svg'%}" alt="decorator" class="img-fluid pt-3">
-                        <h2 style="font-size: 3em">Keep track of the weather.</h2>
-                        <p class="lead">This service provides a worldwide weather tracking. We provide
-                            meteorologic and climatology data.
-                            We keep the meteorologic situation under control every day.
-                        </p>
-                        <div class="container-fluid">
-                            <button class="btn btn-primary btn-lg px-4 me-md-2">Try it out!</button>
-                        </div>
-                        <img src="{% static 'images/hero_section_decorator_two.svg'%}" alt="" class="img-fluid">
-                    </div>
-                </div>
-                <div class="d-flex justify-content-end">
-                    <a class="nav-link active p-2" href="#"><img src="{% static 'images/icon_instagram.svg' %}" alt="Instagram" width=30px height=30px class="col-sm-auto"></a>
-                    <a class="nav-link active p-2" href="#"><img src="{% static 'images/icon_instagram.svg' %}" alt="Instagram" width=30px height=30px class="col-sm-auto"></a>
-                    <a class="nav-link active p-2" href="#"><img src="{% static 'images/icon_instagram.svg' %}" alt="Instagram" width=30px height=30px class="col-sm-auto"></a>
-                    <a class="nav-link active p-2" href="#"><img src="{% static 'images/icon_instagram.svg' %}" alt="Instagram" width=30px height=30px class="col-sm-auto"></a>
-                </div>
-        </div>
-    </div>
-    <!--End Hero section-->
-    <!--Features section-->
-    <div class="container-xxl section">
-        <div class="d-flex flex-column text-start my-5">
-            <h2>Features</h2>
-            <img src="{% static 'images/features_section_decorator.svg'%}" class="d-block me-auto img-fluid">
-        </div>
-        <div class="row row-cols-sm-2 row-cols-1 row-cols-lg-4 my-5">
-            <div class="col">
-                <p>image</p>
-                <p>title</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quae asperiores quisquam ipsam ad vitae omnis velit accusantium excepturi nesciunt fugit.</p>
+<!--Hero section-->
+<div class="d-flex align-items-center min-vh-100">
+    <div class="container px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center justify-content-between g-5 py-5 d-flex d-md-inline-flex flex-md-row flex-column justify-content-md-between">
+            <div class="col-10 col-sm-8 col-lg-6 d-lg-block d-none">
+                <img src="{% static 'images/hero_section.svg'%}" class="d-block mx-lg-auto img-fluid" width="700" height="500" loading="lazy">
             </div>
-            <div class="col">
-                <p>image</p>
-                <p>title</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quae asperiores quisquam ipsam ad vitae omnis velit accusantium excepturi nesciunt fugit.</p>
-            </div>
-            <div class="col">
-                <p>image</p>
-                <p>title</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quae asperiores quisquam ipsam ad vitae omnis velit accusantium excepturi nesciunt fugit.</p>
-            </div>
-            <div class="col">
-                <p>image</p>
-                <p>title</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quae asperiores quisquam ipsam ad vitae omnis velit accusantium excepturi nesciunt fugit.</p>
+            <div class="col-lg-5 d-flex flex-column text-center text-lg-start align-items-center align-items-lg-start">
+                <img src="{% static 'images/hero_section_down_decorator.svg'%}" class="img-fluid me-md-auto mx-md-0 mx-auto my-3">
+                <h1 class="mb-3 mb-5">Keep track of the<br>weather.</h1>
+                <p class="lead my-4 col-10">This service provides a worldwide weather tracking. We provide meteorologic and climatology data.
+                We keep the meteorologic situation under control every day. Furthermore we provide a daily forecast for 8 days.</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-lg-start justify-content-center">
+                    <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Try it out!</button>
+                </div>
+                <img src="{% static 'images/hero_section_up_decorator.svg'%}" class="img-fluid ms-md-auto mx-md-0 mx-auto my-4">
             </div>
         </div>
-        <div class="d-flex flex-column text-start my-5">
-            <h3>We also provide</h3>
-            <div class="row row-cols-4 my-4">
-                <div class="col text-center">
-                    <p>sunrise</p>
-                </div>
-                <div class="col text-center">
-                    <p>sunrise</p>
-                </div>
-                <div class="col text-center">
-                    <p>sunrise</p>
-                </div>
-                <div class="col text-center">
-                    <p>sunrise</p>
-                </div>
-                <div class="col text-center">
-                    <p>sunrise</p>
-                </div>
-                <div class="col text-center">
-                    <p>sunrise</p>
-                </div>
-                <div class="col text-center">
-                    <p>sunrise</p>
-                </div>
-                <div class="col text-center">
-                    <p>sunrise</p>
-                </div>
-                <div class="col text-center">
-                    <p>sunrise</p>
-                </div>
-                <div class="col text-center">
-                    <p>sunrise</p>
-                </div>
-                <div class="col text-center">
-                    <p>sunrise</p>
-                </div>
-                <div class="col text-center">
-                    <p>sunrise</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--End Features section-->
-    <!--Banner-->
-    <div class="banner text-center justify-content-center" style="background: blue;">
-        <h2>Remember to take the umbrella</h2>
-    </div>
-    <!-- End Banner-->
-    <div class="container-xxl section">
-        <p>test</p>
     </div>
 </div>
+<!--End Hero section-->
+<!--Features section-->
+<div class="container section">
+    <div class="d-flex flex-column text-start my-5">
+        <h2>Features</h2>
+        <img src="{% static 'images/section_decorator.svg'%}" class="d-block me-auto img-fluid">
+    </div>
+    <div class="row row-cols-sm-2 row-cols-1 row-cols-lg-4 my-5 justify-content-center">
+        <div class="col-8 d-flex flex-column align-items-center text-center">
+            <p>image</p>
+            <p>title</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quae asperiores quisquam ipsam ad vitae omnis velit accusantium excepturi nesciunt fugit.</p>
+        </div>
+        <div class="col-8 d-flex flex-column align-items-center text-center">
+            <p>image</p>
+            <p>title</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quae asperiores quisquam ipsam ad vitae omnis velit accusantium excepturi nesciunt fugit.</p>
+        </div>
+        <div class="col-8 d-flex flex-column align-items-center text-center">
+            <p>image</p>
+            <p>title</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quae asperiores quisquam ipsam ad vitae omnis velit accusantium excepturi nesciunt fugit.</p>
+        </div>
+        <div class="col-8 d-flex flex-column align-items-center text-center">
+            <p>image</p>
+            <p>title</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quae asperiores quisquam ipsam ad vitae omnis velit accusantium excepturi nesciunt fugit.</p>
+        </div>
+    </div>
+    <div class="d-flex flex-column text-sm-start text-center my-5">
+        <h3>We also provide</h3>
+        <div class="row row-cols-4 my-4">
+            <div class="col text-center">
+                <p>sunrise</p>
+            </div>
+            <div class="col text-center">
+                <p>sunrise</p>
+            </div>
+            <div class="col text-center">
+                <p>sunrise</p>
+            </div>
+            <div class="col text-center">
+                <p>sunrise</p>
+            </div>
+            <div class="col text-center">
+                <p>sunrise</p>
+            </div>
+            <div class="col text-center">
+                <p>sunrise</p>
+            </div>
+            <div class="col text-center">
+                <p>sunrise</p>
+            </div>
+            <div class="col text-center">
+                <p>sunrise</p>
+            </div>
+            <div class="col text-center">
+                <p>sunrise</p>
+            </div>
+            <div class="col text-center">
+                <p>sunrise</p>
+            </div>
+            <div class="col text-center">
+                <p>sunrise</p>
+            </div>
+            <div class="col text-center">
+                <p>sunrise</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End Features section-->
+<!--Banner-->
+<div class="d-flex align-items-center justify-content-center banner" style="background: aqua;">
+    <h2 class="text-center">Remember to take the umbrella</h2>
+</div>
+<!-- End Banner-->
+<!--Meet Our Team-->
+<div class="container section">
+    <div class="d-flex flex-column">
+        <div class="d-flex flex-row">
+            <h2 class="m-0 pe-5 col-6 col-xl-2 col-md-3 col-sm-4">Meet Our Team</h2>
+            <p class="m-0 col-md-4 col-xl-3">The project is developed by Andrea Zorzi, hosted with a Raspberry Py.</p>
+        </div>
+        <img src="{% static 'images/section_decorator.svg'%}" class="d-block me-auto my-3 img-fluid">
+    </div>
+    <div class="row row-cols-1 row-cols-lg-2 mt-5 justify-content-lg-start justify-content-md-end justify-content-center">
+        <div class="col-lg-8">
+            <div class="row row-cols-1 row-cols-sm-2 justify-content-sm-start justify-content-center">
+                <div class="col-10 col-md-5 col-sm-6 mb-sm-0 mb-3 d-flex justify-content-center">
+                    <img src="{% static 'images/meet_our_team_avatar.png'%}" class="img-fluid ratio-9x16">
+                </div>
+                <div class="col align-items-sm-start align-items-center d-flex flex-column">
+                    <h3>Developer & Designer</h3>
+                    <p>Andrea Zorzi</p>
+                    <div class="mt-auto d-flex flex-row">
+                        <a href="#"><img src="{% static 'images/icon_instagram.svg'%}" class="img-fluid"></a>
+                        <a href="#"><img src="{% static 'images/icon_github.svg'%}" class="img-fluid mx-3"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-6 col-sm-7 mt-lg-auto mt-5 text-center text-md-start">
+            <div class="card">
+                <p class="card-text">Sign up to save your favorites places, and keep in touch with us.</p>
+                <a href="#" class="card-link">Sign Up</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--End Meet Our Team-->
+<!--FAQ-->
+
 
 {% endblock content %}
