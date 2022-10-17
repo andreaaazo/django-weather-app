@@ -1,0 +1,20 @@
+// Custom.scss
+// Option A: Include all of Bootstrap
+
+// Include any default variable overrides here (though functions won't be available)
+
+@import "static/bootstrap/bootstrap.scss";
+
+// Then add additional custom code here
+
+// own utilities map
+.banner {
+    height: 350px;
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+
+.section{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}

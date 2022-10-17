@@ -2,9 +2,9 @@
 
 {% block content %}
 {% load static %}
-<div class="container-fluid body">
+<div class="container-fluid">
+    <!--Hero section-->
     <div class="container-xxl">
-        <!--Hero section-->
         <div class="d-flex flex-column pt-5 min-vh-100 justify-content-center">
                 <div class="container-fluid text-center m-3">
                     <h1 style="font-size: 4em">DataBerry</h1>
@@ -34,7 +34,9 @@
                 </div>
         </div>
     </div>
-    <div class="container-xxl min-vh-100">
+    <!--End Hero section-->
+    <!--Features section-->
+    <div class="container-xxl section">
         <div class="d-flex flex-column text-start my-5">
             <h2>Features</h2>
             <img src="{% static 'images/features_section_decorator.svg'%}" class="d-block me-auto img-fluid">
@@ -103,8 +105,15 @@
             </div>
         </div>
     </div>
-    <div class="container-xxl vh- justify-content-center text-center" style="background: blue;">
+    <!--End Features section-->
+    <!--Banner-->
+    <div class="banner text-center justify-content-center" style="background: blue;">
         <h2>Remember to take the umbrella</h2>
     </div>
+    <!-- End Banner-->
+    <div class="container-xxl section">
+        <p>test</p>
+    </div>
 </div>
+
 {% endblock content %}
