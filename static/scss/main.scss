@@ -10,6 +10,8 @@ $theme-colors: (
     "danger": #BA1A1A,
     "light": #F6FEFF,
     "dark": #001F24,
+    "outline": #8A9297,
+    "inverse-primary": #6DD2FF,
     );
 
 // shadows
@@ -99,5 +101,9 @@ $navbar-light-brand-hover-color: $navbar-light-active-color;
 
 .z-1 {
     box-shadow: $shadow-1;
+    background: $surface-1;
+}
+
+.testing {
     background: $surface-1;
 }
