@@ -12,6 +12,7 @@ $theme-colors: (
     "dark": #001F24,
     "outline": #8A9297,
     "inverse-primary": #6DD2FF,
+    "on-surface-variant": #40484C,
     );
 
 // shadows
@@ -102,4 +103,10 @@ $navbar-light-brand-hover-color: $navbar-light-active-color;
 .z-1 {
     box-shadow: $shadow-1;
     background: $surface-1;
+}
+
+.caption {
+    font-family: "Public Sans Regular", sans-serif;
+    font-size: 0.75rem;
+    color: map-get($theme-colors, "on-surface-variant");
 }

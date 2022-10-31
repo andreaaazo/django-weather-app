@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "weathertest.apps.WeathertestConfig",
+    "users.apps.UsersConfig",
+    "temperatures.apps.TemperaturesConfig",
+    "website.apps.WebsiteConfig",
     "compressor",
 ]
 

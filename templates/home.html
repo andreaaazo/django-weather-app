@@ -41,73 +41,78 @@
             </div>
         </div>
         <div class="card text-center p-4 z-1 m-xl-1 m-3">
-            <img src="{% static 'images/features_section_logo_1.svg'%}" class="card-img-top" height="40">
+            <img src="{% static 'images/features_section_logo_2.svg'%}" class="card-img-top" height="40">
             <div class="card-body d-flex flex-column align-items-center">
-                <p class="card-title mb-2">Daily Forecast</p>
-                <p class="card-text">We provide an optimized daily forecast for your needs, with a reliable precision.</p>
+                <p class="card-title mb-2">Hystorical Data</p>
+                <p class="card-text">Search though our historical data up to 40 years back.</p>
             </div>
         </div>
         <div class="card text-center p-4 z-1 m-xl-1 m-3">
-            <img src="{% static 'images/features_section_logo_1.svg'%}" class="card-img-top" height="40">
+            <img src="{% static 'images/features_section_logo_3.svg'%}" class="card-img-top" height="40">
             <div class="card-body d-flex flex-column align-items-center">
-                <p class="card-title mb-2">Daily Forecast</p>
-                <p class="card-text">We provide an optimized daily forecast for your needs, with a reliable precision.</p>
+                <p class="card-title mb-2">Current weather</p>
+                <p class="card-text">Worldwide meteorologic and climatology data.</p>
             </div>
         </div>
         <div class="card text-center p-4 z-1 m-xl-1 m-3">
-            <img src="{% static 'images/features_section_logo_1.svg'%}" class="card-img-top" height="40">
+            <img src="{% static 'images/features_section_logo_4.svg'%}" class="card-img-top" height="40">
             <div class="card-body d-flex flex-column align-items-center">
-                <p class="card-title mb-2">Daily Forecast</p>
-                <p class="card-text">We provide an optimized daily forecast for your needs, with a reliable precision.</p>
+                <p class="card-title mb-2">National Alerts</p>
+                <p class="card-text">Rest safe with our national weather alerts.</p>
             </div>
         </div>
     </div>
-    <div class="d-flex flex-column text-sm-start text-center my-5">
+    <div class="text-sm-start text-center my-5">
         <h3>We also provide</h3>
-        <div class="row row-cols-4 my-4">
-            <div class="col text-center">
-                <p>sunrise</p>
-            </div>
-            <div class="col text-center">
-                <p>sunrise</p>
-            </div>
-            <div class="col text-center">
-                <p>sunrise</p>
-            </div>
-            <div class="col text-center">
-                <p>sunrise</p>
-            </div>
-            <div class="col text-center">
-                <p>sunrise</p>
-            </div>
-            <div class="col text-center">
-                <p>sunrise</p>
-            </div>
-            <div class="col text-center">
-                <p>sunrise</p>
-            </div>
-            <div class="col text-center">
-                <p>sunrise</p>
-            </div>
-            <div class="col text-center">
-                <p>sunrise</p>
-            </div>
-            <div class="col text-center">
-                <p>sunrise</p>
-            </div>
-            <div class="col text-center">
-                <p>sunrise</p>
-            </div>
-            <div class="col text-center">
-                <p>sunrise</p>
-            </div>
+    </div>
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4">
+        <div class="col text-center border p-3 border-top-0 border-start-0">
+            <p class="m-0">sunrise</p>
         </div>
+        <div class="col text-center border p-3 border-top-0">
+            <p class="m-0">sunset</p>
+        </div>
+        <div class="col text-center border p-3 border-top-0">
+            <p class="m-0">moonset</p>
+        </div>
+        <div class="col text-center border p-3 border-top-0 border-end-0">
+            <p class="m-0">moonrise</p>
+        </div>
+        <div class="col text-center border p-3 border-start-0">
+            <p class="m-0">moon phase</p>
+        </div>
+        <div class="col text-center border p-3">
+            <p class="m-0">humidity</p>
+        </div>
+        <div class="col text-center border p-3">
+            <p class="m-0">wind speed</p>
+        </div>
+        <div class="col text-center border p-3 border-end-0">
+            <p class="m-0">pressure</p>
+        </div>
+        <div class="col text-center border p-3 border-bottom-0 border-start-0">
+            <p class="m-0">weather</p>
+        </div>
+        <div class="col text-center border p-3 border-bottom-0">
+            <p class="m-0">alerts</p>
+        </div>
+        <div class="col text-center border p-3 border-bottom-0">
+            <p class="m-0">temperature feelings</p>
+        </div>
+        <div class="col text-center border p-3 border-bottom-0 border-end-0">
+            <p class="m-0">temperature</p>
+        </div>
+        
     </div>
 </div>
 <!--End Features section-->
 <!--Banner-->
-<div class="d-flex align-items-center justify-content-center banner bg-inverse-primary">
-    <h2 class="text-center p-4">Remember to take the umbrella</h2>
+<div class="d-flex flex-column align-items-center justify-content-center banner bg-inverse-primary">
+    <div class="my-3 text-center">
+        <h2 class="mx-4 mx-md-0">Remember to take the umbrella</h2>
+        <p class="lead mx-4 mx-md-0">We offer a complete free service suitable for your needs.</p>
+    </div>
+    <button class="btn-secondary btn">Try it now!</button>
 </div>
 <!-- End Banner-->
 <!--Meet Our Team-->
@@ -115,7 +120,7 @@
     <div class="d-flex flex-column">
         <div class="d-flex flex-row">
             <h2 class="m-0 pe-5 col-6 col-xl-3 col-md-4 col-sm-4">Meet Our Team</h2>
-            <p class="m-0 col-md-4 col-xl-3">The project is developed by Andrea Zorzi, hosted with a Raspberry Py.</p>
+            <p class="m-0 col-md-4 col-xl-2 caption">The project is developed by Andrea Zorzi, hosted with a Raspberry Py.</p>
         </div>
         <img src="{% static 'images/section_decorator.svg'%}" class="d-block me-auto my-3 img-fluid">
     </div>
