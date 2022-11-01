@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<div class="container">
+    <!--Heading-->
+    <div class="d-flex flex-column my-3">
+        <h2 class="mb-0">Tracker</h2>
+        <img src="{% static 'images/tracker_decorator.svg' %}" class="img-fluid me-auto">
+    </div>
+    <!--End Heading-->
+    <!--City Field-->
+    <div class="d-flex flex-column my-5">
+        <form method="POST" class="col-4">
+            <label for="InputCity" class="form-label subtitle">Desired location:</label>
+            <div class="d-flex flex-row">
+                <input type="text" class="form-control elevation-1 bg-surface-variant" id="InputCity" placeholder="ex. London">
+                <button class="ms-2 btn rounded-start elevation-1 border border-1 bg-surface-variant" type="submit"><img src="{% static 'images/tracker_search_icon.svg'%}" alt="Search"></button>
+            </div>
+        </form>
+    </div>
+    <!--End -->
+</div>
+
+
+{% endblock content %}

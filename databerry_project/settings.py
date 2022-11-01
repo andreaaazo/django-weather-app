@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "users.apps.UsersConfig",
-    "temperatures.apps.TemperaturesConfig",
+    "tracker.apps.TrackerConfig",
     "website.apps.WebsiteConfig",
     "compressor",
 ]
