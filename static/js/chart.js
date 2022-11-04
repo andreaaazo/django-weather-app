@@ -25,5 +25,3 @@ options: {
     }
 },
 });
-
-console.log("hi")
