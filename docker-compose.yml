@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  web:
+    build: .
+    command: python /databerry_proj/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/databerry_proj
+    ports:
+      - 8000:8000
+  db:
+    image: postgres:11
+    environment:
+      POSTGRES_PASSWORD: password

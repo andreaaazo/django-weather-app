@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-xzs%_6t(h-300+&a2oz6nc*ba)5j)-dpb(*^jub^-^%+nlz$rh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -80,8 +80,12 @@ WSGI_APPLICATION = "databerry_project.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "postgres",
+        "USER": "postgres",
+        "PASSWORD": "password",
+        "HOST": "db",
+        "PORT": 5432,
     }
 }
 
