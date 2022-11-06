@@ -137,9 +137,14 @@ STATICFILES_DIRS = [
     "/var/www/static/",
 ]
 
+# for SASS bootstrap
+
 STATICFILES_FINDERS = [
     "compressor.finders.CompressorFinder",  # for SASS bootstrap
 ]
 
-# for SASS bootstrap
 COMPRESS_PRECOMPILERS = (("text/x-scss", "django_libsass.SassCompiler"),)
+
+# Custom User
+AUTH_USER_MODEL = "users.DataberryUser"
+LOGIN_REDIRECT_URL = "home"
