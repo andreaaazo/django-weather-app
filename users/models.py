@@ -3,4 +3,5 @@ from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 class DataberryUser(AbstractUser):
-    pass
+    profile_image = models.ImageField(upload_to="users/", default="no_image.png")
+    REQUIRED_FIELDS = ["profile_image"]
