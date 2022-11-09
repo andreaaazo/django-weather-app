@@ -58,7 +58,7 @@
               <img src="{{user.profile_image.url}}" class="rounded-circle" style="height: 40px; width: 40px">
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
-              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="{% url 'logout' %}">Log Out</a></li>
             </ul>

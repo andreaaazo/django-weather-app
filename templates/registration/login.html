@@ -7,11 +7,11 @@
 {% block content %}
 <div class="container min-vh-100">
     <h1 class="my-4">Log In</h1>
-    <div class="elevation-1 p-5">
-        <form method="POST">
+    <div class="elevation-1 p-5 d-flex flex-column align-items-center">
+        <form method="POST" class="col-6">
             {% csrf_token %}
             {{ form|crispy }}
-            <button type="submit" class="btn btn-secondary mt-3">Log In</button>
+            <button type="submit" class="btn btn-secondary mt-3 ">Log In</button>
         </form>
     </div>
 </div>
