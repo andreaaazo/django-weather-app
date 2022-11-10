@@ -24,6 +24,10 @@ def current_weather(city):
             ).strftime("%Y-%m-%d %H:%M:%S")
         ),
         "timezone": current_city_weather["timezone"] / 3600,
+        "hour": (
+            datetime.fromtimestamp(current_city_weather["dt"])
+            + timedelta(hours=current_city_weather["timezone"] / 3600)
+        ).hour,
     }
 
     return current_weather

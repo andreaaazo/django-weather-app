@@ -37,9 +37,9 @@
                         <p class="mb-0 text-on-surface-variant">GMT {{current_weather.timezone}}, {{current_weather.time}}</p>
                     </div>
                     <div class="col-2 text-end">
-                        <button class="btn btn-secondary">
+                        <a class="btn btn-secondary" href="{% url 'add_to_favourites' current_weather.city %}">
                             Add to favorites
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <img src="{% static 'images/tracker_decorator_city.svg'%}" class="mt-3">
@@ -79,7 +79,7 @@
                             <div class="axis">
                                 <div class="tick">
                                 <span class="day-number mb-3">{{current_weather.temp}}°</span>
-                                <span class="day-name">NOW</span>
+                                <span class="day-name">{{current_weather.hour}}</span>
                                 </div>
                                 <div class="tick">
                                 <span class="day-number mb-3">{{hourly_forecast.1.temp}}°</span>
@@ -128,38 +128,49 @@
         </div>
         <!--End City Card-->
     </div>
-    <!--Favorites-->
+    <!--Favourites-->
     <div class="mb-5">
         <!--Title-->
         <div class="d-flex flex-column mb-4">
-            <h3 class="text-on-background">Favorites</h3>
+            <h3 class="text-on-background">Favourites</h3>
             <img src="{% static 'images/tracker_features_title_decorator.svg' %}" alt="Decorator" class="img-fluid me-auto">
         </div>
         <!--End Title-->
         {% if user.is_authenticated %}
+        {% if not favourites.items %}
+        <div class="d-flex flex-column align-items-center text-center p-5">
+            <img src="{% static 'images/nothing_to_show.png' %}" alt="Nothing To Show" class="img-fluid mx-auto">
+            <h4 class="text-on-background my-4">Nothing to show</h4>
+            <p class="text-outline col-5">You can add an item to favorites by clicking on the green button that shows up when you search a city.</p>
+        </div>
+        {% endif %}
+        {% for city, values in favourites.items%}
         <!--City Card-->
         <div class="elevation-1 p-4 d-flex flex-column my-5">
             <div class="d-flex align-items-center justify-content-between">
-                <h4 class="text-on-surface">Bern, Switzerland</h4>
-                <button class="btn btn-secondary"><img src="{% static 'images/tracker_favorites_trash.svg' %}" class="img-fluid ratio-1x1"></button>
+                <h4 class="text-on-surface">{{values.city}}, {{values.country}}</h4>
+                <div class="col text-end">
+                    <p class="mb-0 me-5 text-on-surface-variant">GMT {{values.timezone}}, {{values.time}}</p>
+                </div>
+                <a class="btn btn-secondary" href="{% url 'remove_to_favourites' values.city %}"><img src="{% static 'images/tracker_favorites_trash.svg' %}" class="img-fluid ratio-1x1"></a>
             </div>
             <img src="{% static 'images/tracker_decorator_city.svg'%}" class=" my-3 img-fluid">
-            <p class="m-0 text-on-surface">It’s cloudy, with a maximum temperature of 14° and a minimum of 5°.</p>
+            <p class="m-0 text-on-surface">{{values.description}}, with a maximum temperature of {{values.temp_max}}° and a minimum of {{values.temp_min}}°.</p>
             <!--Temperature informations-->
-            <div class="row align-items-center justify-content-between my-4">
+            <div class="row align-items-center justify-content-between my-4 text-center">
                 <div class="col">
-                    <img src="{% static 'images/city_weather_status.svg'%}" alt="Weather Status Icon" class="img-fluid">
+                    <img src="http://openweathermap.org/img/wn/{{values.icon}}@4x.png" alt="Weather Status Icon" class="img-fluid ratio ratio-1x1">
                 </div>
                 <div class="col">
-                    <h1 class="m-0">13°</h1>
+                    <h1 class="m-0">{{values.temp}}°</h1>
                 </div>
                 <div class="col-4 d-flex flex-column align-items-center">
                     <div class="text-center">
                         <p>Temperature</p>
                         <div class="d-flex flex-row">
-                            <h3 class="m-0 me-2">5°</h3>
+                            <h3 class="m-0 me-2">{{values.temp_min}}°</h3>
                             <img src="{% static 'images/tracker_decorator_temperature.svg'%}" alt="Temperature Decorator" class="img-fluid">
-                            <h3 class="m-0 ms-2">14°</h3>
+                            <h3 class="m-0 ms-2">{{values.temp_max}}°</h3>
                         </div>
                     </div>
                 </div>
@@ -167,9 +178,9 @@
                     <div class="text-center">
                         <p class="mb-2 text-on-surface-variant">Wind</p>
                         <div class="d-flex flex-row align-items-center">
-                            <h2 class="m-0">{{current_weather.wind_speed}}</h2>
+                            <h2 class="m-0">{{values.wind_speed}}</h2>
                             <div class="d-flex flex-column mx-3 align-items-start">
-                                <p class="m-0 text-on-surface-variant">{{current_weather.wind_direction}}°</p>
+                                <p class="m-0 text-on-surface-variant">{{values.wind_direction}}°</p>
                                 <p class="m-0 text-on-surface-variant">m/s</p>
                             </div>
                         </div>
@@ -178,7 +189,7 @@
                 <div class="col d-flex flex-row">
                     <div class="d-flex flex-column text-center">
                         <p class="mb-2 text-on-surface-variant">Humidity</p>
-                        <h2>{{current_weather.humidity}}%</h2>
+                        <h2>{{values.humidity}}%</h2>
                     </div>
                 </div>
             </div>
@@ -186,9 +197,10 @@
             <button class="btn btn-secondary col-1">Show more</button>
         </div>
         <!--End City Card-->
+        {% endfor %}
         {% else %}
         <div class="elevation-1 d-flex flex-column align-items-center p-3">
-            <h4 class="text-on-surface mb-3">Access to add your favorite cities</h4>
+            <h4 class="text-on-surface mb-3">Access to add your favourite cities</h4>
             <div class="d-flex flex-row align-items-center">
                 <a href="{% url 'login' %}" class="btn btn-secondary">Login</a>
                 <p class="m-0 mx-3">or</p>
@@ -197,7 +209,7 @@
         </div>
         {% endif %}
     </div>
-    <!--End Favorites-->
+    <!--End Favourites-->
 </div>
 
 

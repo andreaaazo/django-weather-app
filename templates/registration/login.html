@@ -1,18 +1,58 @@
 {% extends 'base.html' %}
 
 {% load crispy_forms_tags %}
+{% load static %}
 
 {% block title %}Log In{% endblock title %}
 
 {% block content %}
-<div class="container min-vh-100">
-    <h1 class="my-4">Log In</h1>
-    <div class="elevation-1 p-5 d-flex flex-column align-items-center">
-        <form method="POST" class="col-6">
-            {% csrf_token %}
-            {{ form|crispy }}
-            <button type="submit" class="btn btn-secondary mt-3 ">Log In</button>
-        </form>
+<div class="min-vh-100 d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="{% static 'images/login_image.svg'%}" alt="Image" class="img-fluid">
+        </div>
+        <div class="col-md-6 contents">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="mb-4">
+              <h3>Sign In</h3>
+              <p class="mb-4">Access to your account and see the beauties of the weather. Keep yourself updated.</p>
+            </div>
+            <form action="#" method="post">
+              {% csrf_token %}
+              {{form|crispy}}
+              
+              <div class="d-flex mb-5 align-items-center">
+                <span class="ml-auto mt-3"><a href="#" class="forgot-pass">Forgot Password</a></span> 
+              </div>
+
+              <input type="submit" value="Log In" class="btn btn-block btn-secondary">
+
+              <span class="d-block text-left my-4 text-muted">&mdash; or login with &mdash;</span>
+              
+              <div class="social-login">
+                <a href="#" class="facebook">
+                  <span class="icon-facebook mr-3"></span> 
+                </a>
+                <a href="#" class="twitter">
+                  <span class="icon-twitter mr-3"></span> 
+                </a>
+                <a href="#" class="google">
+                  <span class="icon-google mr-3"></span> 
+                </a>
+              </div>
+            </form>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
     </div>
-</div>
+  </div>
 {% endblock content %}
+          <form method="POST" class="col-6">
+              {% csrf_token %}
+              {{ form|crispy }}
+              </form>

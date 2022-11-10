@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import FavoriteCity
+from .models import City
 
 
 # Register your models here.
-admin.site.register(FavoriteCity)
+admin.site.register(City)
