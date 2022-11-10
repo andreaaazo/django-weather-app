@@ -201,12 +201,12 @@ $navbar-light-brand-hover-color: $navbar-light-active-color;
 }
 
 .team_member {
-	-webkit-filter: grayscale(0) blur(0);
-	filter: grayscale(0) blur(0);
+	-webkit-filter: blur(0);
+	filter: blur(0);
 	-webkit-transition: .5s ease-in-out;
 	transition: .5s ease-in-out;
 }
 .team_member:hover {
-	-webkit-filter: grayscale(100%) blur(3px);
-	filter: grayscale(100%) blur(3px);
+	-webkit-filter: blur(2px);
+	filter: blur(2px);
 }

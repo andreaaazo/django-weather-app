@@ -7,7 +7,7 @@ class CityForm(forms.Form):
         widget=forms.TextInput(
             attrs={
                 "placeholder": "ex. London",
-                "class": "form-control elevation-1 bg-surface-variant rounded-left",
+                "class": "form-control bg-surface-variant",
                 "id": "InputCity",
             }
         ),
