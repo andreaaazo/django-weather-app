@@ -17,9 +17,10 @@
         <!--City Field-->
         <div class="d-flex flex-column my-5">
             <form method="POST" class="col-4">
+                {% csrf_token %}
                 <label for="InputCity" class="form-label subtitle">Desired location:</label>
                 <div class="d-flex flex-row">
-                    <input type="text" class="form-control elevation-1 bg-surface-variant rounded-left" id="InputCity" placeholder="ex. London">
+                    {{form}}
                     <button class="ms-2 btn rounded-start elevation-1 border border-1 bg-surface-variant" type="submit"><img src="{% static 'images/tracker_search_icon.svg'%}" alt="Search"></button>
                 </div>
             </form>
@@ -30,10 +31,10 @@
             <div class="d-flex flex-column my-2">
                 <div class="d-flex align-items-center">
                     <div class="col-6">
-                        <h4>Lugano, Switzerland</h4>
+                        <h4>{{current_weather.city}}, {{current_weather.country}}</h4>
                     </div>
                     <div class="col-4 text-end">
-                        <p class="mb-0 text-on-surface-variant">GMT+2, Wednesday, 21 September 2022, 23:23</p>
+                        <p class="mb-0 text-on-surface-variant">GMT {{current_weather.timezone}}, {{current_weather.time}}</p>
                     </div>
                     <div class="col-2 text-end">
                         <button class="btn btn-secondary">
@@ -43,131 +44,84 @@
                 </div>
                 <img src="{% static 'images/tracker_decorator_city.svg'%}" class="mt-3">
             </div>
-            <p class="my-3 text-on-surface">It’s sunny, with a maximum temperature of 19° and a minimum of 2°.</p>
+            <p class="my-3 text-on-surface">{{current_weather.description}}, with a maximum temperature of {{current_weather.temp_max}}° and a minimum of {{current_weather.temp_min}}°.</p>
             <div class="d-flex flex-row my-5 justify-content-between">
-                <img src="{% static 'images/city_weather_status.svg'%}" alt="" class="img-fluid ratio-1x1 align-self-center">
-                <h1 class="align-self-center">17°</h1>
+                <img src="http://openweathermap.org/img/wn/{{current_weather.icon}}@2x.png" alt="" class="img-fluid ratio-1x1 align-self-center">
+                <h1 class="align-self-center">{{current_weather.temp}}°</h1>
                 <div class="text-center">
                     <p class="mb-3 text-on-surface-variant">Temperature</p>
                     <div class="d-flex flex-row align-items-center">
-                        <h3 class="mb-0">2°</h3>
+                        <h3 class="mb-0">{{current_weather.temp_min}}°</h3>
                         <img src="{% static 'images/tracker_decorator_temperature.svg'%}" alt="Temperature Decorator" class="img-fluid mx-3">
-                        <h3 class="mb-0">19°</h3>
+                        <h3 class="mb-0">{{current_weather.temp_max}}°</h3>
                     </div>
                 </div>
                 <div class="text-center">
                     <p class="mb-2 text-on-surface-variant">Wind</p>
                     <div class="d-flex flex-row align-items-center">
-                        <h2 class="m-0">9.4</h2>
+                        <h2 class="m-0">{{current_weather.wind_speed}}</h2>
                         <div class="d-flex flex-column mx-3 align-items-start">
-                            <p class="m-0 text-on-surface-variant">NW</p>
-                            <p class="m-0 text-on-surface-variant">km/h</p>
+                            <p class="m-0 text-on-surface-variant">{{current_weather.wind_direction}}°</p>
+                            <p class="m-0 text-on-surface-variant">m/s</p>
                         </div>
                     </div>
                 </div>
                 <div class="d-flex flex-column text-center">
                     <p class="mb-2 text-on-surface-variant">Humidity</p>
-                    <h2>30%</h2>
+                    <h2>{{current_weather.humidity}}%</h2>
                 </div>
             </div>
             <div class="my-5">
                 <h5 class="mb-3">Temperature</h5>
-                <div class="card chart-container elevation-2 p-4">
-                    <canvas id="chart"></canvas>
-                </div>
-            </div>
-            <div class="my-3">
-                <h5 class="mb-3">This week</h5>
-                <div class="d-flex flex-row">
-                    <div class="elevation-2 py-2 mx-4 d-flex flex-column align-items-center col">
-                        <h6 class="m-0">Tomorrow</h6>
-                        <img src="{% static 'images/city_weather_status.svg'%}" alt="" class="img-fluid ratio-1x1 col-7 my-4">
-                        <div class="row">
-                            <div class="col">
-                                <h5>6°</h5>
+                <div class="p-4 animated">
+                    <div style="position: relative;">
+                        <canvas id="chart"></canvas>
+                            <div class="axis">
+                                <div class="tick">
+                                <span class="day-number mb-3">{{current_weather.temp}}°</span>
+                                <span class="day-name">NOW</span>
+                                </div>
+                                <div class="tick">
+                                <span class="day-number mb-3">{{hourly_forecast.1.temp}}°</span>
+                                <span class="day-name">{{hourly_forecast.1.hour}}</span>
+                                </div>
+                                <div class="tick">
+                                <span class="day-number mb-3">{{hourly_forecast.2.temp}}°</span>
+                                <span class="day-name">{{hourly_forecast.2.hour}}</span>
+                                </div>
+                                <div class="tick">
+                                <span class="day-number mb-3">{{hourly_forecast.3.temp}}°</span>
+                                <span class="day-name">{{hourly_forecast.3.hour}}</span>
+                                </div>
+                                <div class="tick">
+                                <span class="day-number mb-3">{{hourly_forecast.4.temp}}°</span>
+                                <span class="day-name">{{hourly_forecast.4.hour}}</span>
+                                </div>
+                                <div class="tick">
+                                <span class="day-number mb-3">{{hourly_forecast.5.temp}}°</span>
+                                <span class="day-name">{{hourly_forecast.5.hour}}</span>
+                                </div>
+                                <div class="tick">
+                                <span class="day-number mb-3">{{hourly_forecast.6.temp}}°</span>
+                                <span class="day-name">{{hourly_forecast.6.hour}}</span>
+                                </div>
+                                <div class="tick">
+                                <span class="day-number mb-3">{{hourly_forecast.7.temp}}°</span>
+                                <span class="day-name">{{hourly_forecast.7.hour}}</span>
+                                </div>
+                                <div class="tick">
+                                <span class="day-number mb-3">{{hourly_forecast.8.temp}}°</span>
+                                <span class="day-name">{{hourly_forecast.8.hour}}</span>
+                                </div>
+                                <div class="tick">
+                                <span class="day-number mb-3">{{hourly_forecast.9.temp}}°</span>
+                                <span class="day-name">{{hourly_forecast.9.hour}}</span>
+                                </div>
+                                <div class="tick">
+                                <span class="day-number mb-3">{{hourly_forecast.10.temp}}°</span>
+                                <span class="day-name">{{hourly_forecast.10.hour}}</span>
+                                </div>
                             </div>
-                            <div class="col">
-                                <img src="{% static 'images/tracker_weekly_temperature_separator.svg' %}" alt="" class="img-fluid">
-                            </div>
-                            <div class="col">
-                                <h5>14°</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="elevation-2 py-2 mx-4 d-flex flex-column align-items-center col">
-                        <h6 class="m-0">Sunday</h6>
-                        <img src="{% static 'images/city_weather_status.svg'%}" alt="" class="img-fluid ratio-1x1 col-7 my-4">
-                        <div class="row">
-                            <div class="col">
-                                <h5>6°</h5>
-                            </div>
-                            <div class="col">
-                                <img src="{% static 'images/tracker_weekly_temperature_separator.svg' %}" alt="" class="img-fluid">
-                            </div>
-                            <div class="col">
-                                <h5>14°</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="elevation-2 py-2 mx-4 d-flex flex-column align-items-center col">
-                        <h6 class="m-0">Saturday</h6>
-                        <img src="{% static 'images/city_weather_status.svg'%}" alt="" class="img-fluid ratio-1x1 col-7 my-4">
-                        <div class="row">
-                            <div class="col">
-                                <h5>6°</h5>
-                            </div>
-                            <div class="col">
-                                <img src="{% static 'images/tracker_weekly_temperature_separator.svg' %}" alt="" class="img-fluid">
-                            </div>
-                            <div class="col">
-                                <h5>14°</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="elevation-2 py-2 mx-4 d-flex flex-column align-items-center col">
-                        <h6 class="m-0">Monday</h6>
-                        <img src="{% static 'images/city_weather_status.svg'%}" alt="" class="img-fluid ratio-1x1 col-7 my-4">
-                        <div class="row">
-                            <div class="col">
-                                <h5>6°</h5>
-                            </div>
-                            <div class="col">
-                                <img src="{% static 'images/tracker_weekly_temperature_separator.svg' %}" alt="" class="img-fluid">
-                            </div>
-                            <div class="col">
-                                <h5>14°</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="elevation-2 py-2 mx-4 d-flex flex-column align-items-center col">
-                        <h6 class="m-0">Thursday</h6>
-                        <img src="{% static 'images/city_weather_status.svg'%}" alt="" class="img-fluid ratio-1x1 col-7 my-4">
-                        <div class="row">
-                            <div class="col">
-                                <h5>6°</h5>
-                            </div>
-                            <div class="col">
-                                <img src="{% static 'images/tracker_weekly_temperature_separator.svg' %}" alt="" class="img-fluid">
-                            </div>
-                            <div class="col">
-                                <h5>14°</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="elevation-2 py-2 mx-4 d-flex flex-column align-items-center col">
-                        <h6 class="m-0">Wednesday</h6>
-                        <img src="{% static 'images/city_weather_status.svg'%}" alt="" class="img-fluid ratio-1x1 col-7 my-4">
-                        <div class="row">
-                            <div class="col">
-                                <h5>6°</h5>
-                            </div>
-                            <div class="col">
-                                <img src="{% static 'images/tracker_weekly_temperature_separator.svg' %}" alt="" class="img-fluid">
-                            </div>
-                            <div class="col">
-                                <h5>14°</h5>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -182,6 +136,7 @@
             <img src="{% static 'images/tracker_features_title_decorator.svg' %}" alt="Decorator" class="img-fluid me-auto">
         </div>
         <!--End Title-->
+        {% if user.is_authenticated %}
         <!--City Card-->
         <div class="elevation-1 p-4 d-flex flex-column my-5">
             <div class="d-flex align-items-center justify-content-between">
@@ -192,10 +147,10 @@
             <p class="m-0 text-on-surface">It’s cloudy, with a maximum temperature of 14° and a minimum of 5°.</p>
             <!--Temperature informations-->
             <div class="row align-items-center justify-content-between my-4">
-                <div class="col-1">
+                <div class="col">
                     <img src="{% static 'images/city_weather_status.svg'%}" alt="Weather Status Icon" class="img-fluid">
                 </div>
-                <div class="col-1">
+                <div class="col">
                     <h1 class="m-0">13°</h1>
                 </div>
                 <div class="col-4 d-flex flex-column align-items-center">
@@ -208,99 +163,22 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4 d-flex flex-row">
-                    <div class="elevation-2 col p-2 me-2 text-center">
-                        <p class="subtitle m-0">SU</p>
-                        <img src="{% static 'images/city_weather_status.svg'%}" alt="" class="img-fluid my-2">
-                        <p class="m-0 subtitle text-primary">14°</p>
-                    </div>
-                    <div class="elevation-2 col p-2 mx-2 text-center">
-                        <p class="subtitle m-0">SU</p>
-                        <img src="{% static 'images/city_weather_status.svg'%}" alt="" class="img-fluid my-2">
-                        <p class="m-0 subtitle text-primary">14°</p>
-                    </div>
-                    <div class="elevation-2 col p-2 mx-2 text-center">
-                        <p class="subtitle m-0">SU</p>
-                        <img src="{% static 'images/city_weather_status.svg'%}" alt="" class="img-fluid my-2">
-                        <p class="m-0 subtitle text-primary">14°</p>
-                    </div>
-                    <div class="elevation-2 col p-2 mx-2 text-center">
-                        <p class="subtitle m-0">SU</p>
-                        <img src="{% static 'images/city_weather_status.svg'%}" alt="" class="img-fluid my-2">
-                        <p class="m-0 subtitle text-primary">14°</p>
-                    </div>
-                    <div class="elevation-2 col p-2 mx-2 text-center">
-                        <p class="subtitle m-0">SU</p>
-                        <img src="{% static 'images/city_weather_status.svg'%}" alt="" class="img-fluid my-2">
-                        <p class="m-0 subtitle text-primary">14°</p>
-                    </div>
-                    <div class="elevation-2 col p-2 ms-2 text-center">
-                        <p class="subtitle m-0">SU</p>
-                        <img src="{% static 'images/city_weather_status.svg'%}" alt="" class="img-fluid my-2">
-                        <p class="m-0 subtitle text-primary">14°</p>
-                    </div>
-                </div>
-            </div>
-            <!--End Temperature informations-->
-            <button class="btn btn-secondary col-1">Show more</button>
-        </div>
-        <!--End City Card-->
-        <!--City Card-->
-        <div class="elevation-1 p-4 d-flex flex-column my-5">
-            <div class="d-flex align-items-center justify-content-between">
-                <h4 class="text-on-surface">Bern, Switzerland</h4>
-                <button class="btn btn-secondary"><img src="{% static 'images/tracker_favorites_trash.svg' %}" class="img-fluid ratio-1x1"></button>
-            </div>
-            <img src="{% static 'images/tracker_decorator_city.svg'%}" class=" my-3 img-fluid">
-            <p class="m-0 text-on-surface">It’s cloudy, with a maximum temperature of 14° and a minimum of 5°.</p>
-            <!--Temperature informations-->
-            <div class="row align-items-center justify-content-between my-4">
-                <div class="col-1">
-                    <img src="{% static 'images/city_weather_status.svg'%}" alt="Weather Status Icon" class="img-fluid">
-                </div>
-                <div class="col-1">
-                    <h1 class="m-0">13°</h1>
-                </div>
-                <div class="col-4 d-flex flex-column align-items-center">
+                <div class="col d-flex flex-row">
                     <div class="text-center">
-                        <p>Temperature</p>
-                        <div class="d-flex flex-row">
-                            <h3 class="m-0 me-2">5°</h3>
-                            <img src="{% static 'images/tracker_decorator_temperature.svg'%}" alt="Temperature Decorator" class="img-fluid">
-                            <h3 class="m-0 ms-2">14°</h3>
+                        <p class="mb-2 text-on-surface-variant">Wind</p>
+                        <div class="d-flex flex-row align-items-center">
+                            <h2 class="m-0">{{current_weather.wind_speed}}</h2>
+                            <div class="d-flex flex-column mx-3 align-items-start">
+                                <p class="m-0 text-on-surface-variant">{{current_weather.wind_direction}}°</p>
+                                <p class="m-0 text-on-surface-variant">m/s</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-4 d-flex flex-row">
-                    <div class="elevation-2 col p-2 me-2 text-center">
-                        <p class="subtitle m-0">SU</p>
-                        <img src="{% static 'images/city_weather_status.svg'%}" alt="" class="img-fluid my-2">
-                        <p class="m-0 subtitle text-primary">14°</p>
-                    </div>
-                    <div class="elevation-2 col p-2 mx-2 text-center">
-                        <p class="subtitle m-0">SU</p>
-                        <img src="{% static 'images/city_weather_status.svg'%}" alt="" class="img-fluid my-2">
-                        <p class="m-0 subtitle text-primary">14°</p>
-                    </div>
-                    <div class="elevation-2 col p-2 mx-2 text-center">
-                        <p class="subtitle m-0">SU</p>
-                        <img src="{% static 'images/city_weather_status.svg'%}" alt="" class="img-fluid my-2">
-                        <p class="m-0 subtitle text-primary">14°</p>
-                    </div>
-                    <div class="elevation-2 col p-2 mx-2 text-center">
-                        <p class="subtitle m-0">SU</p>
-                        <img src="{% static 'images/city_weather_status.svg'%}" alt="" class="img-fluid my-2">
-                        <p class="m-0 subtitle text-primary">14°</p>
-                    </div>
-                    <div class="elevation-2 col p-2 mx-2 text-center">
-                        <p class="subtitle m-0">SU</p>
-                        <img src="{% static 'images/city_weather_status.svg'%}" alt="" class="img-fluid my-2">
-                        <p class="m-0 subtitle text-primary">14°</p>
-                    </div>
-                    <div class="elevation-2 col p-2 ms-2 text-center">
-                        <p class="subtitle m-0">SU</p>
-                        <img src="{% static 'images/city_weather_status.svg'%}" alt="" class="img-fluid my-2">
-                        <p class="m-0 subtitle text-primary">14°</p>
+                <div class="col d-flex flex-row">
+                    <div class="d-flex flex-column text-center">
+                        <p class="mb-2 text-on-surface-variant">Humidity</p>
+                        <h2>{{current_weather.humidity}}%</h2>
                     </div>
                 </div>
             </div>
@@ -308,72 +186,138 @@
             <button class="btn btn-secondary col-1">Show more</button>
         </div>
         <!--End City Card-->
-        <!--City Card-->
-        <div class="elevation-1 p-4 d-flex flex-column my-5">
-            <div class="d-flex align-items-center justify-content-between">
-                <h4 class="text-on-surface">Bern, Switzerland</h4>
-                <button class="btn btn-secondary"><img src="{% static 'images/tracker_favorites_trash.svg' %}" class="img-fluid ratio-1x1"></button>
+        {% else %}
+        <div class="elevation-1 d-flex flex-column align-items-center p-3">
+            <h4 class="text-on-surface mb-3">Access to add your favorite cities</h4>
+            <div class="d-flex flex-row align-items-center">
+                <a href="{% url 'login' %}" class="btn btn-secondary">Login</a>
+                <p class="m-0 mx-3">or</p>
+                <a href="{% url 'signup' %}" class="btn btn-secondary">Register</a>
             </div>
-            <img src="{% static 'images/tracker_decorator_city.svg'%}" class=" my-3 img-fluid">
-            <p class="m-0 text-on-surface">It’s cloudy, with a maximum temperature of 14° and a minimum of 5°.</p>
-            <!--Temperature informations-->
-            <div class="row align-items-center justify-content-between my-4">
-                <div class="col-1">
-                    <img src="{% static 'images/city_weather_status.svg'%}" alt="Weather Status Icon" class="img-fluid">
-                </div>
-                <div class="col-1">
-                    <h1 class="m-0">13°</h1>
-                </div>
-                <div class="col-4 d-flex flex-column align-items-center">
-                    <div class="text-center">
-                        <p>Temperature</p>
-                        <div class="d-flex flex-row">
-                            <h3 class="m-0 me-2">5°</h3>
-                            <img src="{% static 'images/tracker_decorator_temperature.svg'%}" alt="Temperature Decorator" class="img-fluid">
-                            <h3 class="m-0 ms-2">14°</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4 d-flex flex-row">
-                    <div class="elevation-2 col p-2 me-2 text-center">
-                        <p class="subtitle m-0">SU</p>
-                        <img src="{% static 'images/city_weather_status.svg'%}" alt="" class="img-fluid my-2">
-                        <p class="m-0 subtitle text-primary">14°</p>
-                    </div>
-                    <div class="elevation-2 col p-2 mx-2 text-center">
-                        <p class="subtitle m-0">SU</p>
-                        <img src="{% static 'images/city_weather_status.svg'%}" alt="" class="img-fluid my-2">
-                        <p class="m-0 subtitle text-primary">14°</p>
-                    </div>
-                    <div class="elevation-2 col p-2 mx-2 text-center">
-                        <p class="subtitle m-0">SU</p>
-                        <img src="{% static 'images/city_weather_status.svg'%}" alt="" class="img-fluid my-2">
-                        <p class="m-0 subtitle text-primary">14°</p>
-                    </div>
-                    <div class="elevation-2 col p-2 mx-2 text-center">
-                        <p class="subtitle m-0">SU</p>
-                        <img src="{% static 'images/city_weather_status.svg'%}" alt="" class="img-fluid my-2">
-                        <p class="m-0 subtitle text-primary">14°</p>
-                    </div>
-                    <div class="elevation-2 col p-2 mx-2 text-center">
-                        <p class="subtitle m-0">SU</p>
-                        <img src="{% static 'images/city_weather_status.svg'%}" alt="" class="img-fluid my-2">
-                        <p class="m-0 subtitle text-primary">14°</p>
-                    </div>
-                    <div class="elevation-2 col p-2 ms-2 text-center">
-                        <p class="subtitle m-0">SU</p>
-                        <img src="{% static 'images/city_weather_status.svg'%}" alt="" class="img-fluid my-2">
-                        <p class="m-0 subtitle text-primary">14°</p>
-                    </div>
-                </div>
-            </div>
-            <!--End Temperature informations-->
-            <button class="btn btn-secondary col-1">Show more</button>
         </div>
-        <!--End City Card-->
+        {% endif %}
     </div>
     <!--End Favorites-->
 </div>
 
 
 {% endblock content %}
+
+{% block script %}
+<script>
+var canvas = document.getElementById("chart");
+
+// Apply multiply blend when drawing datasets
+var multiply = {
+  beforeDatasetsDraw: function(chart, options, el) {
+    chart.ctx.globalCompositeOperation = 'multiply';
+  },
+  afterDatasetsDraw: function(chart, options) {
+    chart.ctx.globalCompositeOperation = 'source-over';
+  },
+};
+
+// Gradient color - this week
+var gradientThisWeek = canvas.getContext('2d').createLinearGradient(0, 0, 0, 150);
+gradientThisWeek.addColorStop(0, '#5555FF');
+gradientThisWeek.addColorStop(1, '#9787FF');
+
+var config = {
+    type: 'bar',
+    data: {
+        labels: ["NOW", {{hourly_forecast.1.hour}}, {{hourly_forecast.2.hour}}, {{hourly_forecast.3.hour}}, {{hourly_forecast.4.hour}}, {{hourly_forecast.5.hour}}, {{hourly_forecast.6.hour}}, {{hourly_forecast.7.hour}}, {{hourly_forecast.8.hour}}, {{hourly_forecast.9.hour}}, {{hourly_forecast.10.hour}}],
+        datasets: [
+          {
+              label: 'Temperature',
+              data: [{{current_weather.temp}}, {{hourly_forecast.1.temp}}, {{hourly_forecast.2.temp}}, {{hourly_forecast.3.temp}}, {{hourly_forecast.4.temp}}, {{hourly_forecast.5.temp}}, {{hourly_forecast.6.temp}}, {{hourly_forecast.7.temp}}, {{hourly_forecast.8.temp}}, {{hourly_forecast.9.temp}}, {{hourly_forecast.10.temp}}],
+              backgroundColor: 'rgba(255, 99, 132, 0)'
+          },
+          {
+            type: 'line',
+            label: 'Temperature',
+            data: [{{current_weather.temp}}, {{hourly_forecast.1.temp}}, {{hourly_forecast.2.temp}}, {{hourly_forecast.3.temp}}, {{hourly_forecast.4.temp}}, {{hourly_forecast.5.temp}}, {{hourly_forecast.6.temp}}, {{hourly_forecast.7.temp}}, {{hourly_forecast.8.temp}}, {{hourly_forecast.9.temp}}, {{hourly_forecast.10.temp}}],
+            borderColor: 'rgba(0, 31, 36, 0.2)',
+            borderWidth: 2,
+            pointBackgroundColor: 'transparent',
+            pointBorderColor: '#001F24',
+            pointBorderWidth: 3,
+            pointHoverBorderColor: 'rgba(0, 31, 36, 0.6)',
+            pointHoverBorderWidth: 10,
+            lineTension: 0,
+            backgroundColor: 'rgba(138, 146, 151, 0.1)'
+  }
+          
+        ]
+    },
+    options: {
+        layout: {
+            padding: {
+                top: 30,
+            },
+        },
+    	responsive: true,
+      elements: { 
+        point: {
+          radius: 6,
+          hitRadius: 0, 
+          hoverRadius: 6 
+        } 
+      },
+      legend: {
+        display: false,
+      },
+      tooltips: {
+      	backgroundColor: 'transparent',
+        displayColors: false,
+        bodyFontSize: 14,
+        callbacks: {
+            labelTextColor: (context) => {
+                return '#001F24'
+            },
+          label: function(tooltipItems, data) { 
+            return tooltipItems.yLabel + '°C';
+          }
+        }
+      },
+      scales: {
+        xAxes: [{
+          display: false,
+        }],
+        yAxes: [{
+          display: false,
+          ticks: {
+            beginAtZero: true,
+          },
+        }]
+      }
+    },
+    plugins: [multiply, {
+      id: "responsiveGradient",
+
+      afterLayout: function(chart, options) {
+        var scales = chart.scales;
+
+        // create a linear gradient with the dimentions of the scale
+        var color = chart.ctx.createLinearGradient(
+          scales["x-axis-0"].left,
+          scales["y-axis-0"].bottom,
+          0,
+          scales["y-axis-0"].top
+        );
+        // add gradients stops
+        color.addColorStop(1, "rgba(0, 102, 134, 0.6)");
+        color.addColorStop(0.2, "rgba(0, 102, 134, 0)");
+        // changes the background color option
+        chart.data.datasets[1].backgroundColor = color;
+      }
+    }],
+};
+
+window.chart = new Chart(canvas, config);
+
+
+
+
+</script>
+
+{% endblock script %}

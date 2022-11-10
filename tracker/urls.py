@@ -1,4 +1,6 @@
 from django.urls import path
-from .views import TrackerPageView
+from .views import tracker_view
 
-urlpatterns = [path("", TrackerPageView.as_view(), name="tracker")]
+urlpatterns = [
+    path("", tracker_view, name="tracker"),
+]

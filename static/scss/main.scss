@@ -147,3 +147,66 @@ $navbar-light-brand-hover-color: $navbar-light-active-color;
     font-weight: 600;
     line-height: 1.5;
 }
+
+// chart 
+.axis {
+    position: absolute;
+    color: #001F24;
+    z-index: 1;
+    text-transform: uppercase;
+    display: flex;
+    width: 100%;
+    bottom: 0;
+}
+
+.axis .tick {
+    flex: 1;
+    position: relative;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 20px;
+}
+
+.day-number {
+    display: block;
+}
+
+.day-name {
+    display: block;
+    opacity: 0.5;
+}
+
+/* */
+.animated {
+    background: linear-gradient(-45deg, rgba(0, 102, 134, 0.12),#DCE3E9, rgba(0, 102, 134, 0.12), #DCE3E9, rgba(0, 102, 134, 0.12));
+    background-size: 400% 400%;
+    animation: bg 20s infinite;
+    box-shadow: $shadow-2 !important;
+    border-radius: 35px;
+}
+
+@keyframes bg {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+.team_member {
+	-webkit-filter: grayscale(0) blur(0);
+	filter: grayscale(0) blur(0);
+	-webkit-transition: .5s ease-in-out;
+	transition: .5s ease-in-out;
+}
+.team_member:hover {
+	-webkit-filter: grayscale(100%) blur(3px);
+	filter: grayscale(100%) blur(3px);
+}
