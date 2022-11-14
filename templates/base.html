@@ -1,0 +1,40 @@
+{% load static %}
+{% load compress %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block page_title %}{% endblock page_title %}</title>
+
+    <!--Bootstrap-->
+    {% compress css %}
+        <link rel="stylesheet" href="{% static 'scss/main.scss' %}" type="text/x-scss">
+    {% endcompress %}
+
+</head>
+<body>
+    <!--Navbar-->
+    <div class="nav">
+        <nav class="container d-flex flex-row justify-content-between">
+            <ul class="col-6 navbar d-flex justify-content-between align-items-center">
+                <li class="nav-item"><img src="{% static 'images/logos/logo.svg' %}" alt="DataBerry Logo" class="img-fluid"></li>
+                <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Tracker</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contacts</a></li>
+            </ul>
+            <ul class="col-2 navbar d-flex justify-content-between align-items-center">
+                <li class="nav-item"><a href="" class="nav-link">Log In</a></li>
+                <li class="nav-item"><a href="" class="nav-link btn-md">Sign Up</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!--End Navbar-->
+    {% block content %}
+    {% endblock content %}
+</body>
+{% block script %}{% endblock script %}
+</html>

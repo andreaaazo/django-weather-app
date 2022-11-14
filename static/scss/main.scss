@@ -1,0 +1,586 @@
+/* Bootstrap Grid*/
+@import "static/bootstrap/bootstrap-grid.scss";
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@100;200;300;400;500;600;700;800;900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+/* Typography */
+@mixin body1 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+@mixin body-temperature {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 4rem;
+    line-height: 5rem;
+}
+
+@mixin button-sm {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.813rem;
+    line-height: 1.375rem;
+}
+
+@mixin button-md {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+}
+
+@mixin button-lg {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.938rem;
+    line-height: 1.625rem;
+}
+
+@mixin h1 {
+    font-family: "Epilogue";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 4rem;
+    line-height: 5rem;
+}
+
+@mixin h2 {
+    font-family: "Epilogue";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 3rem;
+    line-height: 4rem;
+}
+
+@mixin h3 {
+    font-family: "Epilogue";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 3rem;  
+}
+
+@mixin h4 {
+    font-family: "Epilogue";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 2.25rem; 
+}
+
+@mixin h5 {
+    font-family: "Epilogue";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+}
+
+@mixin overline {
+    font-family: "Epilogue";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+@mixin subtitle1 {
+    font-family: "Epilogue";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+/* Palette */
+$secondary: #525E7F;
+$on-secondary: #FFFFFF;
+$inverse-surface: #303034;
+$inverse-on-surface: #F2F0F4;
+$surface: #FEFBFF;
+$inverse-primary: #B2C5FF;
+$on-surface: #1B1B1F;
+$primary: #0055D3;
+$surface-variant: #E1E2EC;
+$outline: #757780;
+
+/* Basic */
+body {
+    font-family: "Inter", sans-serif;
+    font-family: "Epilogue", sans-serif;
+    margin: 0px;
+    display: block;
+}
+
+p {
+    margin: 0px;
+}
+
+
+
+// navbar
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.nav {
+    background: #FEFBFF;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    position: sticky;
+    top: 0px;
+    z-index: 10000;
+}
+
+.nav-item {
+    float: left;
+}
+
+.nav-link {
+    @include body1;
+    text-decoration: none;
+}
+
+.nav-logo {
+    max-width: 100%;
+    height: auto; 
+}
+
+
+/* Buttons */
+$buttons: (
+    "sm",
+    "md",
+    "lg"
+);
+
+@each $var in $buttons {
+    .btn-#{$var} {
+        @if $var == "sm" {
+            @include button-sm
+        } @else if $var == "md" {
+            @include button-md
+        } @else {
+            @include button-lg
+        }
+        padding: 10px 20px;
+        background: $secondary;
+        border-radius: 8px;
+        color: $on-secondary;
+        text-decoration: none;
+    } 
+}
+
+.btn-brand {
+    display: inline-flex;
+    flex-direction: row;
+    padding: 10px 20px;
+    gap: 10px;
+    background-color: $secondary;
+    border-radius: 8px;
+
+    & img {
+    height: auto;
+    width: auto;
+    aspect-ratio: auto;
+    color: $on-secondary;
+    }
+
+    & .title {
+     @include button-lg;
+    color: $on-secondary;
+    padding-left: 15px;
+    }
+
+    & .overline {
+    @include overline;
+    color: $on-secondary;
+    padding-left: 15px;        
+    }
+}
+
+@each $var in $buttons {
+    .btn-text-#{$var} {
+        @if $var == "sm" {
+            @include button-sm;
+            text-decoration: none;
+            color: $secondary;
+        } @else if $var == "md" {
+            @include button-md;
+            text-decoration: none;
+            color: $secondary;
+        } @else {
+            @include button-lg;
+            text-decoration: none;
+            color: $secondary;
+        }
+    } 
+}
+
+/* General + Headers */
+
+h1 {
+    @include h1;
+    padding: 100px 0 0 0;
+    margin: 0px;
+}
+
+h2 {
+    @include h2;
+    margin: 0px;
+    padding-bottom: 50px;
+}
+
+h3 {
+    @include h3;
+    margin: 0px;
+}
+
+h4 {
+    @include h4;
+    margin: 0px;
+}
+
+.section {
+    padding: 100px 0px;
+}
+
+.title-overline {
+    @include overline;
+    padding: 0px 0px 10px 0px;
+    color: $inverse-primary;
+}
+
+.img-horizontal {
+    width: 100%;
+    height: auto;
+}
+
+.img-vertical {
+    height: 100%;
+    width: auto;
+}
+
+/* Elevation */
+
+@mixin elevation-1 {
+    background: linear-gradient(0deg, rgba(0, 85, 211, 0.05), rgba(0, 85, 211, 0.05)), #FEFBFF;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Input */
+.input-text {
+    position: absolute;
+    width: 75%;
+    top: 100%;
+    left: 12.5%;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    transform: translateY(-50%);
+
+    & p {
+        @include subtitle1;
+        width: 50%;
+        color: $on-surface;
+    }
+
+    & form {
+        display: inline-flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    & input {
+        border: 0px;
+        border-radius: 8px;
+        background: $surface;
+        padding: 10px 15px;
+        margin: 0 10px 0 20px;
+        width: 100%;
+        @include body1;
+    }::placeholder{
+        color: $outline;
+    }
+
+    & .wrapper {
+        justify-content: center;
+        width: 70%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        background: linear-gradient(90.59deg, rgba(255, 255, 255, 0.4) 22.6%, rgba(255, 255, 255, 0.1) 83.09%);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(20px);
+        border-radius: 8px;
+        padding: 15px 40px 15px 40px;
+    }
+
+    & button {
+        background: $secondary;
+        border: 0px;
+        border-radius: 8px;
+        width: 10%;
+        height: auto;
+        padding: 10px;
+
+        & img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+/* Hero Section */
+
+.hero {
+    background: $inverse-surface;
+    display: flex;
+
+    & .content {
+    position: relative;
+    }
+
+    & .space {
+        margin-bottom: 132px;
+    }
+
+    & .background {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-content: center;
+    position: absolute;
+    z-index: 0;
+    }
+
+    & h1 {
+    color: $inverse-on-surface;
+    }
+
+    & .title-text {
+    padding: 25px 0;
+    @include body1;
+    color: $inverse-on-surface;
+    }
+
+}
+
+
+
+
+/* Banner */
+.banner {
+    background: $inverse-surface;
+    border: 0px;
+
+    & .content {
+        background-color: $surface;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 79px;
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+
+        & h2 {
+            color: $on-surface;
+        }
+    }
+}
+
+.banner-2 {
+    background: linear-gradient(180deg, $inverse-primary, $inverse-surface);
+    border: 0px;
+
+    & .content-2 {
+        color: $on-surface;
+        background-color: $surface;
+        border-radius: 79px;
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+
+        & p {
+            padding: 10px 0 25px 0;
+        }
+
+        & .wrapper {
+            display: inline-flex;
+        }
+    }
+}
+
+.weather-card {
+    background: linear-gradient(0deg, rgba(0, 85, 211, 0.05), rgba(0, 85, 211, 0.05)), #FEFBFF;
+    border-radius: 30px;
+    padding: 20px;
+    height: auto;
+
+    & .title{
+      @include h5;
+    }
+
+    & .temperature{
+        @include body-temperature;
+    }
+
+    & .links {
+        padding-top: 20px;
+    }
+
+    & .max {
+        color: $primary;
+    }
+
+    & .min {
+        color: $secondary;
+    }
+
+    & .img {
+        width: 100%;
+        padding-bottom: 100%;
+        display: flex;
+        position: relative;
+        background: $surface-variant;
+        border-radius: 50%;
+        overflow: hidden;
+
+        & img {
+            position: absolute;
+        }
+    }
+}
+
+/* Features */
+.features {
+    background: $inverse-surface;
+    
+
+    & h2 {
+        color: $inverse-on-surface;
+    }
+}
+
+.features-card {
+    padding: 50px;
+    color: $on-surface;
+    @include elevation-1;
+    border-radius: 8px;
+
+    & h3 {
+        padding: 10px 0px;
+    }
+
+    & p {
+        @include body1;
+    }
+}
+
+.features-group {
+    padding-top: 30px;
+
+    & .item {
+        justify-content: center;
+        display: flex;
+        @include elevation-1;
+        padding: 20px;
+        background: $inverse-surface;
+        color: $inverse-on-surface;
+        border-radius: 0px;
+    }
+};
+
+.waves {
+    display: block;
+    height: 40px;
+    background: $inverse-primary;
+    background-image: url('http://127.0.0.1:8000/static/images/home/waves.svg');
+    background-repeat: repeat-x;
+    background-size: contain;
+    background-position: center center;
+}
+
+.waves-rotated {
+    display: block;
+    height: 40px;
+    transform: rotate(180deg);
+    background: $inverse-primary;
+    background-image: url('http://127.0.0.1:8000/static/images/home/waves.svg');
+    background-repeat: repeat-x;
+    background-size: contain;
+    background-position: center center;
+}
+
+.features-2 {
+    background: $inverse-primary;
+    color: $on-surface;
+}
+
+/* Our team */
+.our-team {
+    background: $inverse-surface;
+
+    & .title {
+        color: $inverse-on-surface;
+    }
+
+    & .card {
+        border-radius: 8px;
+        overflow: hidden;
+
+        & img {
+            display: flex;
+        }
+        & .body {
+            padding: 25px;
+            background: $surface;
+            margin: 0px;
+
+            & h3 {
+                padding: 10px 0;
+            }
+
+            & h4 {
+                color: $primary;
+            }
+        }
+    }
+}
+
+/* Built with */
+.built-with {
+    background: $inverse-primary;
+    color: $on-surface;
+
+    & .brand-group {
+        padding: 25px 0;
+    }
+}
+
+/* FAQ */
+.faq {
+    background: $inverse-surface;
+    color: $inverse-on-surface;
+
+    & .subtitle {
+        @include body1;
+        padding-bottom: 50px;
+    }
+}

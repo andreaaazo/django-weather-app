@@ -1,0 +1,337 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}Homepage{% endblock page_title %}
+
+
+
+
+{% block content %}
+<!--Hero-->
+    <div class="hero">
+        <div class="container content">
+            <div class="background d-flex align-items-end justify-content-end">
+                <div class="col-9 d-flex align-items-end justify-content-end">
+                    <img class="img-horizontal" src="{% static 'images/home/hero_background.svg'%}" alt="Background Image">
+                </div>
+                    <div class="input-text">
+        <div class="wrapper">
+            <p class="text">Whats the weather like?</p>
+            <form action="POST">
+                <input type="text" placeholder="Ex. London">
+                <button type="submit" class="btn-image"><img src="{% static 'images/home/lens.svg' %}"></button>
+            </form>
+        </div>
+    </div>
+            </div>
+            <div class="col-4">
+                <h1>Keep track of the weather</h1>
+            </div>
+            <div class="col-3">
+                <p class="title-text">We offer a free worldwide weather tracking service. We provide meteorologic and climatology data, and keep the meteorologic situation under control.</p>
+            </div>
+            <a class="btn-brand space">
+                <img class="img-horizontal" src="{% static 'images/logos/raspberry.svg'%}" alt="">
+                <div>
+                    <p class="overline">Proudly made with</p>
+                    <p class="title">Raspberry</p>
+                </div>
+            </a>
+        </div>
+</div>
+    <!--Banner-->
+    <div class="banner">
+        <div class="content section">
+            <div class="container">
+                <h2>Popular cities</h2>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="weather-card">
+                            <div class="d-flex">
+                                <div class="col-6 d-flex flex-column body justify-content-between">
+                                    <p class="title">New York, US</p>
+                                    <p class="temperature align-self-center">26°</p>
+                                    <div class="d-flex justify-content-around">
+                                        <p class="max">H:27°</p>
+                                        <p class="min">L:22°</p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="img">
+                                        <img src="{% static 'images/home/sunny_day.svg'%}" alt="" class="img-horizontal">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="links d-flex justify-content-end">
+                                <a href="#" class="btn-text-lg">Show more -></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="weather-card d-flex flex-column justify-content-between">
+                            <div class="d-flex">
+                                <div class="col-6 d-flex flex-column body justify-content-between">
+                                    <p class="title">Dubai, AE</p>
+                                    <p class="temperature align-self-center">30°</p>
+                                    <div class="d-flex justify-content-around">
+                                        <p class="max">H:34°</p>
+                                        <p class="min">L:27°</p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="img">
+                                        <img src="{% static 'images/home/rainy_day.svg'%}" alt="" class="img-horizontal">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col links d-flex justify-content-end align-items-end">
+                                <a href="#" class="btn-text-lg">Show more -></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="weather-card d-flex flex-column">
+                            <div class="d-flex">
+                                <div class="col-6 d-flex flex-column body justify-content-between">
+                                    <p class="title">London, GB</p>
+                                    <p class="temperature align-self-center">2°</p>
+                                    <div class="d-flex justify-content-around">
+                                        <p class="max">H:-1°</p>
+                                        <p class="min">L:3°</p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="img">
+                                        <img src="{% static 'images/home/snow_day.svg'%}" alt="" class="img-horizontal">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="links d-flex justify-content-end">
+                                <a href="#" class="btn-text-lg">Show more -></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--Features-->
+<div class="features section">
+    <div class="container">
+        <p class="title-overline">what we do</p>
+        <h2>Features</h2>
+        <div class="row justify-content-between">
+            <div class="col-3 d-flex">                
+                <div class="features-card d-flex flex-column">
+                    <div class="d-flex justify-content-center">
+                        <img class="img-horizontal" src="{% static 'images/home/features_1.svg' %}" alt="Daily Forecast Image">
+                    </div>
+                    <h3 class="title">Daily forecast</h3>
+                    <p class="body">We provide an optimized daily forecast for your needs, with a reliable precision.</p>
+                </div>
+            </div>
+            <div class="col-3 d-flex">                
+                <div class="features-card d-flex flex-column">
+                    <div class="d-flex justify-content-center">
+                        <img class="img-vertical" src="{% static 'images/home/features_2.svg' %}" alt="Daily Forecast Image">
+                    </div>
+                    <h3 class="title">Hystorical data</h3>
+                    <p class="body">Search though our historical data up to 40 years back.</p>
+                </div>
+            </div>
+            <div class="col-3 d-flex">                
+                <div class="features-card d-flex flex-column">
+                    <div class="d-flex justify-content-center">
+                        <img class="img-vertical" src="{% static 'images/home/features_3.svg' %}" alt="Daily Forecast Image">
+                    </div>
+                    <h3 class="title">Current weather</h3>
+                    <p class="body">Worldwide meteorologic and climatology data.</p>
+                </div>
+            </div>
+            <div class="col-3 d-flex">                
+                <div class="features-card d-flex flex-column">
+                    <div class="d-flex justify-content-center">
+                        <img class="img-horizontal" src="{% static 'images/home/features_4.svg' %}" alt="Daily Forecast Image">
+                    </div>
+                    <h3 class="title">National alerts</h3>
+                    <p class="body">Rest safe with our national weather alerts.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--We also provide-->
+<div class="waves"></div>
+<div class="section features-2">
+    <div class="container">
+        <h3>We also provide</h3>
+        <div class="features-group row justify-content-between">
+            <div class="col-2">
+                <div class="item">
+                    <p>sunset</p>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="item">
+                    <p>sunrise</p>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="item">
+                    <p>moonset</p>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="item">
+                    <p>moonrise</p>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="item">
+                    <p>moon phase</p>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="item">
+                    <p>humidity</p>
+                </div>
+            </div>
+        </div>
+        <div class="features-group row justify-content-between">
+            <div class="col-2">
+                <div class="item">
+                    <p>sunset</p>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="item">
+                    <p>sunrise</p>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="item">
+                    <p>moonset</p>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="item">
+                    <p>moonrise</p>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="item">
+                    <p>moon phase</p>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="item">
+                    <p>humidity</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Banner-->
+<div class="banner-2">
+    <div class="content-2 section">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 d-flex align-items-center">
+                    <div class="d-flex flex-column">
+                        <h2>Remember to take the umbrella!</h2>
+                        <p>We offer a completely free service suitable for your needs.</p>
+                        <div class="wrapper">
+                            <a href="#" class="btn-lg">Try it now!</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <img class="img-horizontal" src="{% static 'images/home/call_to_action.svg'%}" alt="Rainy day">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Our team-->
+<div class="our-team section">
+    <div class="container">
+        <p class="title-overline">meet our staff</p>
+        <h2 class="title">Our team</h2>
+        <div class="row d-flex justify-content-between">
+            <div class="col-5">
+                <div class="card">
+                    <img class="img-horizontal" src="{% static 'images/home/meet_our_team_andrea.svg'%}" alt="">
+                    <div class="body">
+                        <h3>Developer & Designer</h3>
+                        <h4>Andrea Zorzi</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="card">
+                    <img class="img-horizontal" src="{% static 'images/home/meet_our_team_raspberry.svg'%}" alt="">
+                    <div class="body">
+                        <h3>Webserver & Database</h3>
+                        <h4>Raspberry PI</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Built with-->
+<div class="waves"></div>
+<div class="section built-with">
+    <div class="container">
+        <h3 class="title">Built with</h3>
+        <div class="row brand-group">
+            <div class="col-3">
+                <a href="#" class="btn-brand d-flex justify-content-center">
+                    <div class="d-flex">
+                        <img class="img-horizontal" src="{% static 'images/logos/raspberry.svg' %}" alt="">
+                        <p class="title align-self-center">Raspberry PI</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-3">
+                <a href="#" class="btn-brand d-flex justify-content-center">
+                    <div class="d-flex">
+                        <img class="img-horizontal" src="{% static 'images/logos/apache.svg' %}" alt="">
+                        <p class="title align-self-center">Apache</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-3">
+                <a href="#"class="btn-brand d-flex justify-content-center">
+                    <div class="d-flex">
+                        <img class="img-horizontal" src="{% static 'images/logos/bootstrap.svg' %}" alt="">
+                        <p class="title align-self-center">Bootstrap Grid</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-3">
+                <a href="#"class="btn-brand d-flex justify-content-center">
+                    <div class="d-flex">
+                        <img class="img-horizontal" src="{% static 'images/logos/django.svg' %}" alt="">
+                        <p class="title align-self-center">Django</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="waves-rotated"></div>
+<!--FAQ-->
+<div class="section faq">
+    <div class="container">
+        <div class="d-flex flex-column">
+            <p class="title-overline">questions</p>
+            <h2>Frequently Asked Questions</h2>
+            <div class="col-7">
+                <p class="subtitle">A frequently asked questions (FAQ) list is often used in articles, websites, email lists, and online forums where common questions tend to recur, asked questions and answers on a website about.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
