@@ -117,6 +117,18 @@ $surface-variant: #E1E2EC;
 $outline: #757780;
 
 /* Basic */
+
+@media (max-width: 576px) {
+    .margin-auto {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .container {
+        width: auto;
+    }
+}
+
 body {
     font-family: "Inter", sans-serif;
     font-family: "Epilogue", sans-serif;
@@ -399,6 +411,13 @@ h4 {
         border-radius: 79px;
         box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
 
+        @media (max-width: 768px) {
+            h2 {
+                padding-top: 50px;
+                padding-bottom: 25px;
+            }
+        }
+
         & p {
             padding: 10px 0 25px 0;
         }
@@ -408,6 +427,7 @@ h4 {
         }
     }
 }
+
 
 .weather-card {
     background: linear-gradient(0deg, rgba(0, 85, 211, 0.05), rgba(0, 85, 211, 0.05)), #FEFBFF;
@@ -465,6 +485,9 @@ h4 {
     color: $on-surface;
     @include elevation-1;
     border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+
 
     & h3 {
         padding: 10px 0px;
@@ -475,8 +498,21 @@ h4 {
     }
 }
 
+@media (max-width: 1400px) and (min-width: 1200px) {
+    .features-card {
+        padding: 25px;
+    }
+}
+
+
+
 .features-group {
     padding-top: 30px;
+
+    & .feature {
+        margin-bottom: 30px;
+    }
+
 
     & .item {
         justify-content: center;
@@ -495,7 +531,6 @@ h4 {
     background: $inverse-primary;
     background-image: url('http://127.0.0.1:8000/static/images/home/waves.svg');
     background-repeat: repeat-x;
-    background-size: contain;
     background-position: center center;
 }
 
@@ -506,7 +541,6 @@ h4 {
     background: $inverse-primary;
     background-image: url('http://127.0.0.1:8000/static/images/home/waves.svg');
     background-repeat: repeat-x;
-    background-size: contain;
     background-position: center center;
 }
 
