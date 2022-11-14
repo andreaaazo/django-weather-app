@@ -8,36 +8,25 @@
 
 {% block content %}
 <!--Hero-->
-    <div class="hero">
-        <div class="container content">
-            <div class="background d-flex align-items-end justify-content-end">
-                <div class="col-9 d-flex align-items-end justify-content-end">
-                    <img class="img-horizontal" src="{% static 'images/home/hero_background.svg'%}" alt="Background Image">
+<div class="hero">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5 col-lg-9 col-12">
+                <h1>Keep track of the weather</h1>
+                <p class="desc">We offer a free worldwide weather tracking service. We provide meteorologic and climatology data, and keep the meteorologic situation under control.</p>
+                <div class="btn-brand btn">
+                    <img src="{% static 'images/logos/raspberry.svg'%}" alt="">
+                    <div>
+                        <p class="overline">Proudly made with</p>
+                        <p class="title">Raspberry PI</p>
+                    </div>
                 </div>
-                    <div class="input-text">
-        <div class="wrapper">
-            <p class="text">Whats the weather like?</p>
-            <form action="POST">
-                <input type="text" placeholder="Ex. London">
-                <button type="submit" class="btn-image"><img src="{% static 'images/home/lens.svg' %}"></button>
-            </form>
+            </div>
+            <div class="col-xl-7 col-12 d-flex align-items-end ">
+                <img src="{% static 'images/home/hero_background.svg'%}" alt="" class="img-horizontal mt-5 mt-xl-0">
+            </div>
         </div>
     </div>
-            </div>
-            <div class="col-4">
-                <h1>Keep track of the weather</h1>
-            </div>
-            <div class="col-3">
-                <p class="title-text">We offer a free worldwide weather tracking service. We provide meteorologic and climatology data, and keep the meteorologic situation under control.</p>
-            </div>
-            <a class="btn-brand space">
-                <img class="img-horizontal" src="{% static 'images/logos/raspberry.svg'%}" alt="">
-                <div>
-                    <p class="overline">Proudly made with</p>
-                    <p class="title">Raspberry</p>
-                </div>
-            </a>
-        </div>
 </div>
     <!--Banner-->
     <div class="banner">
@@ -45,7 +34,7 @@
             <div class="container">
                 <h2>Popular cities</h2>
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-lg-3 col-md-6 col-12 mb-5 mb-lg-0">
                         <div class="weather-card">
                             <div class="d-flex">
                                 <div class="col-6 d-flex flex-column body justify-content-between">
@@ -67,7 +56,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-lg-3 col-md-6 col-12 mb-5 my-lg-0">
                         <div class="weather-card d-flex flex-column justify-content-between">
                             <div class="d-flex">
                                 <div class="col-6 d-flex flex-column body justify-content-between">
@@ -89,7 +78,29 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-lg-3 col-md-6 col-12 my-5 my-lg-0">
+                        <div class="weather-card d-flex flex-column">
+                            <div class="d-flex">
+                                <div class="col-6 d-flex flex-column body justify-content-between">
+                                    <p class="title">London, GB</p>
+                                    <p class="temperature align-self-center">2°</p>
+                                    <div class="d-flex justify-content-around">
+                                        <p class="max">H:-1°</p>
+                                        <p class="min">L:3°</p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="img">
+                                        <img src="{% static 'images/home/snow_day.svg'%}" alt="" class="img-horizontal">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="links d-flex justify-content-end">
+                                <a href="#" class="btn-text-lg">Show more -></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12 mt-5 my-lg-0">
                         <div class="weather-card d-flex flex-column">
                             <div class="d-flex">
                                 <div class="col-6 d-flex flex-column body justify-content-between">
@@ -122,7 +133,7 @@
         <p class="title-overline">what we do</p>
         <h2>Features</h2>
         <div class="row justify-content-between">
-            <div class="col-3 d-flex">                
+            <div class="col-xl-3 col-md-6 col-10">                
                 <div class="features-card d-flex flex-column">
                     <div class="d-flex justify-content-center">
                         <img class="img-horizontal" src="{% static 'images/home/features_1.svg' %}" alt="Daily Forecast Image">
@@ -131,7 +142,7 @@
                     <p class="body">We provide an optimized daily forecast for your needs, with a reliable precision.</p>
                 </div>
             </div>
-            <div class="col-3 d-flex">                
+            <div class="col-xl-3 col-md-6 col-10">                
                 <div class="features-card d-flex flex-column">
                     <div class="d-flex justify-content-center">
                         <img class="img-vertical" src="{% static 'images/home/features_2.svg' %}" alt="Daily Forecast Image">
@@ -140,7 +151,7 @@
                     <p class="body">Search though our historical data up to 40 years back.</p>
                 </div>
             </div>
-            <div class="col-3 d-flex">                
+            <div class="col-xl-3 col-md-6 col-10 d-flex">                
                 <div class="features-card d-flex flex-column">
                     <div class="d-flex justify-content-center">
                         <img class="img-vertical" src="{% static 'images/home/features_3.svg' %}" alt="Daily Forecast Image">
@@ -149,7 +160,7 @@
                     <p class="body">Worldwide meteorologic and climatology data.</p>
                 </div>
             </div>
-            <div class="col-3 d-flex">                
+            <div class="col-xl-3 col-md-6 col-10 d-flex">                
                 <div class="features-card d-flex flex-column">
                     <div class="d-flex justify-content-center">
                         <img class="img-horizontal" src="{% static 'images/home/features_4.svg' %}" alt="Daily Forecast Image">
@@ -167,64 +178,64 @@
     <div class="container">
         <h3>We also provide</h3>
         <div class="features-group row justify-content-between">
-            <div class="col-2">
+            <div class="col-md-2 col-4">
                 <div class="item">
                     <p>sunset</p>
                 </div>
             </div>
-            <div class="col-2">
+            <div class="col-md-2 col-4">
                 <div class="item">
                     <p>sunrise</p>
                 </div>
             </div>
-            <div class="col-2">
+            <div class="col-md-2 col-4">
                 <div class="item">
                     <p>moonset</p>
                 </div>
             </div>
-            <div class="col-2">
+            <div class="col-md-2 col-4">
                 <div class="item">
                     <p>moonrise</p>
                 </div>
             </div>
-            <div class="col-2">
+            <div class="col-md-2 col-4">
                 <div class="item">
                     <p>moon phase</p>
                 </div>
             </div>
-            <div class="col-2">
+            <div class="col-md-2 col-4">
                 <div class="item">
                     <p>humidity</p>
                 </div>
             </div>
         </div>
         <div class="features-group row justify-content-between">
-            <div class="col-2">
+            <div class="col-md-2 col-4">
                 <div class="item">
                     <p>sunset</p>
                 </div>
             </div>
-            <div class="col-2">
+            <div class="col-md-2 col-4">
                 <div class="item">
                     <p>sunrise</p>
                 </div>
             </div>
-            <div class="col-2">
+            <div class="col-md-2 col-4">
                 <div class="item">
                     <p>moonset</p>
                 </div>
             </div>
-            <div class="col-2">
+            <div class="col-md-2 col-4">
                 <div class="item">
                     <p>moonrise</p>
                 </div>
             </div>
-            <div class="col-2">
+            <div class="col-md-2 col-4">
                 <div class="item">
                     <p>moon phase</p>
                 </div>
             </div>
-            <div class="col-2">
+            <div class="col-md-2 col-4">
                 <div class="item">
                     <p>humidity</p>
                 </div>
@@ -237,7 +248,7 @@
     <div class="content-2 section">
         <div class="container">
             <div class="row">
-                <div class="col-6 d-flex align-items-center">
+                <div class="col-md-6 col-12 order-2 d-flex align-items-center">
                     <div class="d-flex flex-column">
                         <h2>Remember to take the umbrella!</h2>
                         <p>We offer a completely free service suitable for your needs.</p>
@@ -246,7 +257,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-md-6 col-12 order-1">
                     <img class="img-horizontal" src="{% static 'images/home/call_to_action.svg'%}" alt="Rainy day">
                 </div>
             </div>
@@ -259,7 +270,7 @@
         <p class="title-overline">meet our staff</p>
         <h2 class="title">Our team</h2>
         <div class="row d-flex justify-content-between">
-            <div class="col-5">
+            <div class="col-md-5 col-sm-6 col-10">
                 <div class="card">
                     <img class="img-horizontal" src="{% static 'images/home/meet_our_team_andrea.svg'%}" alt="">
                     <div class="body">
@@ -268,7 +279,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-5">
+            <div class="col-md-5 col-sm-6 col-10">
                 <div class="card">
                     <img class="img-horizontal" src="{% static 'images/home/meet_our_team_raspberry.svg'%}" alt="">
                     <div class="body">
@@ -286,7 +297,7 @@
     <div class="container">
         <h3 class="title">Built with</h3>
         <div class="row brand-group">
-            <div class="col-3">
+            <div class="col-lg-3 col-sm-6 mb-3 mb-lg-0">
                 <a href="#" class="btn-brand d-flex justify-content-center">
                     <div class="d-flex">
                         <img class="img-horizontal" src="{% static 'images/logos/raspberry.svg' %}" alt="">
@@ -294,7 +305,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-3">
+            <div class="col-lg-3 col-sm-6 mb-3 mb-lg-0">
                 <a href="#" class="btn-brand d-flex justify-content-center">
                     <div class="d-flex">
                         <img class="img-horizontal" src="{% static 'images/logos/apache.svg' %}" alt="">
@@ -302,7 +313,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-3">
+            <div class="col-lg-3 col-sm-6 mb-3 mb-lg-0">
                 <a href="#"class="btn-brand d-flex justify-content-center">
                     <div class="d-flex">
                         <img class="img-horizontal" src="{% static 'images/logos/bootstrap.svg' %}" alt="">
@@ -310,7 +321,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-3">
+            <div class="col-lg-3 col-sm-6">
                 <a href="#"class="btn-brand d-flex justify-content-center">
                     <div class="d-flex">
                         <img class="img-horizontal" src="{% static 'images/logos/django.svg' %}" alt="">

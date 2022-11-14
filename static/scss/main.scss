@@ -354,34 +354,16 @@ h4 {
 .hero {
     background: $inverse-surface;
     display: flex;
+    color: $inverse-on-surface;
 
-    & .content {
-    position: relative;
-    }
-
-    & .space {
+    & .btn {
         margin-bottom: 132px;
     }
 
-    & .background {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    align-content: center;
-    position: absolute;
-    z-index: 0;
+    & .desc {
+        @include body1;
+        padding: 25px 0;
     }
-
-    & h1 {
-    color: $inverse-on-surface;
-    }
-
-    & .title-text {
-    padding: 25px 0;
-    @include body1;
-    color: $inverse-on-surface;
-    }
-
 }
 
 
