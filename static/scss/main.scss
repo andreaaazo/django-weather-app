@@ -206,6 +206,7 @@ $buttons: (
     gap: 10px;
     background-color: $secondary;
     border-radius: 8px;
+    text-decoration: none;
 
     & img {
     height: auto;
@@ -361,6 +362,7 @@ h4 {
     }
 }
 
+
 /* Hero Section */
 
 .hero {
@@ -372,6 +374,24 @@ h4 {
         margin-bottom: 132px;
     }
 
+    @media (max-width: 1199px) and (min-width:575px) {
+        .btn {
+            margin-bottom: 0px;
+        }
+    }
+
+    .img-hero {
+        visibility: hidden;
+        display: none;
+    }
+
+    @media (min-width:575px) {
+        .img-hero{
+            display: block;
+            visibility: visible;
+        }
+    }
+
     & .desc {
         @include body1;
         padding: 25px 0;
@@ -379,24 +399,116 @@ h4 {
 }
 
 
+/* Popular cities */
 
-
-/* Banner */
-.banner {
+.popular-cities-banner {
     background: $inverse-surface;
     border: 0px;
 
-    & .content {
+    & .content-box {
         background-color: $surface;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
         border-radius: 79px;
         box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
 
         & h2 {
             color: $on-surface;
+        }
+
+        & .city-card {
+            background: linear-gradient(0deg, rgba(0, 85, 211, 0.05), rgba(0, 85, 211, 0.05)), #FEFBFF;
+            border-radius: 30px;
+            padding: 20px;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: row;
+            
+            & .content {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                width: 100%;
+                height: auto;
+                flex-grow: 1;
+                flex-shrink: 1;
+                flex-wrap: wrap;
+
+                & .body {
+                    display: flex;
+                    flex-direction: column;
+                    width: 50%;
+
+                    & h5 {
+                        @include h5;
+                        margin: 0
+                    }
+
+                    & .current-temperature {
+                        @include body-temperature;
+                        align-self: center;
+                        padding: 20px 0;
+                    }
+
+                    & .details {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-evenly;
+                    }
+
+                }
+
+
+
+
+            }
+
+            & .test {
+                width: 50%;
+                height: 100%;
+                display: block;
+            }
+
+            & .img-container {
+                width: 50%;
+                height: auto;
+                display: flex;
+                align-items: center;
+                position: relative;
+            
+                & .circle {
+                    display: flex;
+                    position: relative;
+                    border-radius: 50%;
+                    width: 100%;
+                    padding-top: 100%;
+                    background: $surface-variant;
+                    overflow: hidden;
+                }
+                
+            }
+
+            @media (max-width:1199px) {
+                .img-container {
+                    width: 40%;
+                }
+            }
+
+            @media (max-width:991px) {
+                .img-container {
+                    width: 50%;
+                }
+            }
+            @media (max-width:767px) {
+                .img-container {
+                    width: 35%;
+                }
+            }
+            @media (max-width:499px) {
+                .img-container {
+                    width: 40%;
+                }
+            }
         }
     }
 }
@@ -428,48 +540,6 @@ h4 {
     }
 }
 
-
-.weather-card {
-    background: linear-gradient(0deg, rgba(0, 85, 211, 0.05), rgba(0, 85, 211, 0.05)), #FEFBFF;
-    border-radius: 30px;
-    padding: 20px;
-    height: auto;
-
-    & .title{
-      @include h5;
-    }
-
-    & .temperature{
-        @include body-temperature;
-    }
-
-    & .links {
-        padding-top: 20px;
-    }
-
-    & .max {
-        color: $primary;
-    }
-
-    & .min {
-        color: $secondary;
-    }
-
-    & .img {
-        width: 100%;
-        padding-bottom: 100%;
-        display: flex;
-        position: relative;
-        background: $surface-variant;
-        border-radius: 50%;
-        overflow: hidden;
-
-        & img {
-            position: absolute;
-        }
-    }
-}
-
 /* Features */
 .features {
     background: $inverse-surface;
@@ -478,52 +548,38 @@ h4 {
     & h2 {
         color: $inverse-on-surface;
     }
+
+    & .features-card {
+        padding: 50px;
+        color: $on-surface;
+        @include elevation-1;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        box-sizing: border-box;
+    
+        & img {
+            margin: 0 auto;
+        }
+    
+        & h3 {
+            padding: 10px 0px;
+        }
+    
+        & p {
+            @include body1;
+        }
+    }
 }
 
-.features-card {
-    padding: 50px;
-    color: $on-surface;
-    @include elevation-1;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-
-
-    & h3 {
-        padding: 10px 0px;
-    }
-
-    & p {
-        @include body1;
-    }
-}
 
 @media (max-width: 1400px) and (min-width: 1200px) {
     .features-card {
         padding: 25px;
     }
 }
-
-
-
-.features-group {
-    padding-top: 30px;
-
-    & .feature {
-        margin-bottom: 30px;
-    }
-
-
-    & .item {
-        justify-content: center;
-        display: flex;
-        @include elevation-1;
-        padding: 20px;
-        background: $inverse-surface;
-        color: $inverse-on-surface;
-        border-radius: 0px;
-    }
-};
 
 .waves {
     display: block;
@@ -544,9 +600,28 @@ h4 {
     background-position: center center;
 }
 
+/* Features 2*/
 .features-2 {
     background: $inverse-primary;
     color: $on-surface;
+
+    & .features-group {
+    padding-top: 30px;
+
+        & .feature {
+            margin-bottom: 30px;
+
+            & .item {
+            justify-content: center;
+            display: flex;
+            @include elevation-1;
+            padding: 20px;
+            background: $inverse-surface;
+            color: $inverse-on-surface;
+            border-radius: 0px;
+            }
+        }
+    };
 }
 
 /* Our team */
