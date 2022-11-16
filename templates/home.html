@@ -39,16 +39,19 @@
                     <div class="city-card">
                         <div class="content">
                             <div class="body">
-                                <h5>Dubai, AE</h5>
-                                <p class="current-temperature">30</p>
+                                <h5>{{dubai.city}}, {{dubai.country}}</h5>
+                                <p class="current-temperature">{{dubai.temp}}°</p>
                                 <div class="details">
-                                    <p class="max">H:27</p>
-                                    <p class="min">L:22</p>
+                                    <p class="max">H:{{dubai.temp_max}}°</p>
+                                    <p class="min">L:{{dubai.temp_min}}°</p>
                                 </div>
                             </div>
                             <div class="img-container" >
                                 <div class="circle">
                                 </div>
+                            </div>
+                            <div class="links">
+                                <a class="btn-text-lg">Show more -></a>
                             </div>
                         </div>
                     </div>
@@ -57,16 +60,19 @@
                     <div class="city-card">
                         <div class="content">
                             <div class="body">
-                                <h5>Dubai, AE</h5>
-                                <p class="current-temperature">30</p>
+                                <h5>{{new_york.city}}, {{new_york.country}}</h5>
+                                <p class="current-temperature">{{new_york.temp}}°</p>
                                 <div class="details">
-                                    <p class="max">H:27</p>
-                                    <p class="min">L:22</p>
+                                    <p class="max">H:{{new_york.temp_max}}°</p>
+                                    <p class="min">L:{{new_york.temp_min}}°</p>
                                 </div>
                             </div>
                             <div class="img-container" >
                                 <div class="circle">
                                 </div>
+                            </div>
+                            <div class="links">
+                                <a class="btn-text-lg">Show more -></a>
                             </div>
                         </div>
                     </div>
@@ -75,16 +81,19 @@
                     <div class="city-card">
                         <div class="content">
                             <div class="body">
-                                <h5>Dubai, AE</h5>
-                                <p class="current-temperature">30</p>
+                                <h5>{{london.city}}, {{london.country}}</h5>
+                                <p class="current-temperature">{{london.temp}}°</p>
                                 <div class="details">
-                                    <p class="max">H:27</p>
-                                    <p class="min">L:22</p>
+                                    <p class="max">H:{{london.temp_max}}°</p>
+                                    <p class="min">L:{{london.temp_min}}°</p>
                                 </div>
                             </div>
                             <div class="img-container" >
                                 <div class="circle">
                                 </div>
+                            </div>
+                            <div class="links">
+                                <a class="btn-text-lg">Show more -></a>
                             </div>
                         </div>
                     </div>
@@ -93,16 +102,19 @@
                     <div class="city-card">
                         <div class="content">
                             <div class="body">
-                                <h5>Dubai, AE</h5>
-                                <p class="current-temperature">30</p>
+                                <h5>{{tokyo.city}}, {{tokyo.country}}</h5>
+                                <p class="current-temperature">{{tokyo.temp}}°</p>
                                 <div class="details">
-                                    <p class="max">H:27</p>
-                                    <p class="min">L:22</p>
+                                    <p class="max">H:{{tokyo.temp_max}}°</p>
+                                    <p class="min">L:{{tokyo.temp_min}}°</p>
                                 </div>
                             </div>
                             <div class="img-container" >
                                 <div class="circle">
                                 </div>
+                            </div>
+                            <div class="links">
+                                <a class="btn-text-lg">Show more -></a>
                             </div>
                         </div>
                     </div>
@@ -327,5 +339,4 @@
 {% endblock content %}
 
 {% block script %}
-<script src="{% static 'js/main.js'%}"></script>
 {% endblock script %}

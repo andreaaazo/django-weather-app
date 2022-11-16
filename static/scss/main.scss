@@ -423,6 +423,7 @@ h4 {
             box-sizing: border-box;
             display: flex;
             flex-direction: row;
+            justify-content: space-between;
             
             & .content {
                 display: flex;
@@ -463,12 +464,6 @@ h4 {
 
             }
 
-            & .test {
-                width: 50%;
-                height: 100%;
-                display: block;
-            }
-
             & .img-container {
                 width: 50%;
                 height: auto;
@@ -488,9 +483,21 @@ h4 {
                 
             }
 
+            .links {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                height: fit-content;
+                justify-content: end;
+                padding-top: 20px;
+            }
+
             @media (max-width:1199px) {
                 .img-container {
                     width: 40%;
+                }
+                .body {
+                    width: 60%
                 }
             }
 
@@ -498,15 +505,24 @@ h4 {
                 .img-container {
                     width: 50%;
                 }
+                .body {
+                    width: 50%
+                }
             }
             @media (max-width:767px) {
                 .img-container {
                     width: 35%;
                 }
+                .body {
+                    width: 65%
+                }
             }
             @media (max-width:499px) {
                 .img-container {
                     width: 40%;
+                }
+                .body {
+                    width: 60%
                 }
             }
         }
