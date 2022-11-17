@@ -48,6 +48,25 @@
                             </div>
                             <div class="img-container" >
                                 <div class="circle">
+                                    {% if dubai.main == 'Snow' %}
+                                    <img src="{% static 'images/home/snow_day.svg'%}" alt="">
+                                    
+                                    {% elif dubai.main == 'Rain' %}
+                                    <img src="{% static 'images/home/rainy_day.svg'%}" alt="">
+                                    
+                                    {% elif dubai.main == 'Drizzle' %}
+                                    <img src="{% static 'images/home/rainy_day.svg'%}" alt="">
+
+                                    {% elif dubai.main == 'Thunderstorm' %}
+                                    <img src="{% static 'images/home/rainy_day.svg'%}" alt="">
+
+                                    {% elif dubai.main == 'Clouds' %}
+                                    <img src="{% static 'images/home/cloudy_day.svg'%}" alt="">
+                                    
+                                    {% else %}
+                                    <img src="{% static 'images/home/sunny_day.svg'%}" alt="">
+                                    
+                                    {% endif %}
                                 </div>
                             </div>
                             <div class="links">
@@ -69,6 +88,25 @@
                             </div>
                             <div class="img-container" >
                                 <div class="circle">
+                                    {% if new_york.main == 'Snow' %}
+                                    <img src="{% static 'images/home/snow_day.svg'%}" alt="">
+                                    
+                                    {% elif new_york.main == 'Rain' %}
+                                    <img src="{% static 'images/home/rainy_day.svg'%}" alt="">
+                                    
+                                    {% elif new_york.main == 'Drizzle' %}
+                                    <img src="{% static 'images/home/rainy_day.svg'%}" alt="">
+
+                                    {% elif new_york.main == 'Thunderstorm' %}
+                                    <img src="{% static 'images/home/rainy_day.svg'%}" alt="">
+
+                                    {% elif new_york.main == 'Clouds' %}
+                                    <img src="{% static 'images/home/cloudy_day.svg'%}" alt="">
+                                    
+                                    {% else %}
+                                    <img src="{% static 'images/home/sunny_day.svg'%}" alt="">
+                                    
+                                    {% endif %}
                                 </div>
                             </div>
                             <div class="links">
@@ -90,6 +128,25 @@
                             </div>
                             <div class="img-container" >
                                 <div class="circle">
+                                    {% if london.main == 'Snow' %}
+                                    <img src="{% static 'images/home/snow_day.svg'%}" alt="">
+                                    
+                                    {% elif london.main == 'Rain' %}
+                                    <img src="{% static 'images/home/rainy_day.svg'%}" alt="">
+                                    
+                                    {% elif london.main == 'Drizzle' %}
+                                    <img src="{% static 'images/home/rainy_day.svg'%}" alt="">
+
+                                    {% elif london.main == 'Thunderstorm' %}
+                                    <img src="{% static 'images/home/rainy_day.svg'%}" alt="">
+                                    
+                                    {% elif london.main == 'Clouds' %}
+                                    <img src="{% static 'images/home/cloudy_day.svg'%}" alt="">
+                                    
+                                    {% else %}
+                                    <img src="{% static 'images/home/sunny_day.svg'%}" alt="">
+                                    
+                                    {% endif %}
                                 </div>
                             </div>
                             <div class="links">
@@ -111,6 +168,25 @@
                             </div>
                             <div class="img-container" >
                                 <div class="circle">
+                                    {% if tokyo.main == 'Snow' %}
+                                    <img src="{% static 'images/home/snow_day.svg'%}" alt="">
+                                    
+                                    {% elif tokyo.main == 'Rain' %}
+                                    <img src="{% static 'images/home/rainy_day.svg'%}" alt="">
+                                    
+                                    {% elif tokyo.main == 'Drizzle' %}
+                                    <img src="{% static 'images/home/rainy_day.svg'%}" alt="">
+
+                                    {% elif tokyo.main == 'Thunderstorm' %}
+                                    <img src="{% static 'images/home/rainy_day.svg'%}" alt="">
+
+                                    {% elif tokyo.main == 'Clouds' %}
+                                    <img src="{% static 'images/home/cloudy_day.svg'%}" alt="">
+                                    
+                                    {% else %}
+                                    <img src="{% static 'images/home/sunny_day.svg'%}" alt="">
+                                    
+                                    {% endif %}
                                 </div>
                             </div>
                             <div class="links">
@@ -240,7 +316,7 @@
         <div class="container">
             <div class="row margin-auto d-flex">
                 <div class="col-md-6 col-12 order-2 d-flex align-items-center">
-                    <div class="d-flex flex-column">
+                    <div class="body">
                         <h2>Remember to take the umbrella!</h2>
                         <p>We offer a completely free service suitable for your needs.</p>
                         <div class="wrapper">
@@ -333,10 +409,73 @@
             <div class="col-7">
                 <p class="subtitle">A frequently asked questions (FAQ) list is often used in articles, websites, email lists, and online forums where common questions tend to recur, asked questions and answers on a website about.</p>
             </div>
+            <div class="accordions">
+                <div class="accordion">
+                    <div class="head">
+                        <img src="{% static 'images/home/accordion_btn.svg'%}" alt="">
+                        <p>How often is the weather updated?</p>
+                    </div>
+                    <div class="body">
+                        <div class="panel">
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores voluptates sit vero soluta eveniet accusamus illum animi culpa impedit quibusdam repellendus harum ipsa exercitationem distinctio ullam aspernatur, ut labore? Tenetur!</p>
+                            <a href="#" class="btn-text-lg">Learn more -></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <div class="head">
+                        <img src="{% static 'images/home/accordion_btn.svg'%}" alt="">
+                        <p>Is it totally free?</p>
+                    </div>
+                    <div class="body">
+                        <div class="panel">
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores voluptates sit vero soluta eveniet accusamus illum animi culpa impedit quibusdam repellendus harum ipsa exercitationem distinctio ullam aspernatur, ut labore? Tenetur!</p>
+                            <a href="#" class="btn-text-lg">Learn more -></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <div class="head">
+                        <img src="{% static 'images/home/accordion_btn.svg'%}" alt="">
+                        <p>Is my data private?</p>
+                    </div>
+                    <div class="body">
+                        <div class="panel">
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores voluptates sit vero soluta eveniet accusamus illum animi culpa impedit quibusdam repellendus harum ipsa exercitationem distinctio ullam aspernatur, ut labore? Tenetur!</p>
+                            <a href="#" class="btn-text-lg">Learn more -></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <div class="head">
+                        <img src="{% static 'images/home/accordion_btn.svg'%}" alt="">
+                        <p>I have troubles to sign up</p>
+                    </div>
+                    <div class="body">
+                        <div class="panel">
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores voluptates sit vero soluta eveniet accusamus illum animi culpa impedit quibusdam repellendus harum ipsa exercitationem distinctio ullam aspernatur, ut labore? Tenetur!</p>
+                            <a href="#" class="btn-text-lg">Learn more -></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <div class="head">
+                        <img src="{% static 'images/home/accordion_btn.svg'%}" alt="">
+                        <p>I haven't received the email confirmation</p>
+                    </div>
+                    <div class="body">
+                        <div class="panel">
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores voluptates sit vero soluta eveniet accusamus illum animi culpa impedit quibusdam repellendus harum ipsa exercitationem distinctio ullam aspernatur, ut labore? Tenetur!</p>
+                            <a href="#" class="btn-text-lg">Learn more -></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 {% endblock content %}
 
 {% block script %}
+<script src="{% static 'js/accordion.js'%}"></script>
 {% endblock script %}

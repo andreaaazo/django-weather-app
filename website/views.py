@@ -6,8 +6,8 @@ from api.get_current_weather import get_current_weather
 # Create your views here.
 class HomePageView(View):
     def get(self, request, *args, **kwargs):
-        dubai = get_current_weather("Dubai")
 
+        dubai = get_current_weather("Dubai")
         new_york = get_current_weather("New York")
         london = get_current_weather("London")
         tokyo = get_current_weather("Tokyo")

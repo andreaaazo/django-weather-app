@@ -35,6 +35,42 @@
     <!--End Navbar-->
     {% block content %}
     {% endblock content %}
+    <footer>
+        <div class="container">
+            <div class="row margin-auto">
+                <div class="section col-6 col-md-4">
+                    <img src="{% static 'images/logos/logo.svg'%}" alt="">
+                    <p class="desc">Worldwide tracking meteorologic and clymatologic weather data.</p>
+                    <p class="copyright">© 2022 DATABERRY. All rights reserved.</p>
+                </div>
+                <div class="section col-6 col-md-2">
+                    <h5>Quick links</h5>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Our team</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="section col-6 col-md-2">
+                    <h5>Sitemap</h5>
+                    <ul>
+                        <li><a href="#">Homepage</a></li>
+                        <li><a href="#">Tracker</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contacts</a></li>
+                    </ul>
+                </div>
+                <div class="section col-6 col-md-4">
+                    <h5>Subscribe</h5>
+                    <p>We care about our subscribers, sign up to receive updates when our service improves.</p>
+                    <div class="links">
+                        <a href="#" class="btn-lg">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 {% block script %}{% endblock script %}
 </html>

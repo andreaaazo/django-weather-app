@@ -14,6 +14,14 @@
     line-height: 1.5rem;
 }
 
+@mixin body2 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+}
+
 @mixin body-temperature {
     font-family: 'Inter';
     font-style: normal;
@@ -104,6 +112,14 @@
     line-height: 1.5rem;
 }
 
+@mixin caption {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+}
+
 /* Palette */
 $secondary: #525E7F;
 $on-secondary: #FFFFFF;
@@ -115,6 +131,7 @@ $on-surface: #1B1B1F;
 $primary: #0055D3;
 $surface-variant: #E1E2EC;
 $outline: #757780;
+$on-surface-variant: #45464F;
 
 /* Basic */
 
@@ -479,6 +496,15 @@ h4 {
                     padding-top: 100%;
                     background: $surface-variant;
                     overflow: hidden;
+
+                    & img {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        width: 100%;
+                        height: 100%;
+                    }
+
                 }
                 
             }
@@ -539,10 +565,20 @@ h4 {
         border-radius: 79px;
         box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
 
+        & .body {
+            display: flex;
+            flex-direction: column;
+            padding-left: 50px;
+        }
+
         @media (max-width: 768px) {
             h2 {
                 padding-top: 50px;
                 padding-bottom: 25px;
+            }
+
+            .body {
+                padding: 0;
             }
         }
 
@@ -689,5 +725,134 @@ h4 {
     & .subtitle {
         @include body1;
         padding-bottom: 50px;
+    }
+
+
+    & .accordions {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding-top: 25px;
+        padding-bottom: 25px;
+
+        & .accordion {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border-radius: 8px;
+            margin: 10px 0;
+
+            & .head {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 25px;
+                @include elevation-1;
+                color: $on-surface;
+                cursor: pointer;
+
+                & p {
+                    margin-left: 25px;
+                }
+
+            }
+
+            & .body {
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+                max-height: 0;
+                transition: all 0.5s cubic-bezier(0.84, 0, 0.21, 1);
+
+                & .panel {
+                    display: flex;
+                    flex-direction: column;
+                    background: $surface-variant;
+                    color: $on-surface;
+                    padding: 25px;
+    
+    
+                    & p {
+                        @include body2;
+                    }
+    
+                    & a {
+                        padding-top: 15px;
+                    }
+    
+                }
+            }
+
+
+
+        }
+
+
+
+
+
+    }
+}
+
+
+/* Footer */
+footer {
+    @include elevation-1;
+    background: $surface;
+    color: $on-surface;
+
+    & h5 {
+        @include h5;
+        margin: 0;
+        margin-bottom: 15px;
+    }
+
+    & ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+
+        & li {
+            margin-bottom: 5px;
+            
+            & a {
+                @include body1;
+                color: $on-surface-variant;
+                text-decoration: none;
+
+            }
+
+        }
+
+    }
+
+    & p {
+        @include body1;
+    }
+
+    & img {
+        margin-right: auto;
+    }
+
+    & .desc {
+        padding: 15px 50px 15px 0;
+    }
+
+    & .copyright {
+        @include caption;
+    }
+
+    .section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 50px 25px;
+
+        & .links {
+            display: inline-flex;
+            margin-top: 15px;
+        }
     }
 }

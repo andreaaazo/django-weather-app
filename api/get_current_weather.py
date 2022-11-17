@@ -10,6 +10,7 @@ def get_current_weather(city: str):
         return dict(
             city=weather_data["name"],
             country=weather_data["sys"]["country"],
+            main=weather_data["weather"][0]["main"],
             temp=round(weather_data["main"]["temp"]),
             temp_min=round(weather_data["main"]["temp_min"]),
             temp_max=round(weather_data["main"]["temp_max"]),
