@@ -213,7 +213,13 @@ $buttons: (
         border-radius: 8px;
         color: $on-secondary;
         text-decoration: none;
-    } 
+        transition: all 0.2s ease 0s;
+    }
+
+    .btn-#{$var}:hover {
+        background: $primary;
+        transition: all 0.2s ease 0s;
+    }
 }
 
 .btn-brand {
@@ -223,6 +229,7 @@ $buttons: (
     gap: 10px;
     background-color: $secondary;
     border-radius: 8px;
+    transition: all 0.2s ease 0s;
     text-decoration: none;
 
     & img {
@@ -245,22 +252,45 @@ $buttons: (
     }
 }
 
+.btn-brand:hover{
+    transition: all 0.2s ease 0s;
+    background-color: $primary;
+}
+
 @each $var in $buttons {
     .btn-text-#{$var} {
         @if $var == "sm" {
             @include button-sm;
-            text-decoration: none;
-            color: $secondary;
         } @else if $var == "md" {
             @include button-md;
-            text-decoration: none;
-            color: $secondary;
         } @else {
             @include button-lg;
-            text-decoration: none;
-            color: $secondary;
         }
-    } 
+
+        text-decoration: none;
+        color: $secondary;
+        padding-right: 12px;
+        transition: all 0.2s ease 0s;
+    }
+    
+    .btn-text-#{$var}::after {
+        content: "->";
+        position: relative;
+        right: -4px;
+        transition: all 0.2s ease 0s;
+        white-space: nowrap;
+    }
+
+    .btn-text-#{$var}:hover::after {
+        right: -12px;
+        transition: all 0.2s ease 0s;
+        color: $primary
+    }
+
+    .btn-text-#{$var}:hover{
+        transition: all 0.2s ease 0s;
+        color: $primary
+    }
 }
 
 /* General + Headers */
@@ -611,17 +641,28 @@ h4 {
         height: 100%;
         width: 100%;
         box-sizing: border-box;
+        transition: all 0.3s ease-out;
     
         & img {
             margin: 0 auto;
         }
     
         & h3 {
-            padding: 10px 0px;
+            transition: all 0.3s ease-out;
+            padding: 25px 0px 10px 0px;
         }
     
         & p {
             @include body1;
+        }
+    }
+
+    & .features-card:hover {
+        transform: translateY(-7px) translateZ(0);
+        @include elevation-1;
+
+        & h3 {
+            color: $primary;
         }
     }
 }
@@ -687,6 +728,7 @@ h4 {
     & .card {
         border-radius: 8px;
         overflow: hidden;
+        transition: all 0.3s ease-out;
 
         & img {
             display: flex;
@@ -704,6 +746,11 @@ h4 {
                 color: $primary;
             }
         }
+    }
+
+    & .card:hover {
+        transform: translateY(-7px) translateZ(0);
+        @include elevation-1;
     }
 }
 
@@ -751,6 +798,31 @@ h4 {
                 @include elevation-1;
                 color: $on-surface;
                 cursor: pointer;
+                
+                & .img {
+                    position: relative;
+                    display: flex;
+
+                    & span {
+                        position: absolute;
+                        background: #525E7F;
+                        border-radius: 3px;
+                    }
+
+                    & span:first-child {
+                        top: 30%;
+                        bottom: 30%;
+                        width: 10%;
+                        left: 45%;
+                    }
+
+                    & span:nth-child(2) {
+                        left: 30%;
+                        right: 30%;
+                        height: 10%;
+                        top: 45%;
+                    }
+                }
 
                 & p {
                     margin-left: 25px;
