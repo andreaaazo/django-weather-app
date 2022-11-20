@@ -12,7 +12,10 @@
     <div class="container">
         <div class="d-flex row margin-auto">
             <div class="col-xl-5 col-lg-9 col-12">
-                <h1>Keep track of the weather</h1>
+                <div class="title">
+                    <h1>Keep track of the weather</h1>
+                    <img src="{% static 'images/home/swoosh.svg'%}" alt="" class="swoosh">
+                </div>
                 <p class="desc">We offer a free worldwide weather tracking service. We provide meteorologic and climatology data, and keep the meteorologic situation under control.</p>
                 <div class="btn-brand btn">
                     <img src="{% static 'images/logos/raspberry.svg'%}" alt="">
@@ -24,6 +27,15 @@
             </div>
             <div class="col-xl-7 col-12 d-flex align-items-end img-hero">
                 <img src="{% static 'images/home/hero_background.svg'%}" alt="" class="img-horizontal mt-5 mt-xl-0 img-hero">
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search">
+                <p class="text">What's the weather like?</p>
+                <form action="POST">
+                    <input type="text" placeholder="ex. London">
+                    <button action="submit"><img src="{% static 'images/home/lens.svg'%}" alt=""></button>
+                </form>
             </div>
         </div>
     </div>
