@@ -1,0 +1,340 @@
+/* Bootstrap Grid*/
+@import "static/bootstrap/bootstrap-grid.scss";
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@100;200;300;400;500;600;700;800;900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Palette */
+$secondary: #525E7F;
+$on-secondary: #FFFFFF;
+$inverse-surface: #303034;
+$inverse-on-surface: #F2F0F4;
+$surface: #FEFBFF;
+$inverse-primary: #B2C5FF;
+$on-surface: #1B1B1F;
+$primary: #0055D3;
+$surface-variant: #E1E2EC;
+$outline: #757780;
+$on-surface-variant: #45464F;
+
+/* Typography */
+@mixin body1 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+@mixin body2 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+}
+
+@mixin body-temperature {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 4rem;
+    line-height: 5rem;
+}
+
+@mixin button-sm {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.813rem;
+    line-height: 1.375rem;
+}
+
+@mixin button-md {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+}
+
+@mixin button-lg {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.938rem;
+    line-height: 1.625rem;
+}
+
+@mixin h1 {
+    font-family: "Epilogue";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 4rem;
+    line-height: 5rem;
+}
+
+@mixin h2 {
+    font-family: "Epilogue";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 3rem;
+    line-height: 4rem;
+}
+
+@mixin h3 {
+    font-family: "Epilogue";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 3rem;  
+}
+
+@mixin h4 {
+    font-family: "Epilogue";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 2.25rem; 
+}
+
+@mixin h5 {
+    font-family: "Epilogue";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+}
+
+@mixin overline {
+    font-family: "Epilogue";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+@mixin subtitle1 {
+    font-family: "Epilogue";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+@mixin caption {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+}
+
+/* Elevation */
+@mixin elevation-1 {
+    background: linear-gradient(0deg, rgba(0, 85, 211, 0.05), rgba(0, 85, 211, 0.05)), #FEFBFF;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+}
+
+@mixin elevation-2 {
+    background: linear-gradient(0deg, rgba(103, 80, 164, 0.08), rgba(103, 80, 164, 0.08)), #FFFBFE;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+}
+
+/* Animations */
+@mixin btn_hover_animation {
+    transition: all 0.3s ease 0s;
+    background-color: $primary;
+}
+
+@mixin link_hover_animation {
+    transition: all 0.3s ease 0s;
+    color: $primary;
+}
+
+@mixin card_hover_animation {
+    @include elevation-2;
+    transform: translateY(-7px) translateZ(0);
+    transition: all 0.3s ease 0s;
+}
+
+/* General */
+h1 {
+    @include h1;
+    padding: 100px 0 0 0;
+    margin: 0px;
+    cursor: default;
+}
+
+h2 {
+    @include h2;
+    margin: 0px;
+    padding-bottom: 50px;
+    cursor: default;
+}
+
+h3 {
+    @include h3;
+    margin: 0px;
+    cursor: default;
+}
+
+h4 {
+    @include h4;
+    margin: 0px;
+    cursor: default;
+}
+
+h5 {
+    @include h5;
+    margin: 0px;
+    cursor: default;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    font-family: "Epilogue", sans-serif;
+    margin: 0px;
+    display: block;
+}
+
+p {
+    margin: 0px;
+    cursor: default;
+}
+
+.section {
+    padding: 100px 0px;
+}
+
+.title-overline {
+    @include overline;
+    padding: 0px 0px 10px 0px;
+    color: $inverse-primary;
+    cursor: default;
+}
+
+.img-horizontal {
+    width: 100%;
+    height: auto;
+}
+
+.img-vertical {
+    height: 100%;
+    width: auto;
+}
+
+@media (max-width: 576px) {
+    .margin-auto {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .container {
+        width: auto;
+    }
+}
+
+/* Buttons */
+$buttons: (
+    "sm",
+    "md",
+    "lg"
+);
+
+@each $var in $buttons {
+    .btn-#{$var} {
+        @if $var == "sm" {
+            @include button-sm
+        } @else if $var == "md" {
+            @include button-md
+        } @else {
+            @include button-lg
+        }
+        padding: 10px 20px;
+        background: $secondary;
+        border-radius: 8px;
+        color: $on-secondary;
+        text-decoration: none;
+        transition: all 0.2s ease 0s;
+    }
+
+    .btn-#{$var}:hover {
+        @include btn_hover_animation;
+    }
+}
+
+.btn-brand {
+    display: inline-flex;
+    flex-direction: row;
+    padding: 10px 20px;
+    gap: 10px;
+    background-color: $secondary;
+    border-radius: 8px;
+    transition: all 0.2s ease 0s;
+    text-decoration: none;
+    cursor: pointer;
+
+    & img {
+    height: auto;
+    width: auto;
+    aspect-ratio: auto;
+    color: $on-secondary;
+    }
+
+    & .title {
+     @include button-lg;
+    color: $on-secondary;
+    padding-left: 15px;
+    cursor: pointer;
+    }
+
+    & .overline {
+    @include overline;
+    color: $on-secondary;
+    padding-left: 15px;
+    cursor: pointer;        
+    }
+}
+
+.btn-brand:hover{
+    @include btn_hover_animation;
+}
+
+@each $var in $buttons {
+    .btn-text-#{$var} {
+        @if $var == "sm" {
+            @include button-sm;
+        } @else if $var == "md" {
+            @include button-md;
+        } @else {
+            @include button-lg;
+        }
+
+        text-decoration: none;
+        color: $secondary;
+        padding-right: 12px;
+        transition: all 0.2s ease 0s;
+    }
+    
+    .btn-text-#{$var}::after {
+        content: "->";
+        position: relative;
+        right: -4px;
+        transition: all 0.2s ease 0s;
+        white-space: nowrap;
+    }
+
+    .btn-text-#{$var}:hover::after {
+        right: -12px;
+        transition: all 0.2s ease 0s;
+        color: $primary
+    }
+
+    .btn-text-#{$var}:hover{
+        transition: all 0.2s ease 0s;
+        color: $primary
+    }
+}
