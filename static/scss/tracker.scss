@@ -1,0 +1,152 @@
+@import "_general.scss";
+
+h1 {
+    color: $inverse-on-surface;
+    margin-bottom: 50px;
+}
+
+.tracker {
+    background: $inverse-surface;
+
+    & .city-form {
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+        background: $primary-container;
+        color: $on-primary-container;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-bottom: 25px;
+
+        & form {
+            display: flex;
+        }
+
+        & input {
+            @include elevation-1;
+            border: 0px;
+            border-bottom: 1px solid $outline;
+            margin: 15px 25px 15px 15px;
+            padding: 0 5px;
+            width: 215px;
+            height: 24px;
+        }
+
+        & p {
+            margin-left: 25px;
+        }
+
+        & button {
+            display: flex;
+            align-items: center;
+            border: 0px;
+            background: $secondary;
+            padding: 0px 29px;
+        }
+
+        & img {
+            width: 25px;
+            height: 25px;
+        }
+
+    }
+
+    & .weather-card {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        border-radius: 8px;
+        overflow: hidden;
+        @include elevation-1;
+        color: $on-surface;
+
+        & .overline {
+            @include overline;
+            color: $primary;
+            margin-bottom: 5px;
+        }
+
+        & .text-variant {
+            color: $on-surface-variant;
+        }
+
+        & .head {
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            align-items: flex-start;
+            background: $surface-variant;
+            padding: 25px;
+            color: $on-surface;
+
+            & .place {
+                margin-right: 50px;
+            }
+
+            & a {
+                display: inline-block;
+                margin: auto 0 auto auto;
+            }
+        }
+
+        & .body {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 25px;
+
+            & .data {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                padding-bottom: 50px;
+
+                & .image {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    & img {
+                        width: 100px;
+                        height: 100px;
+                        background: $neutral40;
+                        border-radius: 8px;
+                        border: 0;
+                    }
+                }
+
+                & .data-container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+
+                    & .multidata-wrapper {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+
+                        & .main-data {
+                            @include body-temperature;
+                            margin-right: 10px;
+                        }
+
+                        & .temp-max-min {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10px;
+                        }
+                    }
+                }
+            }
+
+            & .chart {
+                @include elevation-2;
+                display: flex;
+                border-radius: 8px;
+                overflow: hidden;
+                width: 100%;
+            }
+
+        }
+    }
+}

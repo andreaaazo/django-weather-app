@@ -10,40 +10,45 @@
     <title>{% block page_title %}{% endblock page_title %}</title>
 
     <!--Bootstrap-->
-    {% compress css %}
-        <link rel="stylesheet" href="{% static 'scss/main.scss' %}" type="text/x-scss">
-    {% endcompress %}
+    {% block stylesheet %}{% endblock stylesheet %}
 
 </head>
 <body>
     <!--Navbar-->
-    <div class="nav">
-        <nav class="container d-flex flex-row justify-content-between">
-            <ul class="col-6 navbar d-flex justify-content-between align-items-center">
-                <li class="nav-item"><img src="{% static 'images/logos/logo.svg' %}" alt="DataBerry Logo" class="img-fluid"></li>
-                <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Tracker</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Contacts</a></li>
-            </ul>
-            <ul class="col-2 navbar d-flex justify-content-between align-items-center">
-                <li class="nav-item"><a href="" class="nav-link">Log In</a></li>
-                <li class="nav-item"><a href="" class="nav-link btn-md">Sign Up</a></li>
-            </ul>
-        </nav>
-    </div>
+    <nav>
+        <div class="container container-menu">
+            <div class="navbar">
+                <a href="#" class="brand"><img src="{% static 'images/logos/logo.svg'%}" alt=""></a>
+                <div class="menu">
+                    <ul class="main-menu">
+                        <li><a href="{% url 'home' %}" class="btn-menu-text">Home</a></li>
+                        <li><a href="{% url 'tracker' %}" class="btn-menu-text">Tracker</a></li>
+                        <li><a href="#" class="btn-menu-text">About</a></li>
+                        <li><a href="#" class="btn-menu-text">Contacts</a></li>
+                    </ul>
+                    <ul class="menu-links">
+                        <li><a href="#" class="btn-menu-text">Log In</a></li>
+                        <li><a href="#" class="btn-lg">Sign Up</a></li>
+                    </ul>
+                </div>
+                <a class="menu-button">
+                    <span></span>
+                </a>
+            </div>
+        </div>
+    </nav>
     <!--End Navbar-->
     {% block content %}
     {% endblock content %}
     <footer>
         <div class="container">
             <div class="row margin-auto">
-                <div class="section col-6 col-md-4">
+                <div class="section col-6 col-lg-4">
                     <img src="{% static 'images/logos/logo.svg'%}" alt="">
                     <p class="desc">Worldwide tracking meteorologic and clymatologic weather data.</p>
                     <p class="copyright">© 2022 DATABERRY. All rights reserved.</p>
                 </div>
-                <div class="section col-6 col-md-2">
+                <div class="section col-6 col-lg-2">
                     <h5>Quick links</h5>
                     <ul>
                         <li><a href="#">Home</a></li>
@@ -52,16 +57,16 @@
                         <li><a href="#">FAQ</a></li>
                     </ul>
                 </div>
-                <div class="section col-6 col-md-2">
+                <div class="section col-6 col-lg-2">
                     <h5>Sitemap</h5>
                     <ul>
-                        <li><a href="#">Homepage</a></li>
-                        <li><a href="#">Tracker</a></li>
+                        <li><a href="{% url 'home' %}">Homepage</a></li>
+                        <li><a href="{% url 'tracker' %}">Tracker</a></li>
                         <li><a href="#">About</a></li>
                         <li><a href="#">Contacts</a></li>
                     </ul>
                 </div>
-                <div class="section col-6 col-md-4">
+                <div class="section col-6 col-lg-4">
                     <h5>Subscribe</h5>
                     <p>We care about our subscribers, sign up to receive updates when our service improves.</p>
                     <div class="links">
@@ -72,5 +77,6 @@
         </div>
     </footer>
 </body>
+<script src="{% static 'js/menu.js'%}"></script>
 {% block script %}{% endblock script %}
 </html>

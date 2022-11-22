@@ -1,17 +1,21 @@
 {% extends "base.html" %}
 {% load static %}
+{% load compress %}
 
 {% block page_title %}Homepage{% endblock page_title %}
 
-
-
+{% block stylesheet %}
+    {% compress css %}
+        <link rel="stylesheet" href="{% static 'scss/home.scss' %}" type="text/x-scss">
+    {% endcompress %}
+{% endblock stylesheet %}
 
 {% block content %}
 <!--Hero-->
 <div class="hero">
     <div class="container">
-        <div class="d-flex row margin-auto">
-            <div class="col-xl-5 col-lg-9 col-12">
+        <div class="d-flex row margin-auto justify-content-between">
+            <div class="col-xxl-4 col-xl-5 col-lg-7 col-md-9 content">
                 <div class="title">
                     <h1>Keep track of the weather.</h1>
                     <img src="{% static 'images/home/swoosh.svg'%}" alt="" class="swoosh">
@@ -25,7 +29,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-7 col-12 d-flex align-items-end img-hero">
+            <div class="col-xxl-7 col-xl-7 col-12 d-flex align-items-end img-hero">
                 <img src="{% static 'images/home/hero_background.svg'%}" alt="" class="img-horizontal mt-5 mt-xl-0 img-hero">
             </div>
         </div>
