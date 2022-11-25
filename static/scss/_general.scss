@@ -164,6 +164,10 @@ $neutral40: #5E5E62;
     transition: all 0.3s ease 0s;
 }
 
+@mixin simple_animation {
+    transition: all 0.3s ease 0s;
+}
+
 /* General */
 * {
     margin: 0;
@@ -174,8 +178,7 @@ $neutral40: #5E5E62;
 
 h1 {
     @include h1;
-    padding: 100px 0 0 0;
-    margin: 0px;
+    margin: 100px 0 0 0;
     cursor: default;
 }
 
@@ -264,7 +267,7 @@ $buttons: (
         } @else if $var == "md" {
             @include button-md
         } @else {
-            @include button-lg
+            @include button-lg;
         }
         padding: 10px 20px;
         background: $secondary;

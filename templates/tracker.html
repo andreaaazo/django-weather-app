@@ -35,7 +35,7 @@
                 <a href="#" class="btn-lg">Add to favorites</a>
             </div>
             <div class="body">
-                <div class="data">
+                <div class="tracker-data">
                     <div class="image">
                         <img src="{% static  'images/tracker/icon_test.svg'%}" alt="">
                         <p>Clear Sky</p>
@@ -68,16 +68,155 @@
                     </div>
                 </div>
                 <p class="overline">All-Day Temperature</p>
-                <div class="chart">
-                    <h2>Here chart</h2>
+                <div class="chart" id="chart-container">
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+<!--Waves-->
+<div class="waves"></div>
+
+<!--Features section-->
+<div class="favorites section">
+    <div class="container">
+        <h2>Your Favorites</h2>
+        <div class="favorites-group">
+            <div class="favorite-card">
+                <div class="status-container">
+                    <div class="circle">
+                        <img src="{% static  'images/tracker/icon_test.svg'%}" alt="">
+                    </div>
+                </div>
+                <div class="content-container">
+                    <div class="head">
+                        <h5>New York, US</h5>
+                        <p>GMT 1.0, 2022-11-12 20:36:51</p>
+                        <a href="#" class="btn-lg">Remove</a>
+                    </div>
+                    <div class="tracker-data">
+                        <div class="data-container">
+                            <div class="multidata-wrapper">
+                                <p class="main-data">26°</p>
+                                <div class="temp-max-min">
+                                    <p>H:30°</p>
+                                    <p>L:22°</p>
+                                </div>
+                            </div>
+                            <p class="text-variant">Feels like: 27°</p>
+                        </div>
+                        <div class="data-container">
+                            <div class="multidata-wrapper">
+                                <p class="main-data">12</p>
+                                <p>m/s</p>
+                            </div>
+                            <p class="text-variant">deg: 260°</p>
+                        </div>
+                        <div class="data-container">
+                            <div class="multidata-wrapper">
+                                <p class="main-data">76</p>
+                                <p>%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="background-image">
+                    <img src="{% static 'images/tracker/rainy_day.svg'%}" alt="">
+                </div>
+            </div>
+            <div class="favorite-card">
+                <div class="status-container">
+                    <div class="circle">
+                        <img src="{% static  'images/tracker/icon_test.svg'%}" alt="">
+                    </div>
+                </div>
+                <div class="content-container">
+                    <div class="head">
+                        <h5>New York, US</h5>
+                        <p>GMT 1.0, 2022-11-12 20:36:51</p>
+                        <a href="#" class="btn-lg">Remove</a>
+                    </div>
+                    <div class="tracker-data">
+                        <div class="data-container">
+                            <div class="multidata-wrapper">
+                                <p class="main-data">26°</p>
+                                <div class="temp-max-min">
+                                    <p>H:30°</p>
+                                    <p>L:22°</p>
+                                </div>
+                            </div>
+                            <p class="text-variant">Feels like: 27°</p>
+                        </div>
+                        <div class="data-container">
+                            <div class="multidata-wrapper">
+                                <p class="main-data">12</p>
+                                <p>m/s</p>
+                            </div>
+                            <p class="text-variant">deg: 260°</p>
+                        </div>
+                        <div class="data-container">
+                            <div class="multidata-wrapper">
+                                <p class="main-data">76</p>
+                                <p>%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="background-image">
+                    <img src="{% static 'images/tracker/rainy_day.svg'%}" alt="">
+                </div>
+            </div>
+            <div class="favorite-card">
+                <div class="status-container">
+                    <div class="circle">
+                        <img src="{% static  'images/tracker/icon_test.svg'%}" alt="">
+                    </div>
+                </div>
+                <div class="content-container">
+                    <div class="head">
+                        <h5>New York, US</h5>
+                        <p>GMT 1.0, 2022-11-12 20:36:51</p>
+                        <a href="#" class="btn-lg">Remove</a>
+                    </div>
+                    <div class="tracker-data">
+                        <div class="data-container">
+                            <div class="multidata-wrapper">
+                                <p class="main-data">26°</p>
+                                <div class="temp-max-min">
+                                    <p>H:30°</p>
+                                    <p>L:22°</p>
+                                </div>
+                            </div>
+                            <p class="text-variant">Feels like: 27°</p>
+                        </div>
+                        <div class="data-container">
+                            <div class="multidata-wrapper">
+                                <p class="main-data">12</p>
+                                <p>m/s</p>
+                            </div>
+                            <p class="text-variant">deg: 260°</p>
+                        </div>
+                        <div class="data-container">
+                            <div class="multidata-wrapper">
+                                <p class="main-data">76</p>
+                                <p>%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="background-image">
+                    <img src="{% static 'images/tracker/rainy_day.svg'%}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 {% endblock content %}
 
 {% block script %}
-
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="{% static 'js/chart.js'%}"></script>
 {% endblock script %}
