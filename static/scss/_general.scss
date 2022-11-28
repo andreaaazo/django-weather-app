@@ -178,7 +178,6 @@ $neutral40: #5E5E62;
 
 h1 {
     @include h1;
-    margin: 100px 0 0 0;
     cursor: default;
 }
 
@@ -275,6 +274,8 @@ $buttons: (
         color: $on-secondary;
         text-decoration: none;
         transition: all 0.2s ease 0s;
+        border: 0px;
+        cursor: pointer;
     }
 
     .btn-#{$var}:hover {
@@ -368,7 +369,8 @@ $buttons: (
 
 /* Navbar */
 nav {
-    position: fixed;
+    position: sticky;
+    top: 0;
     width: 100%;
     padding: 20px 0;
     @include elevation-2;
@@ -404,6 +406,11 @@ nav {
     & .menu-links {
         margin-left: auto;
         gap: 15px;
+
+    }
+
+    & .active {
+        color: $primary;  
     }
 
     & .brand {
