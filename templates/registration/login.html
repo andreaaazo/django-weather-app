@@ -14,16 +14,20 @@
 
 <div class="auth">
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-between align-items-center">
             <div class="col-6 img-container">
                 <img src="{% static 'images/login/image.svg' %}" alt="" class="img-horizontal">
             </div>
-            <div class="col-6">
+            <div class="col-5">
                 <div class="auth-container">
                     <h1>Log In</h1>
                     <p class="text">Access to your account and see the beauties of the weather. Keep yourself updated.</p>
-                    <a href="#" class="btn-text-lg">Forgot password</a>
-                    <button class="btn-lg">Log in</button>
+                    <form method="POST" class="auth-form">
+                        {% csrf_token %}
+                            {{form}}
+                            <a href="#" class="btn-text-lg auth-item">Forgot password</a>
+                            <button class="btn-lg">Log in</button>
+                    </form>
                 </div>
             </div>
         </div>

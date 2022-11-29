@@ -10,7 +10,7 @@
         position: relative;
 
         & .content {
-            padding: 100px 0px;
+            padding: 150px 0px;
         }
         
         & .search-container {
@@ -388,7 +388,7 @@
             padding-left: 50px;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
             h2 {
                 padding-top: 50px;
                 padding-bottom: 25px;

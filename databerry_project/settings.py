@@ -141,3 +141,8 @@ COMPRESS_PRECOMPILERS = (("text/x-scss", "django_libsass.SassCompiler"),)
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# User
+AUTH_USER_MODEL = "users.BerryUser"
+LOGIN_REDIRECT_URL = "tracker"
+LOGOUT_REDIRECT_URL = "home"

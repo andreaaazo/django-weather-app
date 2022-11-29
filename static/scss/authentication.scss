@@ -28,3 +28,42 @@ h1 {
     flex-direction: column;
     align-items: flex-start;
 }
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+
+    & input {
+        @include body1;
+        outline: none;
+        width: 100%;
+        margin-bottom: 25px;
+        padding: 5px 10px;
+        border-radius: 8px;
+        border: 1px solid $outline;
+        @include simple_animation
+    }
+
+    & input:focus, input:hover{
+        background: $surface;
+        border: 1px solid $primary;
+        @include simple_animation
+    };
+
+    & .helptext {
+        display: none;
+
+    }
+
+    & label {
+        @include body2;
+        color: $on-surface-variant;
+    }
+
+    & .auth-item {
+        margin-bottom: 25px;
+    }
+
+}

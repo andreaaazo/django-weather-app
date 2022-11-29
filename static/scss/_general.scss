@@ -220,7 +220,7 @@ p {
 }
 
 .section {
-    padding: 100px 0px;
+    padding: 150px 0px;
 }
 
 
@@ -372,7 +372,7 @@ nav {
     position: sticky;
     top: 0;
     width: 100%;
-    padding: 20px 0;
+    padding: 25px 0;
     @include elevation-2;
     background: $surface;
     z-index: 10000;
@@ -478,7 +478,7 @@ nav {
 @media (max-width:767px) {
 
     nav {
-        position: fixed;
+        position: sticky;
         width: 100%;
     }
 
@@ -585,4 +585,95 @@ footer {
             margin-top: 15px;
         }
     }
+}
+
+/* Preloader */
+.preloader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10000000;
+    background: $inverse-surface;
+    opacity: 1;
+}
+
+/* Loader 4 */
+.loader-4 {
+	height: 62px;
+	width: 62px;
+
+    & span {
+        display: block;
+        position: absolute;
+        top: 0; left: 0;
+        bottom: 0; right: 0;
+        margin: auto;
+        height: 52px;
+        width: 52px;
+        animation: loader-4-2 2s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite;
+    }
+
+    & span::before, span::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0; left: 0;
+        bottom: 0; right: 0;
+        margin: auto;
+        height: 32px;
+        width: 32px;
+        background: $inverse-on-surface;
+        border-radius: 50%;
+        animation: loader-4-3 2s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite;
+    }
+
+}
+
+.loader-4::after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0; left: 0;
+	bottom: 0; right: 0;
+	margin: auto;
+	width: 32px;
+	height: 32px;
+	top: 0; left: 0;
+	bottom: 0; right: 0;
+	margin: auto;
+	background: $inverse-on-surface;
+	border-radius: 50%;
+	animation: loader-4-1 2s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite;
+}
+
+@keyframes loader-4-1 {
+	0%   { transform: scale(0); opacity: 0; }
+	50%  { transform: scale(1); opacity: 1; }
+	100% { transform: scale(0); opacity: 0; }
+}
+
+@keyframes loader-4-2 {
+	0%   { transform: rotate(0deg); }
+	50%  { transform: rotate(180deg); }
+	100% { transform: rotate(360deg); }
+}
+
+@keyframes loader-4-3 {
+	0%   { transform: translate3d(0, 0, 0) scale(1); }
+	50%  { transform: translate3d(-36px, 0, 0) scale(.5); }
+	100% { transform: translate3d(0, 0, 0) scale(1); }
+}
+.loader-4 span::after {
+	animation: loader-4-4 2s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite;
+}
+
+@keyframes loader-4-4 {
+	0%   { transform: translate3d(0, 0, 0) scale(1); }
+	50%  { transform: translate3d(36px, 0, 0) scale(.5); }
+	100% { transform: translate3d(0, 0, 0) scale(1); }
 }

@@ -18,6 +18,7 @@ Highcharts.chart({
         style: {
             fontFamily: 'Inter'
         },
+        marginTop: 50,
     },
     title: {
         text: ''

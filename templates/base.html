@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/logos/favicon.ico'%}">
     <title>{% block page_title %}{% endblock page_title %}</title>
 
     <!--Bootstrap-->
@@ -18,7 +19,7 @@
     <nav>
         <div class="container container-menu">
             <div class="navbar">
-                <a href="#" class="brand"><img src="{% static 'images/logos/logo.svg'%}" alt=""></a>
+                <a href="{% url 'home' %}" class="brand"><img src="{% static 'images/logos/logo.svg'%}" alt=""></a>
                 <div class="menu">
                     <ul class="main-menu">
                         <li><a href="{% url 'home' %}" class="btn-menu-text">Home</a></li>
@@ -27,8 +28,8 @@
                         <li><a href="#" class="btn-menu-text">Contacts</a></li>
                     </ul>
                     <ul class="menu-links">
-                        <li><a href="#" class="btn-menu-text">Log In</a></li>
-                        <li><a href="#" class="btn-lg">Sign Up</a></li>
+                        <li><a href="{% url 'login' %}" class="btn-menu-text">Log In</a></li>
+                        <li><a href="{% url 'signup' %}" class="btn-lg">Sign Up</a></li>
                     </ul>
                 </div>
                 <a class="menu-button">
@@ -70,13 +71,23 @@
                     <h5>Subscribe</h5>
                     <p>We care about our subscribers, sign up to receive updates when our service improves.</p>
                     <div class="links">
-                        <a href="#" class="btn-lg">Sign Up</a>
+                        <a href="{% url 'signup' %}" class="btn-lg">Sign Up</a>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
 </body>
+
+<div class="preloader">
+    <div class="loader-4"><span></span></div>
+</div>
+
+<!--Mobile menu-->
 <script src="{% static 'js/menu.js'%}"></script>
+
+<!--Preloader-->
+<script src="{% static 'js/libs/jquery-3.6.1.js'%}"></script>
+<script src="{% static 'js/ajax.js'%}"></script>
 {% block script %}{% endblock script %}
 </html>

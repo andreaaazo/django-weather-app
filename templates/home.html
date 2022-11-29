@@ -2,7 +2,7 @@
 {% load static %}
 {% load compress %}
 
-{% block page_title %}Homepage{% endblock page_title %}
+{% block page_title %}Databerry - Keep track of the weather.{% endblock page_title %}
 
 {% block stylesheet %}
     {% compress css %}
@@ -65,22 +65,22 @@
                             <div class="img-container" >
                                 <div class="circle">
                                     {% if dubai.main == 'Snow' %}
-                                    <img src="{% static 'images/home/snow_day.svg'%}" alt="">
+                                    <img src="{% static 'images/weather_status/snow_day.svg'%}" alt="">
                                     
                                     {% elif dubai.main == 'Rain' %}
-                                    <img src="{% static 'images/home/rainy_day.svg'%}" alt="">
+                                    <img src="{% static 'images/weather_status/rainy_day.svg'%}" alt="">
                                     
                                     {% elif dubai.main == 'Drizzle' %}
-                                    <img src="{% static 'images/home/rainy_day.svg'%}" alt="">
+                                    <img src="{% static 'images/weather_status/rainy_day.svg'%}" alt="">
 
                                     {% elif dubai.main == 'Thunderstorm' %}
-                                    <img src="{% static 'images/home/rainy_day.svg'%}" alt="">
+                                    <img src="{% static 'images/weather_status/rainy_day.svg'%}" alt="">
 
                                     {% elif dubai.main == 'Clouds' %}
-                                    <img src="{% static 'images/home/cloudy_day.svg'%}" alt="">
+                                    <img src="{% static 'images/weather_status/cloudy_day.svg'%}" alt="">
                                     
                                     {% else %}
-                                    <img src="{% static 'images/home/sunny_day.svg'%}" alt="">
+                                    <img src="{% static 'images/weather_status/sunny_day.svg'%}" alt="">
                                     
                                     {% endif %}
                                 </div>
@@ -105,22 +105,22 @@
                             <div class="img-container" >
                                 <div class="circle">
                                     {% if new_york.main == 'Snow' %}
-                                    <img src="{% static 'images/home/snow_day.svg'%}" alt="">
+                                    <img src="{% static 'images/weather_status/snow_day.svg'%}" alt="">
                                     
                                     {% elif new_york.main == 'Rain' %}
-                                    <img src="{% static 'images/home/rainy_day.svg'%}" alt="">
+                                    <img src="{% static 'images/weather_status/rainy_day.svg'%}" alt="">
                                     
                                     {% elif new_york.main == 'Drizzle' %}
-                                    <img src="{% static 'images/home/rainy_day.svg'%}" alt="">
+                                    <img src="{% static 'images/weather_status/rainy_day.svg'%}" alt="">
 
                                     {% elif new_york.main == 'Thunderstorm' %}
-                                    <img src="{% static 'images/home/rainy_day.svg'%}" alt="">
+                                    <img src="{% static 'images/weather_status/rainy_day.svg'%}" alt="">
 
                                     {% elif new_york.main == 'Clouds' %}
-                                    <img src="{% static 'images/home/cloudy_day.svg'%}" alt="">
+                                    <img src="{% static 'images/weather_status/cloudy_day.svg'%}" alt="">
                                     
                                     {% else %}
-                                    <img src="{% static 'images/home/sunny_day.svg'%}" alt="">
+                                    <img src="{% static 'images/weather_status/sunny_day.svg'%}" alt="">
                                     
                                     {% endif %}
                                 </div>
@@ -145,22 +145,22 @@
                             <div class="img-container" >
                                 <div class="circle">
                                     {% if london.main == 'Snow' %}
-                                    <img src="{% static 'images/home/snow_day.svg'%}" alt="">
+                                    <img src="{% static 'images/weather_status/snow_day.svg'%}" alt="">
                                     
                                     {% elif london.main == 'Rain' %}
-                                    <img src="{% static 'images/home/rainy_day.svg'%}" alt="">
+                                    <img src="{% static 'images/weather_status/rainy_day.svg'%}" alt="">
                                     
                                     {% elif london.main == 'Drizzle' %}
-                                    <img src="{% static 'images/home/rainy_day.svg'%}" alt="">
+                                    <img src="{% static 'images/weather_status/rainy_day.svg'%}" alt="">
 
                                     {% elif london.main == 'Thunderstorm' %}
-                                    <img src="{% static 'images/home/rainy_day.svg'%}" alt="">
+                                    <img src="{% static 'images/weather_status/rainy_day.svg'%}" alt="">
                                     
                                     {% elif london.main == 'Clouds' %}
-                                    <img src="{% static 'images/home/cloudy_day.svg'%}" alt="">
+                                    <img src="{% static 'images/weather_status/cloudy_day.svg'%}" alt="">
                                     
                                     {% else %}
-                                    <img src="{% static 'images/home/sunny_day.svg'%}" alt="">
+                                    <img src="{% static 'images/weather_status/sunny_day.svg'%}" alt="">
                                     
                                     {% endif %}
                                 </div>
@@ -185,22 +185,22 @@
                             <div class="img-container" >
                                 <div class="circle">
                                     {% if tokyo.main == 'Snow' %}
-                                    <img src="{% static 'images/home/snow_day.svg'%}" alt="">
+                                    <img src="{% static 'images/weather_status/snow_day.svg'%}" alt="">
                                     
                                     {% elif tokyo.main == 'Rain' %}
-                                    <img src="{% static 'images/home/rainy_day.svg'%}" alt="">
+                                    <img src="{% static 'images/weather_status/rainy_day.svg'%}" alt="">
                                     
                                     {% elif tokyo.main == 'Drizzle' %}
-                                    <img src="{% static 'images/home/rainy_day.svg'%}" alt="">
+                                    <img src="{% static 'images/weather_status/rainy_day.svg'%}" alt="">
 
                                     {% elif tokyo.main == 'Thunderstorm' %}
-                                    <img src="{% static 'images/home/rainy_day.svg'%}" alt="">
+                                    <img src="{% static 'images/weather_status/rainy_day.svg'%}" alt="">
 
                                     {% elif tokyo.main == 'Clouds' %}
-                                    <img src="{% static 'images/home/cloudy_day.svg'%}" alt="">
+                                    <img src="{% static 'images/weather_status/cloudy_day.svg'%}" alt="">
                                     
                                     {% else %}
-                                    <img src="{% static 'images/home/sunny_day.svg'%}" alt="">
+                                    <img src="{% static 'images/weather_status/sunny_day.svg'%}" alt="">
                                     
                                     {% endif %}
                                 </div>
@@ -330,7 +330,7 @@
 <div class="banner-2">
     <div class="content-2 section">
         <div class="container">
-            <div class="row margin-auto d-flex">
+            <div class="row margin-auto d-flex align-items-center">
                 <div class="col-md-6 col-12 order-2 d-flex align-items-center">
                     <div class="body">
                         <h2>Remember to take the umbrella!</h2>
@@ -353,7 +353,7 @@
         <p class="title-overline">meet our staff</p>
         <h2 class="title">Our team</h2>
         <div class="row margin-auto justify-content-between">
-            <div class="col-md-5 col-12 mb-4 mb-md-0">
+            <div class="col-md-5 col-lg-6 col-12 mb-4 mb-md-0">
                 <div class="card">
                     <img class="img-horizontal" src="{% static 'images/home/meet_our_team_andrea.png'%}" alt="">
                     <div class="body">
@@ -362,7 +362,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-5 col-12">
+            <div class="col-md-5 col-lg-6 col-12">
                 <div class="card">
                     <img class="img-horizontal" src="{% static 'images/home/meet_our_team_raspberry.svg'%}" alt="">
                     <div class="body">

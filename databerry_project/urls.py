@@ -20,4 +20,8 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("website.urls")),
     path("tracker/", include("tracker.urls")),
+    # User authentication
+    path("accounts/", include("django.contrib.auth.urls")),
+    # Custom auth
+    path("accounts/", include("users.urls")),
 ]
