@@ -4,7 +4,6 @@ var current_time = new Date(document.currentScript.dataset.currentTime)
 function calculate_hours () {
     
     current_hour = current_time.getHours()
-    console.log(current_hour)
 
     if (current_hour % 3 == 0) {
         return current_hour

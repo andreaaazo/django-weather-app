@@ -1,6 +1,6 @@
 {% load static %}
 {% load compress %}
-
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,14 +23,14 @@
                 <div class="menu">
                     {% with request.resolver_match.url_name as url_name %}
                     <ul class="main-menu">
-                        <li><a href="{% url 'home' %}" class="btn-menu-text {% if url_name == 'home' %}active{% endif %}">Home</a></li>
-                        <li><a href="{% url 'tracker' %}" class="btn-menu-text {% if url_name == 'tracker' %}active{% endif %}">Tracker</a></li>
-                        <li><a href="#" class="btn-menu-text {% if url_name == 'about' %}active{% endif %}">About</a></li>
-                        <li><a href="#" class="btn-menu-text {% if url_name == 'contacts' %}active{% endif %}">Contacts</a></li>
+                        <li><a href="{% url 'home' %}" class="btn-menu-text {% if url_name == 'home' %}active{% endif %}">{% translate "Home" %}</a></li>
+                        <li><a href="{% url 'tracker' %}" class="btn-menu-text {% if url_name == 'tracker' %}active{% endif %}">{% translate "Tracker" %}</a></li>
+                        <li><a href="#" class="btn-menu-text {% if url_name == 'about' %}active{% endif %}">{% translate "About" %}</a></li>
+                        <li><a href="#" class="btn-menu-text {% if url_name == 'contacts' %}active{% endif %}">{% translate "Contacts" %}</a></li>
                     </ul>
                     <ul class="menu-links">
-                        <li><a href="{% url 'login' %}" class="btn-menu-text {% if url_name == 'login' %}active{% endif %}">Log In</a></li>
-                        <li><a href="{% url 'signup' %}" class="btn-lg">Sign Up</a></li>
+                        <li><a href="{% url 'login' %}" class="btn-menu-text {% if url_name == 'login' %}active{% endif %}">{% translate "Log in" %}</a></li>
+                        <li><a href="{% url 'signup' %}" class="btn-lg">{% translate "Sign up" %}</a></li>
                     </ul>
                     {% endwith %}
                 </div>
@@ -48,33 +48,33 @@
             <div class="row margin-auto">
                 <div class="section col-12 col-sm-6 col-lg-4">
                     <a href="{% url 'home' %}"><img src="{% static 'images/logos/logo.svg'%}" alt=""></a>
-                    <p class="desc">Worldwide tracking meteorologic and clymatologic weather data.</p>
-                    <p class="copyright">© 2022 DATABERRY. All rights reserved.</p>
+                    <p class="desc">{% translate "Worldwide tracking meteorologic and clymatologic weather data." %}</p>
+                    <p class="copyright">{% translate "© 2022 DATABERRY. All rights reserved." %}</p>
                 </div>
                 <div class="section col-12 col-sm-6 col-lg-2">
-                    <h5>Quick links</h5>
+                    <h5>{% translate "Quick links" %}</h5>
                     <ul>
-                        <li><a href="{% url 'home' %}#home" class="btn-menu-text">Home</a></li>
-                        <li><a href="{% url 'home' %}#popular-cities" class="btn-menu-text">Popular cities</a></li>
-                        <li><a href="{% url 'home' %}#features" class="btn-menu-text">Features</a></li>
-                        <li><a href="{% url 'home' %}#our-team" class="btn-menu-text">Our team</a></li>
-                        <li><a href="{% url 'home' %}#faq" class="btn-menu-text">FAQ</a></li>
+                        <li><a href="{% url 'home' %}#home" class="btn-menu-text">{% translate "Home" %}</a></li>
+                        <li><a href="{% url 'home' %}#popular-cities" class="btn-menu-text">{% translate "Popular cities" %}</a></li>
+                        <li><a href="{% url 'home' %}#features" class="btn-menu-text">{% translate "Features" %}</a></li>
+                        <li><a href="{% url 'home' %}#our-team" class="btn-menu-text">{% translate "Our team" %}</a></li>
+                        <li><a href="{% url 'home' %}#faq" class="btn-menu-text">{% translate "FAQ" %}</a></li>
                     </ul>
                 </div>
                 <div class="section col-12 col-sm-6 col-lg-2">
-                    <h5>Sitemap</h5>
+                    <h5>{% translate "Sitemap" %}</h5>
                     <ul>
-                        <li><a href="{% url 'home' %}" class="btn-menu-text">Homepage</a></li>
-                        <li><a href="{% url 'tracker' %}" class="btn-menu-text">Tracker</a></li>
-                        <li><a href="#" class="btn-menu-text">About</a></li>
-                        <li><a href="#" class="btn-menu-text">Contacts</a></li>
+                        <li><a href="{% url 'home' %}" class="btn-menu-text">{% translate "Homepage" %}</a></li>
+                        <li><a href="{% url 'tracker' %}" class="btn-menu-text">{% translate "Tracker" %}</a></li>
+                        <li><a href="#" class="btn-menu-text">{% translate "About" %}</a></li>
+                        <li><a href="#" class="btn-menu-text">{% translate "Contacts" %}</a></li>
                     </ul>
                 </div>
                 <div class="section col-12 col-sm-6 col-lg-4">
-                    <h5>Subscribe</h5>
-                    <p>We care about our subscribers, sign up to receive updates when our service improves.</p>
+                    <h5>{% translate "Subscribe" %}</h5>
+                    <p>{% translate "We care about our subscribers, sign up to receive updates when our service improves." %}</p>
                     <div class="links">
-                        <a href="{% url 'signup' %}" class="btn-lg">Sign Up</a>
+                        <a href="{% url 'signup' %}" class="btn-lg">{% translate "Sign up" %}</a>
                     </div>
                 </div>
             </div>
