@@ -33,7 +33,7 @@
                     <p class="overline">Time</p>
                     <p class="text-variant">GMT {{current_weather.timezone}}, {{current_weather.time}}</p>
                 </div>
-                <a href="#" class="btn-lg">Add to favorites</a>
+                <a href="{% url 'add_to_favourites' current_weather.city %}" class="btn-lg">Add to favorites</a>
             </div>
             <div class="body">
                 <div class="tracker-data">
@@ -88,6 +88,7 @@
         <h2>Favorites</h2>
         {% if user.is_authenticated %}
             <div class="favorites-group">
+                {% for city, values in  favourites.items%}
                 <div class="favorite-card">
                     <div class="status-container">
                         <div class="circle">
@@ -96,9 +97,9 @@
                     </div>
                     <div class="content-container">
                         <div class="head">
-                            <h5>New York, US</h5>
+                            <h5>{{values.city}}, {{values.country}}</h5>
                             <p>GMT 1.0, 2022-11-12 20:36:51</p>
-                            <a href="#" class="btn-lg">Remove</a>
+                            <a href="{% url 'remove_to_favourites' values.city %}" class="btn-lg">Remove</a>
                         </div>
                         <div class="tracker-data">
                             <div class="data-container">
@@ -130,90 +131,7 @@
                         <img src="{% static 'images/weather_status/rainy_day.svg'%}" alt="">
                     </div>
                 </div>
-                <div class="favorite-card">
-                    <div class="status-container">
-                        <div class="circle">
-                            <img src="{% static  'images/tracker/icon_test.svg'%}" alt="">
-                        </div>
-                    </div>
-                    <div class="content-container">
-                        <div class="head">
-                            <h5>New York, US</h5>
-                            <p>GMT 1.0, 2022-11-12 20:36:51</p>
-                            <a href="#" class="btn-lg">Remove</a>
-                        </div>
-                        <div class="tracker-data">
-                            <div class="data-container">
-                                <div class="multidata-wrapper">
-                                    <p class="main-data">26°</p>
-                                    <div class="temp-max-min">
-                                        <p>H:30°</p>
-                                        <p>L:22°</p>
-                                    </div>
-                                </div>
-                                <p class="text-variant">Feels like: 27°</p>
-                            </div>
-                            <div class="data-container">
-                                <div class="multidata-wrapper">
-                                    <p class="main-data">12</p>
-                                    <p>m/s</p>
-                                </div>
-                                <p class="text-variant">deg: 260°</p>
-                            </div>
-                            <div class="data-container">
-                                <div class="multidata-wrapper">
-                                    <p class="main-data">76</p>
-                                    <p>%</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="background-image">
-                        <img src="{% static 'images/weather_status/rainy_day.svg'%}" alt="">
-                    </div>
-                </div>
-                <div class="favorite-card">
-                    <div class="status-container">
-                        <div class="circle">
-                            <img src="{% static  'images/tracker/icon_test.svg'%}" alt="">
-                        </div>
-                    </div>
-                    <div class="content-container">
-                        <div class="head">
-                            <h5>New York, US</h5>
-                            <p>GMT 1.0, 2022-11-12 20:36:51</p>
-                            <a href="#" class="btn-lg">Remove</a>
-                        </div>
-                        <div class="tracker-data">
-                            <div class="data-container">
-                                <div class="multidata-wrapper">
-                                    <p class="main-data">26°</p>
-                                    <div class="temp-max-min">
-                                        <p>H:30°</p>
-                                        <p>L:22°</p>
-                                    </div>
-                                </div>
-                                <p class="text-variant">Feels like: 27°</p>
-                            </div>
-                            <div class="data-container">
-                                <div class="multidata-wrapper">
-                                    <p class="main-data">12</p>
-                                    <p>m/s</p>
-                                </div>
-                                <p class="text-variant">deg: 260°</p>
-                            </div>
-                            <div class="data-container">
-                                <div class="multidata-wrapper">
-                                    <p class="main-data">76</p>
-                                    <p>%</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="background-image">
-                        <img src="{% static 'images/weather_status/rainy_day.svg'%}" alt="">
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         {% else %}
             <div class="d-flex justify-content-center">
