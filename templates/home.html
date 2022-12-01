@@ -12,7 +12,7 @@
 
 {% block content %}
 <!--Hero-->
-<div class="hero">
+<div class="hero" id="home">
     <div class="container">
         <div class="d-flex row margin-auto justify-content-between">
             <div class="col-xxl-4 col-xl-5 col-lg-7 col-md-9 content">
@@ -46,7 +46,7 @@
 </div>
 
 <!--Banner-->
-<div class="popular-cities-banner">
+<div class="popular-cities-banner" id="popular-cities">
     <div class="content-box section">
         <div class="container">
             <h2>Popular cities</h2>
@@ -64,29 +64,15 @@
                             </div>
                             <div class="img-container" >
                                 <div class="circle">
-                                    {% if dubai.main == 'Snow' %}
-                                    <img src="{% static 'images/weather_status/snow_day.svg'%}" alt="">
-                                    
-                                    {% elif dubai.main == 'Rain' %}
-                                    <img src="{% static 'images/weather_status/rainy_day.svg'%}" alt="">
-                                    
-                                    {% elif dubai.main == 'Drizzle' %}
-                                    <img src="{% static 'images/weather_status/rainy_day.svg'%}" alt="">
-
-                                    {% elif dubai.main == 'Thunderstorm' %}
-                                    <img src="{% static 'images/weather_status/rainy_day.svg'%}" alt="">
-
-                                    {% elif dubai.main == 'Clouds' %}
-                                    <img src="{% static 'images/weather_status/cloudy_day.svg'%}" alt="">
-                                    
-                                    {% else %}
-                                    <img src="{% static 'images/weather_status/sunny_day.svg'%}" alt="">
-                                    
-                                    {% endif %}
+                                    <img src="{% static 'images/weather_status/'%}{{dubai.main}}_day.svg" alt="">
                                 </div>
                             </div>
                             <div class="links">
-                                <a class="btn-text-lg" href="#">Show more</a>
+                                <form action="{% url 'tracker' %}" method="POST">
+                                    {% csrf_token %}
+                                    <input type="hidden" value="Dubai" name="city">
+                                    <button class="btn-text-lg" type="submit">Show more</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -104,29 +90,15 @@
                             </div>
                             <div class="img-container" >
                                 <div class="circle">
-                                    {% if new_york.main == 'Snow' %}
-                                    <img src="{% static 'images/weather_status/snow_day.svg'%}" alt="">
-                                    
-                                    {% elif new_york.main == 'Rain' %}
-                                    <img src="{% static 'images/weather_status/rainy_day.svg'%}" alt="">
-                                    
-                                    {% elif new_york.main == 'Drizzle' %}
-                                    <img src="{% static 'images/weather_status/rainy_day.svg'%}" alt="">
-
-                                    {% elif new_york.main == 'Thunderstorm' %}
-                                    <img src="{% static 'images/weather_status/rainy_day.svg'%}" alt="">
-
-                                    {% elif new_york.main == 'Clouds' %}
-                                    <img src="{% static 'images/weather_status/cloudy_day.svg'%}" alt="">
-                                    
-                                    {% else %}
-                                    <img src="{% static 'images/weather_status/sunny_day.svg'%}" alt="">
-                                    
-                                    {% endif %}
+                                    <img src="{% static 'images/weather_status/'%}{{new_york.main}}_day.svg" alt="">
                                 </div>
                             </div>
                             <div class="links">
-                                <a class="btn-text-lg" href="#">Show more</a>
+                                <form action="{% url 'tracker' %}" method="POST">
+                                    {% csrf_token %}
+                                    <input type="hidden" value="New York" name="city">
+                                    <button class="btn-text-lg" type="submit">Show more</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -144,29 +116,15 @@
                             </div>
                             <div class="img-container" >
                                 <div class="circle">
-                                    {% if london.main == 'Snow' %}
-                                    <img src="{% static 'images/weather_status/snow_day.svg'%}" alt="">
-                                    
-                                    {% elif london.main == 'Rain' %}
-                                    <img src="{% static 'images/weather_status/rainy_day.svg'%}" alt="">
-                                    
-                                    {% elif london.main == 'Drizzle' %}
-                                    <img src="{% static 'images/weather_status/rainy_day.svg'%}" alt="">
-
-                                    {% elif london.main == 'Thunderstorm' %}
-                                    <img src="{% static 'images/weather_status/rainy_day.svg'%}" alt="">
-                                    
-                                    {% elif london.main == 'Clouds' %}
-                                    <img src="{% static 'images/weather_status/cloudy_day.svg'%}" alt="">
-                                    
-                                    {% else %}
-                                    <img src="{% static 'images/weather_status/sunny_day.svg'%}" alt="">
-                                    
-                                    {% endif %}
+                                    <img src="{% static 'images/weather_status/'%}{{london.main}}_day.svg" alt="">
                                 </div>
                             </div>
                             <div class="links">
-                                <a class="btn-text-lg" href="#">Show more</a>
+                                <form action="{% url 'tracker' %}" method="POST">
+                                    {% csrf_token %}
+                                    <input type="hidden" value="London" name="city">
+                                    <button class="btn-text-lg" type="submit">Show more</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -184,29 +142,15 @@
                             </div>
                             <div class="img-container" >
                                 <div class="circle">
-                                    {% if tokyo.main == 'Snow' %}
-                                    <img src="{% static 'images/weather_status/snow_day.svg'%}" alt="">
-                                    
-                                    {% elif tokyo.main == 'Rain' %}
-                                    <img src="{% static 'images/weather_status/rainy_day.svg'%}" alt="">
-                                    
-                                    {% elif tokyo.main == 'Drizzle' %}
-                                    <img src="{% static 'images/weather_status/rainy_day.svg'%}" alt="">
-
-                                    {% elif tokyo.main == 'Thunderstorm' %}
-                                    <img src="{% static 'images/weather_status/rainy_day.svg'%}" alt="">
-
-                                    {% elif tokyo.main == 'Clouds' %}
-                                    <img src="{% static 'images/weather_status/cloudy_day.svg'%}" alt="">
-                                    
-                                    {% else %}
-                                    <img src="{% static 'images/weather_status/sunny_day.svg'%}" alt="">
-                                    
-                                    {% endif %}
+                                    <img src="{% static 'images/weather_status/'%}{{tokyo.main}}_day.svg" alt="">
                                 </div>
                             </div>
                             <div class="links">
-                                <a class="btn-text-lg" href="#">Show more</a>
+                                <form action="{% url 'tracker' %}" method="POST">
+                                    {% csrf_token %}
+                                    <input type="hidden" value="Tokyo" name="city">
+                                    <button class="btn-text-lg" type="submit">Show more</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -217,7 +161,7 @@
 </div>
 
 <!--Features-->
-<div class="features section">
+<div class="features section" id="features">
     <div class="container">
         <p class="title-overline">what we do</p>
         <h2>Features</h2>
@@ -348,12 +292,12 @@
     </div>
 </div>
 <!--Our team-->
-<div class="our-team section">
+<div class="our-team section" id="our-team">
     <div class="container">
         <p class="title-overline">meet our staff</p>
         <h2 class="title">Our team</h2>
         <div class="row margin-auto justify-content-between">
-            <div class="col-md-5 col-lg-6 col-12 mb-4 mb-md-0">
+            <div class="col-md-5 col-12 mb-4 mb-md-0">
                 <div class="card">
                     <img class="img-horizontal" src="{% static 'images/home/meet_our_team_andrea.png'%}" alt="">
                     <div class="body">
@@ -362,7 +306,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-5 col-lg-6 col-12">
+            <div class="col-md-5 col-12">
                 <div class="card">
                     <img class="img-horizontal" src="{% static 'images/home/meet_our_team_raspberry.svg'%}" alt="">
                     <div class="body">
@@ -417,7 +361,7 @@
 </div>
 <div class="waves-rotated"></div>
 <!--FAQ-->
-<div class="section faq">
+<div class="section faq" id="faq">
     <div class="container">
         <div class="d-flex flex-column">
             <p class="title-overline">questions</p>
@@ -439,7 +383,7 @@
                     </div>
                     <div class="body">
                         <div class="panel">
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores voluptates sit vero soluta eveniet accusamus illum animi culpa impedit quibusdam repellendus harum ipsa exercitationem distinctio ullam aspernatur, ut labore? Tenetur!</p>
+                            <p>The weather is updated every call. We use a public realtime database, which measures meteorological data.</p>
                             <a href="#" class="btn-text-lg">Learn more</a>
                         </div>
                     </div>
@@ -457,7 +401,7 @@
                     </div>
                     <div class="body">
                         <div class="panel">
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores voluptates sit vero soluta eveniet accusamus illum animi culpa impedit quibusdam repellendus harum ipsa exercitationem distinctio ullam aspernatur, ut labore? Tenetur!</p>
+                            <p>Yes! This is a free service with no advertisements. In fact this is a maturity work.</p>
                             <a href="#" class="btn-text-lg">Learn more</a>
                         </div>
                     </div>
@@ -475,7 +419,7 @@
                     </div>
                     <div class="body">
                         <div class="panel">
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores voluptates sit vero soluta eveniet accusamus illum animi culpa impedit quibusdam repellendus harum ipsa exercitationem distinctio ullam aspernatur, ut labore? Tenetur!</p>
+                            <p>Your data is totally private. Your personal data is encrypted so no one (including us) can access. Our server uses strong encryption, based on a hash function: sha256</p>
                             <a href="#" class="btn-text-lg">Learn more</a>
                         </div>
                     </div>
@@ -493,7 +437,7 @@
                     </div>
                     <div class="body">
                         <div class="panel">
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores voluptates sit vero soluta eveniet accusamus illum animi culpa impedit quibusdam repellendus harum ipsa exercitationem distinctio ullam aspernatur, ut labore? Tenetur!</p>
+                            <p>Feel free to contact our support team, so we can solve the problem and allow you to use the service immediately.</p>
                             <a href="#" class="btn-text-lg">Learn more</a>
                         </div>
                     </div>
@@ -511,7 +455,7 @@
                     </div>
                     <div class="body">
                         <div class="panel">
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores voluptates sit vero soluta eveniet accusamus illum animi culpa impedit quibusdam repellendus harum ipsa exercitationem distinctio ullam aspernatur, ut labore? Tenetur!</p>
+                            <p>Feel free to contact our support team, so we can solve the problem and allow you to use the service immediately.</p>
                             <a href="#" class="btn-text-lg">Learn more</a>
                         </div>
                     </div>
@@ -523,6 +467,6 @@
 {% endblock content %}
 
 {% block script %}
-<script src="{% static 'js/libs/anime.min.js'%}"></script>
 <script src="{% static 'js/accordion.js'%}"></script>
+<script src="{% static 'js/anchors.js'%}"></script>
 {% endblock script %}

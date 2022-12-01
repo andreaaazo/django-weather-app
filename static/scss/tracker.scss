@@ -80,11 +80,11 @@ h1 {
             border: 0px;
             background: none;
             border-bottom: 2px solid $primary;
-            @include simple_animation
+            @include simple_animation;
         }
 
         & p {
-            margin-left: 25px;
+            margin-left: 15px;
         }
 
         & button {
@@ -93,14 +93,6 @@ h1 {
             border: 0px;
             background: none;
             @include simple_animation
-        }
-
-        & button:hover {
-            & img {
-                @include btn_hover_animation;
-                fill: #0055D3;
-            }
-
         }
 
         & img {
@@ -140,6 +132,16 @@ h1 {
 
             & .place {
                 margin-right: 50px;
+            }
+
+            & .time {
+                display: flex;
+                flex-direction: column;
+                align-self: stretch;
+
+                & .text-variant {
+                    margin: auto 0;
+                }
             }
 
             & a {
@@ -182,6 +184,23 @@ h1 {
                 display: block;
                 border-radius: 8px;
                 width: 100%;
+
+                & .highcharts-scrolling::-webkit-scrollbar {
+                        height: 10px;
+                }
+
+                & .highcharts-scrolling::-webkit-scrollbar-thumb {
+                    background: $secondary;
+                    border-radius: 8px;
+                }
+
+                & .highcharts-scrolling::-webkit-scrollbar-thumb:hover {
+                    background: $primary;
+                }
+
+                & .highcharts-credits {
+                    display: none;
+                }
             }
 
             .background-image {

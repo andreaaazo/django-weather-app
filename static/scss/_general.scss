@@ -41,7 +41,7 @@ $neutral40: #5E5E62;
 @mixin body-temperature {
     font-family: 'Inter';
     font-style: normal;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 4rem;
     line-height: 5rem;
 }
@@ -114,8 +114,8 @@ $neutral40: #5E5E62;
     font-family: "Epilogue";
     font-style: normal;
     font-weight: 700;
-    font-size: 0.75rem;
-    line-height: 1.125rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 1.2px;
 }
@@ -331,6 +331,9 @@ $buttons: (
         }
 
         text-decoration: none;
+        border: 0px;
+        background: none;
+        cursor: pointer;
         color: $secondary;
         padding-right: 12px;
         transition: all 0.2s ease 0s;
@@ -376,6 +379,10 @@ nav {
     @include elevation-2;
     background: $surface;
     z-index: 10000;
+
+    & .active {
+        color: $primary;  
+    }
 }
 
 .navbar {
@@ -407,10 +414,6 @@ nav {
         margin-left: auto;
         gap: 15px;
 
-    }
-
-    & .active {
-        color: $primary;  
     }
 
     & .brand {
@@ -590,6 +593,7 @@ footer {
 /* Preloader */
 .preloader {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     position: fixed;
@@ -600,80 +604,21 @@ footer {
     z-index: 10000000;
     background: $inverse-surface;
     opacity: 1;
-}
+    overscroll-behavior-y: contain;
 
-/* Loader 4 */
-.loader-4 {
-	height: 62px;
-	width: 62px;
-
-    & span {
-        display: block;
-        position: absolute;
-        top: 0; left: 0;
-        bottom: 0; right: 0;
-        margin: auto;
-        height: 52px;
-        width: 52px;
-        animation: loader-4-2 2s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite;
+    & .spinner {
+        overflow: visible;
+        position: relative;
+        display: flex;
+        height: 200px;
     }
 
-    & span::before, span::after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0; left: 0;
-        bottom: 0; right: 0;
-        margin: auto;
-        height: 32px;
-        width: 32px;
-        background: $inverse-on-surface;
-        border-radius: 50%;
-        animation: loader-4-3 2s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite;
+    & .spinner path {
+        stroke-dashoffset: 0;
+        stroke-width: 15;
+        stroke-linejoin: round;
+        stroke-linecap: round;
+        stroke: $surface;
+        fill: none;
     }
-
-}
-
-.loader-4::after {
-	content: "";
-	display: block;
-	position: absolute;
-	top: 0; left: 0;
-	bottom: 0; right: 0;
-	margin: auto;
-	width: 32px;
-	height: 32px;
-	top: 0; left: 0;
-	bottom: 0; right: 0;
-	margin: auto;
-	background: $inverse-on-surface;
-	border-radius: 50%;
-	animation: loader-4-1 2s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite;
-}
-
-@keyframes loader-4-1 {
-	0%   { transform: scale(0); opacity: 0; }
-	50%  { transform: scale(1); opacity: 1; }
-	100% { transform: scale(0); opacity: 0; }
-}
-
-@keyframes loader-4-2 {
-	0%   { transform: rotate(0deg); }
-	50%  { transform: rotate(180deg); }
-	100% { transform: rotate(360deg); }
-}
-
-@keyframes loader-4-3 {
-	0%   { transform: translate3d(0, 0, 0) scale(1); }
-	50%  { transform: translate3d(-36px, 0, 0) scale(.5); }
-	100% { transform: translate3d(0, 0, 0) scale(1); }
-}
-.loader-4 span::after {
-	animation: loader-4-4 2s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite;
-}
-
-@keyframes loader-4-4 {
-	0%   { transform: translate3d(0, 0, 0) scale(1); }
-	50%  { transform: translate3d(36px, 0, 0) scale(.5); }
-	100% { transform: translate3d(0, 0, 0) scale(1); }
 }

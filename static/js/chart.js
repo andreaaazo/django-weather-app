@@ -1,24 +1,43 @@
+var forecast_temperature = JSON.parse(document.currentScript.dataset.forecastTemperature)
+var current_time = new Date(document.currentScript.dataset.currentTime)
+
+function calculate_hours () {
+    
+    current_hour = current_time.getHours()
+    console.log(current_hour)
+
+    if (current_hour % 3 == 0) {
+        return current_hour
+    } else if (current_hour % 5 == 0) {
+        return current_hour -=3
+    } else if (current_hour % 8 == 0) {
+        return current_hour -= 2
+    } else if (current_hour % 2 == 0) {
+        return current_time -= 1
+    } else {
+        return current_hour += 2
+    }
+}
+
 Highcharts.chart({
     legend: {
-        enabled: false,
-    },
-    tooltip: {
         enabled: false,
     },
     chart: {
         renderTo: 'chart-container',
         type: 'areaspline',
         scrollablePlotArea: {
-            minWidth: 1346,
-            scrollPositionX: 1,
+            minWidth: 4000,
+            scrollPositionX: 0,
             opacity: 0,
         },
         align: "center",
         backgroundColor: '',
         style: {
-            fontFamily: 'Inter'
+            fontFamily: 'Inter',
         },
         marginTop: 50,
+        marginBottom: 50,
     },
     title: {
         text: ''
@@ -31,10 +50,13 @@ Highcharts.chart({
         tickColor: '#E1E2EC',
         tickmarkPlacement: 'between',
         labels: {
-            align: "center"
+            align: "center",
+            style: {
+                fontSize: 14,
+            }
         },
         crosshair: {
-            color: 'rgba(92, 140, 255, 0.2)',
+            color: 'rgba(92, 140, 255, 0.5)',
             dashStyle: 'longdash'
         },
     },
@@ -44,10 +66,15 @@ Highcharts.chart({
             align: "low",
         },
         gridLineColor: '#E1E2EC',
+        labels: {
+            style: {
+                fontSize: 14,
+            }
+        },
     },
     series: [{
         name: 'Temperature',
-        data: [1, 3, 4, 2, 3, 5, 1, 3, 4, 5, 4, 10, 3, 5, 3],
+        data: forecast_temperature,
         color: {
             linearGradient : {
                 x1: 1,
@@ -72,7 +99,7 @@ Highcharts.chart({
                 [1, Highcharts.Color('#0055D3').setOpacity(0).get('rgba')],
             ]
         },
-        pointStart: Date.UTC(2010, 0, 1),
+        pointStart: Date.UTC(current_time.getUTCFullYear(), current_time.getUTCMonth(), current_time.getUTCDate(), calculate_hours()),
         pointInterval: 3600 * 1000 * 3 // three hour
     }],
     

@@ -16,8 +16,9 @@
         <h1>Tracker</h1>
         <div class="city-form">
             <p>Whats the weather in</p>
-            <form action="POST">
-                <input type="text" placeholder="London">
+            <form method="POST">
+                {% csrf_token %}
+                {{search_city_form}}
                 <button type="submit"><img src="{% static 'images/tracker/lens.svg'%}" alt="">
                 </button>
             </form>
@@ -26,43 +27,43 @@
             <div class="head">
                 <div class="place">
                     <p class="overline">City, Country</p>
-                    <h5>New York, US</h5>
+                    <h3>{{current_weather.city}}, {{current_weather.country}}</h3>
                 </div>
-                <div>
+                <div class="time">
                     <p class="overline">Time</p>
-                    <p class="text-variant">GMT 1.0, 2022-11-12 20:36:51</p>
+                    <p class="text-variant">GMT {{current_weather.timezone}}, {{current_weather.time}}</p>
                 </div>
                 <a href="#" class="btn-lg">Add to favorites</a>
             </div>
             <div class="body">
                 <div class="tracker-data">
                     <div class="image">
-                        <img src="{% static  'images/tracker/icon_test.svg'%}" alt="">
-                        <p>Clear Sky</p>
+                        <img src="https://openweathermap.org/img/wn/{{current_weather.icon}}@2x.png" alt="">
+                        <p>{{current_weather.description}}</p>
                     </div>
                     <div class="data-container">
                         <p class="overline">Temperature</p>
                         <div class="multidata-wrapper">
-                            <p class="main-data">26°</p>
+                            <p class="main-data">{{current_weather.temp}}°</p>
                             <div class="temp-max-min">
-                                <p>H:30°</p>
-                                <p>L:22°</p>
+                                <p>H:{{current_weather.temp_max}}°</p>
+                                <p>L:{{current_weather.temp_min}}°</p>
                             </div>
                         </div>
-                        <p class="text-variant">Feels like: 27°</p>
+                        <p class="text-variant">Feels like: {{current_weather.temp_feel}}°</p>
                     </div>
                     <div class="data-container">
                         <p class="overline">Wind</p>
                         <div class="multidata-wrapper">
-                            <p class="main-data">12</p>
+                            <p class="main-data">{{current_weather.wind}}</p>
                             <p>m/s</p>
                         </div>
-                        <p class="text-variant">deg: 260°</p>
+                        <p class="text-variant">deg: {{current_weather.wind_deg}}°</p>
                     </div>
                     <div class="data-container">
                         <p class="overline">Humidity</p>
                         <div class="multidata-wrapper">
-                            <p class="main-data">76</p>
+                            <p class="main-data">{{current_weather.humidity}}</p>
                             <p>%</p>
                         </div>
                     </div>
@@ -71,7 +72,7 @@
                 <div class="chart" id="chart-container">
                 </div>
                 <div class="background-image">
-                    <img src="{% static  'images/weather_status/cloudy_day.svg'%}" class="img-vertical" alt="">
+                    <img src="{% static 'images/weather_status/'%}{{current_weather.main}}_day.svg" alt="" class="img-vertical">
                 </div>
             </div>
         </div>
@@ -230,10 +231,9 @@
     </div>
 </div>
 
-
 {% endblock content %}
 
 {% block script %}
 <script src="{% static 'js/libs/highcharts.js'%}"></script>
-<script src="{% static 'js/chart.js'%}"></script>
+<script src="{% static 'js/chart.js'%}" data-forecast-temperature="{{city_forecast}}" data-current-time="{{current_weather.time}}"></script>
 {% endblock script %}

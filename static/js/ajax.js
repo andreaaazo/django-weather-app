@@ -1,10 +1,23 @@
 $.ajax({
     type: "GET",
     beforeSend: function () {
-        $(".preloader").fadeIn(500)
+        $(".preloader").show()
+        const animation = anime({
+            targets: '.spinner path',
+            strokeDashoffset: [anime.setDashoffset, 0],
+            easing: 'cubicBezier(.5, .2, .3, 1, 1)',
+            duration: 500,
+            delay: function(el, i) { return i * 50 },
+            direction: 'alternate',
+            loop: true
+        });
+
+        animation.play()
     },
 
     complete: function () {
-        $(".preloader").fadeOut(800)
-    } 
+        setTimeout(function () {
+            $(".preloader").fadeOut(500)
+        }, 500)
+    }
 })

@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import response
+from .views import TrackerPageView
 
 urlpatterns = [
-    path("", response, name="tracker"),
+    path("", TrackerPageView.as_view(), name="tracker"),
 ]
