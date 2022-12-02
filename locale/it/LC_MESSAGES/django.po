@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-01 02:23+0000\n"
+"POT-Creation-Date: 2022-12-02 16:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,72 +26,81 @@ msgstr "Inglese"
 msgid "Italian"
 msgstr "Italiano"
 
-#: templates/base.html:26 templates/base.html:57
+#: templates/base.html:26 templates/base.html:72
 msgid "Home"
 msgstr "Home"
 
-#: templates/base.html:27 templates/base.html:68
+#: templates/base.html:27 templates/base.html:83 templates/tracker.html:6
+#: templates/tracker.html:17
 msgid "Tracker"
 msgstr "Tracker"
 
-#: templates/base.html:28 templates/base.html:69
+#: templates/base.html:28 templates/base.html:84
 msgid "About"
 msgstr "Su di noi"
 
-#: templates/base.html:29 templates/base.html:70
+#: templates/base.html:29 templates/base.html:85
 msgid "Contacts"
 msgstr "Contatti"
 
-#: templates/base.html:32
+#: templates/base.html:39
+msgid "Your profile"
+msgstr "Il tuo profilo"
+
+#: templates/base.html:40
+msgid "Log out"
+msgstr "Esci"
+
+#: templates/base.html:46 templates/tracker.html:152
 msgid "Log in"
 msgstr "Accedi"
 
-#: templates/base.html:33 templates/base.html:77
+#: templates/base.html:47 templates/base.html:92 templates/tracker.html:153
 msgid "Sign up"
 msgstr "Registrati"
 
-#: templates/base.html:51
+#: templates/base.html:66
 msgid "Worldwide tracking meteorologic and clymatologic weather data."
 msgstr "Monitoraggio mondiale dei dati meteorologici e climatologici."
 
-#: templates/base.html:52
+#: templates/base.html:67
 msgid "© 2022 DATABERRY. All rights reserved."
 msgstr "© 2022 DATABERRY. Tutti i diritti riservati."
 
-#: templates/base.html:55
+#: templates/base.html:70
 msgid "Quick links"
 msgstr "Link veloci"
 
-#: templates/base.html:58 templates/home.html:53
+#: templates/base.html:73 templates/home.html:53
 msgid "Popular cities"
 msgstr "Città popolari"
 
-#: templates/base.html:59 templates/home.html:168
+#: templates/base.html:74 templates/home.html:168
 msgid "Features"
 msgstr "Caratteristiche"
 
-#: templates/base.html:60 templates/home.html:299
+#: templates/base.html:75 templates/home.html:299
 msgid "Our team"
 msgstr "Il nostro team"
 
-#: templates/base.html:61
+#: templates/base.html:76
 msgid "FAQ"
 msgstr "FAQ"
 
-#: templates/base.html:65
+#: templates/base.html:80
 msgid "Sitemap"
 msgstr "Mappa del sito"
 
-#: templates/base.html:67
+#: templates/base.html:82
 #, fuzzy
 msgid "Homepage"
 msgstr "Homepage"
 
-#: templates/base.html:74
+#: templates/base.html:89
 msgid "Subscribe"
 msgstr "Iscriviti"
 
-#: templates/base.html:75
+#: templates/base.html:90
 msgid ""
 "We care about our subscribers, sign up to receive updates when our service "
 "improves."
@@ -207,7 +216,8 @@ msgstr "Ricordati di prendere l'ombrello!"
 
 #: templates/home.html:282
 msgid "We offer a completely free service suitable for your needs."
-msgstr "Offriamo un servizio completamente gratuito, perfetto per le tue esigenze."
+msgstr ""
+"Offriamo un servizio completamente gratuito, perfetto per le tue esigenze."
 
 #: templates/home.html:284
 msgid "Try it now!"
@@ -246,7 +256,10 @@ msgid ""
 "A frequently asked questions (FAQ) list is often used in articles, websites, "
 "email lists, and online forums where common questions tend to recur, asked "
 "questions and answers on a website about."
-msgstr "Una lista di domande frequenti (FAQ) è spesso utilizzata in articoli, siti web, liste di email, e forum online dove le domande comuni tendono a ripetersi, e viene subito data una risposta."
+msgstr ""
+"Una lista di domande frequenti (FAQ) è spesso utilizzata in articoli, siti "
+"web, liste di email, e forum online dove le domande comuni tendono a "
+"ripetersi, e viene subito data una risposta."
 
 #: templates/home.html:383
 msgid "How often is the weather updated?"
@@ -256,7 +269,9 @@ msgstr "Quanto spesso viene aggiornato il meteo?"
 msgid ""
 "The weather is updated every call. We use a public realtime database, which "
 "measures meteorological data."
-msgstr "Il meteo viene aggiornato ad ogni chiamata. Usiamo un database pubblico in tempo reale, che misura i dati meteorologici."
+msgstr ""
+"Il meteo viene aggiornato ad ogni chiamata. Usiamo un database pubblico in "
+"tempo reale, che misura i dati meteorologici."
 
 #: templates/home.html:388 templates/home.html:406 templates/home.html:424
 #: templates/home.html:442 templates/home.html:460
@@ -271,7 +286,9 @@ msgstr "E' completamente gratuito?"
 msgid ""
 "Yes! This is a free service with no advertisements. In fact this is a "
 "maturity work."
-msgstr "Si! Si tratta di un servizio gratuito senza pubblicità. In realtà si tratta di un lavoro maturo."
+msgstr ""
+"Si! Si tratta di un servizio gratuito senza pubblicità. In realtà si tratta "
+"di un lavoro maturo."
 
 #: templates/home.html:419
 msgid "Is my data private?"
@@ -282,7 +299,10 @@ msgid ""
 "Your data is totally private. Your personal data is encrypted so no one "
 "(including us) can access. Our server uses strong encryption, based on a "
 "hash function: sha256"
-msgstr "I tuoi dati sono del tutto privati. I tuoi dati personali sono criptati in modo che nessuno (inclusi noi) possa accedervi. Il nostro server utilizza una crittografia forte, basata su una funzione hash: sha256"
+msgstr ""
+"I tuoi dati sono del tutto privati. I tuoi dati personali sono criptati in "
+"modo che nessuno (inclusi noi) possa accedervi. Il nostro server utilizza "
+"una crittografia forte, basata su una funzione hash: sha256"
 
 #: templates/home.html:437
 msgid "I have troubles to sign up"
@@ -292,11 +312,86 @@ msgstr "Ho problemi a registrarmi"
 msgid ""
 "Feel free to contact our support team, so we can solve the problem and allow "
 "you to use the service immediately."
-msgstr "Non esitate a contattare il nostro team di supporto, in modo da poter risolvere il problema e potervi consentire immediatamente di utilizzare il servizio."
+msgstr ""
+"Non esitate a contattare il nostro team di supporto, in modo da poter "
+"risolvere il problema e potervi consentire immediatamente di utilizzare il "
+"servizio."
 
 #: templates/home.html:455
 msgid "I haven't received the email confirmation"
 msgstr "Non ho ricevuto l'email di conferma"
+
+#: templates/tracker.html:19
+msgid "Whats the weather in"
+msgstr "Com'è il tempo a"
+
+#: templates/tracker.html:30
+msgid "City, Country"
+msgstr "Città, Paese"
+
+#: templates/tracker.html:34
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2417
+msgid "Time"
+msgstr "Orario"
+
+#: templates/tracker.html:37
+msgid "Add to favorites"
+msgstr "Aggiungi ai preferiti"
+
+#: templates/tracker.html:46
+msgid "Temperature"
+msgstr "Temperatura"
+
+#: templates/tracker.html:54
+msgid "Feels like:"
+msgstr "Si sente come"
+
+#: templates/tracker.html:57
+msgid "Wind"
+msgstr "Vento"
+
+#: templates/tracker.html:62
+msgid "deg"
+msgstr "gradi"
+
+#: templates/tracker.html:65
+msgid "Humidity"
+msgstr "Umidità"
+
+#: templates/tracker.html:72
+msgid "All-Day Temperature"
+msgstr "Temperature nei giorni successivi"
+
+#: templates/tracker.html:89
+msgid "Favorites"
+msgstr "Preferiti"
+
+#: templates/tracker.html:104
+msgid "Remove"
+msgstr "Rimuovi"
+
+#: templates/tracker.html:115
+msgid "Feels like"
+msgstr "Si sente come"
+
+#: templates/tracker.html:141
+msgid "Nothing to show"
+msgstr "Niente da mostrare"
+
+#: templates/tracker.html:142
+msgid ""
+"You can add an item to favorites by clicking on the green button that shows "
+"up when you search a city."
+msgstr ""
+"Puoi aggiungere una città ai preferiti facendo clic sul pulsante Aggiungi ai preferiti quando cerchi una città."
+
+#: templates/tracker.html:149
+msgid "Log in required"
+msgstr "Accesso richiesto"
+
+#: templates/tracker.html:150
+msgid "Access to add your favorite cities."
+msgstr "Accedi per aggiungere le tue città preferite"
 
 #: venv/lib/python3.11/site-packages/click/_termui_impl.py:496
 #, python-brace-format
@@ -954,10 +1049,6 @@ msgstr ""
 msgid ""
 "“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
 "invalid time."
-msgstr ""
-
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2417
-msgid "Time"
 msgstr ""
 
 #: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2525

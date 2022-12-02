@@ -17,7 +17,10 @@ class TrackerPageView(View):
             for i in FavouriteCity.objects.filter(favourite=request.user).all():
                 favourites[i] = get_current_weather(i)
 
-            kwargs["favourites"] = favourites
+            if favourites:
+                kwargs["favourites"] = favourites
+            else:
+                kwargs["favourites"] = None
         else:
             kwargs["favourites"] = None
 

@@ -1,23 +1,6 @@
 var forecast_temperature = JSON.parse(document.currentScript.dataset.forecastTemperature)
 var current_time = new Date(document.currentScript.dataset.currentTime)
 
-function calculate_hours () {
-    
-    current_hour = current_time.getHours()
-
-    if (current_hour % 3 == 0) {
-        return current_hour
-    } else if (current_hour % 5 == 0) {
-        return current_hour -=3
-    } else if (current_hour % 8 == 0) {
-        return current_hour -= 2
-    } else if (current_hour % 2 == 0) {
-        return current_time -= 1
-    } else {
-        return current_hour += 2
-    }
-}
-
 Highcharts.chart({
     legend: {
         enabled: false,
@@ -98,7 +81,7 @@ Highcharts.chart({
                 [1, Highcharts.Color('#0055D3').setOpacity(0).get('rgba')],
             ]
         },
-        pointStart: Date.UTC(current_time.getUTCFullYear(), current_time.getUTCMonth(), current_time.getUTCDate(), calculate_hours()),
+        pointStart: Date.UTC(current_time.getUTCFullYear(), current_time.getUTCMonth(), current_time.getUTCDate(), current_time.getHours()),
         pointInterval: 3600 * 1000 * 3 // three hour
     }],
     

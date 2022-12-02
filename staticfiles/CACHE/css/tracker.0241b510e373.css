@@ -4412,42 +4412,43 @@ nav {
 /* line 388, static/scss/_general.scss */
 .navbar {
   display: flex;
+  align-items: center;
   width: 100%; }
 
-/* line 393, static/scss/_general.scss */
+/* line 394, static/scss/_general.scss */
 .menu {
   display: flex;
   flex-direction: row;
   width: 100%; }
-  /* line 398, static/scss/_general.scss */
+  /* line 399, static/scss/_general.scss */
   .menu li {
     text-align: start;
     display: block; }
-  /* line 403, static/scss/_general.scss */
+  /* line 404, static/scss/_general.scss */
   .menu ul {
     display: flex;
     align-items: center; }
-  /* line 408, static/scss/_general.scss */
+  /* line 409, static/scss/_general.scss */
   .menu .main-menu {
     gap: 15px;
     margin-left: 50px; }
-  /* line 413, static/scss/_general.scss */
+  /* line 414, static/scss/_general.scss */
   .menu .menu-links {
     margin-left: auto;
     gap: 15px; }
-  /* line 419, static/scss/_general.scss */
+  /* line 420, static/scss/_general.scss */
   .menu .brand {
     display: flex;
     align-items: center; }
 
-/* line 425, static/scss/_general.scss */
+/* line 426, static/scss/_general.scss */
 .menu-button {
   position: relative;
   height: 22px;
   width: 30px;
   outline: none;
   display: none; }
-  /* line 432, static/scss/_general.scss */
+  /* line 433, static/scss/_general.scss */
   .menu-button span, .menu-button span::before, .menu-button span::after {
     position: absolute;
     content: '';
@@ -4455,88 +4456,178 @@ nav {
     height: 3px;
     background: #525E7F;
     transition: 500ms cubic-bezier(0.77, 0, 0.175, 1); }
-  /* line 441, static/scss/_general.scss */
+  /* line 442, static/scss/_general.scss */
   .menu-button span {
     position: relative;
     display: block;
     top: 50%;
     transform: translate(0, -50%); }
-  /* line 448, static/scss/_general.scss */
+  /* line 449, static/scss/_general.scss */
   .menu-button span::before {
     top: -8px; }
-  /* line 452, static/scss/_general.scss */
+  /* line 453, static/scss/_general.scss */
   .menu-button span::after {
     top: 8px; }
 
-/* line 459, static/scss/_general.scss */
+/* line 460, static/scss/_general.scss */
 .menu-button:hover > span, .menu-button:hover span::after, .menu-button:hover span::before {
   background: #0055D3; }
 
-/* line 465, static/scss/_general.scss */
+/* line 466, static/scss/_general.scss */
 .menu-button.active > span {
   background: transparent; }
 
-/* line 469, static/scss/_general.scss */
+/* line 470, static/scss/_general.scss */
 .menu-button.active > span:before {
   transform: rotate(-225deg);
   top: 0px; }
 
-/* line 474, static/scss/_general.scss */
+/* line 475, static/scss/_general.scss */
 .menu-button.active > span::after {
   transform: rotate(225deg);
   top: 0px; }
 
+/* line 482, static/scss/_general.scss */
+.profile-container {
+  position: relative;
+  display: flex;
+  margin: auto 0 auto auto;
+  align-items: center;
+  gap: 10px; }
+  /* line 489, static/scss/_general.scss */
+  .profile-container .avatar-container {
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+    background: black;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    cursor: pointer; }
+    /* line 499, static/scss/_general.scss */
+    .profile-container .avatar-container img {
+      top: 0;
+      left: 0;
+      max-width: 100%;
+      height: auto;
+      margin: auto 0;
+      position: absolute; }
+  /* line 509, static/scss/_general.scss */
+  .profile-container .arrow {
+    position: static;
+    border: solid #525E7F;
+    border-width: 0 3px 3px 0;
+    padding: 3px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    cursor: pointer; }
+  /* line 519, static/scss/_general.scss */
+  .profile-container .dropdown-content {
+    background: linear-gradient(0deg, rgba(0, 85, 211, 0.08), rgba(0, 85, 211, 0.08)), #FEFBFF;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+    display: none;
+    position: absolute;
+    padding: 15px 25px;
+    border-radius: 8px;
+    gap: 15px;
+    flex-direction: column;
+    white-space: nowrap;
+    top: 100%;
+    right: 0; }
+    /* line 531, static/scss/_general.scss */
+    .profile-container .dropdown-content::before {
+      content: "";
+      position: absolute;
+      right: 30px;
+      top: -15px;
+      border-top: none;
+      border-right: 15px solid transparent;
+      border-left: 15px solid transparent;
+      border-bottom: 15px solid #FEFBFF; }
+  /* line 545, static/scss/_general.scss */
+  .profile-container:hover .arrow {
+    position: static;
+    border: solid #0055D3;
+    border-width: 0 3px 3px 0;
+    padding: 3px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg); }
+
 @media (max-width: 767px) {
-  /* line 483, static/scss/_general.scss */
+  /* line 558, static/scss/_general.scss */
   nav {
     position: sticky;
     width: 100%; }
-  /* line 488, static/scss/_general.scss */
+  /* line 563, static/scss/_general.scss */
   .navbar {
     justify-content: space-between;
     align-items: center; }
-    /* line 492, static/scss/_general.scss */
+    /* line 567, static/scss/_general.scss */
     .navbar .menu-button {
       display: block; }
-    /* line 496, static/scss/_general.scss */
+    /* line 571, static/scss/_general.scss */
     .navbar .menu {
       display: none;
       height: 100%;
       width: 100%;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
       position: absolute;
       background: #FEFBFF; }
-    /* line 506, static/scss/_general.scss */
+    /* line 582, static/scss/_general.scss */
     .navbar .main-menu {
       flex-direction: column;
       margin: 0px;
       gap: 25px; }
-    /* line 512, static/scss/_general.scss */
+    /* line 588, static/scss/_general.scss */
     .navbar .menu-links {
       flex-direction: column;
       margin: 0px;
       margin-top: 50px;
-      gap: 25px; } }
+      gap: 25px; }
+  /* line 596, static/scss/_general.scss */
+  .profile-container {
+    margin: 0; }
+    /* line 599, static/scss/_general.scss */
+    .profile-container .avatar-container {
+      display: none; }
+    /* line 603, static/scss/_general.scss */
+    .profile-container .arrow {
+      display: none; }
+    /* line 607, static/scss/_general.scss */
+    .profile-container .dropdown-content {
+      display: flex !important;
+      padding-top: 50px;
+      align-items: center;
+      position: relative;
+      background: inherit;
+      box-shadow: inherit;
+      top: 0;
+      right: 0;
+      gap: 25px; }
+      /* line 618, static/scss/_general.scss */
+      .profile-container .dropdown-content::before {
+        display: none; } }
 
 @media (min-width: 768px) {
-  /* line 523, static/scss/_general.scss */
+  /* line 629, static/scss/_general.scss */
   .menu {
     display: flex !important; } }
 
 @media (max-width: 576px) {
-  /* line 530, static/scss/_general.scss */
+  /* line 636, static/scss/_general.scss */
   nav {
     padding: 15px 0px; } }
 
 /* Footer */
-/* line 537, static/scss/_general.scss */
+/* line 643, static/scss/_general.scss */
 footer {
   background: linear-gradient(0deg, rgba(0, 85, 211, 0.05), rgba(0, 85, 211, 0.05)), #FEFBFF;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
   background: #FEFBFF;
   color: #1B1B1F; }
-  /* line 542, static/scss/_general.scss */
+  /* line 648, static/scss/_general.scss */
   footer h5 {
     font-family: "Epilogue";
     font-style: normal;
@@ -4545,16 +4636,16 @@ footer {
     line-height: 1.875rem;
     margin: 0;
     margin-bottom: 15px; }
-  /* line 548, static/scss/_general.scss */
+  /* line 654, static/scss/_general.scss */
   footer ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden; }
-    /* line 554, static/scss/_general.scss */
+    /* line 660, static/scss/_general.scss */
     footer ul li {
       margin-bottom: 5px; }
-      /* line 557, static/scss/_general.scss */
+      /* line 663, static/scss/_general.scss */
       footer ul li a {
         font-family: 'Inter';
         font-style: normal;
@@ -4563,38 +4654,38 @@ footer {
         line-height: 1.5rem;
         color: #45464F;
         text-decoration: none; }
-  /* line 565, static/scss/_general.scss */
+  /* line 671, static/scss/_general.scss */
   footer p {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 1rem;
     line-height: 1.5rem; }
-  /* line 569, static/scss/_general.scss */
+  /* line 675, static/scss/_general.scss */
   footer img {
     margin-right: auto; }
-  /* line 573, static/scss/_general.scss */
+  /* line 679, static/scss/_general.scss */
   footer .desc {
     padding: 15px 50px 15px 0; }
-  /* line 577, static/scss/_general.scss */
+  /* line 683, static/scss/_general.scss */
   footer .copyright {
     font-family: "Inter";
     font-style: normal;
     font-weight: 400;
     font-size: 0.75rem;
     line-height: 1.125rem; }
-  /* line 581, static/scss/_general.scss */
+  /* line 687, static/scss/_general.scss */
   footer .section {
     display: flex;
     flex-direction: column;
     padding: 50px 25px; }
-    /* line 586, static/scss/_general.scss */
+    /* line 692, static/scss/_general.scss */
     footer .section .links {
       display: inline-flex;
       margin-top: 15px; }
 
 /* Preloader */
-/* line 594, static/scss/_general.scss */
+/* line 700, static/scss/_general.scss */
 .preloader {
   display: flex;
   flex-direction: column;
@@ -4609,13 +4700,13 @@ footer {
   background: #303034;
   opacity: 1;
   overscroll-behavior-y: contain; }
-  /* line 609, static/scss/_general.scss */
+  /* line 715, static/scss/_general.scss */
   .preloader .spinner {
     overflow: visible;
     position: relative;
     display: flex;
     height: 200px; }
-  /* line 616, static/scss/_general.scss */
+  /* line 722, static/scss/_general.scss */
   .preloader .spinner path {
     stroke-dashoffset: 0;
     stroke-width: 15;
@@ -4938,3 +5029,19 @@ h1 {
   .login-required .links {
     display: flex;
     justify-content: space-evenly; }
+
+/* Favorites nothing to show */
+/* line 344, static/scss/tracker.scss */
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; }
+  /* line 350, static/scss/tracker.scss */
+  .empty h3 {
+    color: #1B1B1F;
+    margin: 25px 0; }
+  /* line 355, static/scss/tracker.scss */
+  .empty p {
+    color: #757780;
+    width: 25%; }

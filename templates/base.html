@@ -28,10 +28,25 @@
                         <li><a href="#" class="btn-menu-text {% if url_name == 'about' %}active{% endif %}">{% translate "About" %}</a></li>
                         <li><a href="#" class="btn-menu-text {% if url_name == 'contacts' %}active{% endif %}">{% translate "Contacts" %}</a></li>
                     </ul>
-                    <ul class="menu-links">
-                        <li><a href="{% url 'login' %}" class="btn-menu-text {% if url_name == 'login' %}active{% endif %}">{% translate "Log in" %}</a></li>
-                        <li><a href="{% url 'signup' %}" class="btn-lg">{% translate "Sign up" %}</a></li>
-                    </ul>
+                    {% if user.is_authenticated %}
+                    <div class="profile-container">
+                        <div class="avatar-container">
+                            <img src="{% static 'images/home/meet_our_team_andrea.png'%}" alt="">
+                        </div>
+                        <div class="arrow">
+                        </div>
+                        <div class="dropdown-content">
+                            <a href="#" class="btn-menu-text">{% translate "Your profile" %}</a>
+                            <a href="{% url 'logout'%}" class="btn-menu-text">{% translate "Log out" %}</a>
+                        </div>
+                    </div>
+                    
+                    {% else %}
+                        <ul class="menu-links">
+                            <li><a href="{% url 'login' %}" class="btn-menu-text {% if url_name == 'login' %}active{% endif %}">{% translate "Log in" %}</a></li>
+                            <li><a href="{% url 'signup' %}" class="btn-lg">{% translate "Sign up" %}</a></li>
+                        </ul>
+                    {% endif %}
                     {% endwith %}
                 </div>
                 <a class="menu-button">

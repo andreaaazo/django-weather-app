@@ -387,6 +387,7 @@ nav {
 
 .navbar {
     display: flex;
+    align-items: center;
     width: 100%;
 }
 
@@ -478,6 +479,80 @@ nav {
     
 }
 
+.profile-container {
+    position: relative;
+    display: flex;
+    margin: auto 0 auto auto;
+    align-items: center;
+    gap: 10px;
+
+    & .avatar-container {
+        position: relative;
+        display: inline-block;
+        border-radius: 50%;
+        background: black;
+        width: 50px;
+        height: 50px;
+        overflow: hidden;
+        cursor: pointer;
+
+        & img {
+            top: 0;
+            left: 0;
+            max-width: 100%;
+            height: auto;
+            margin: auto 0;
+            position: absolute;
+        }
+    }
+
+    & .arrow {
+        position: static;
+        border: solid $secondary;
+        border-width: 0 3px 3px 0;
+        padding: 3px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        cursor: pointer;
+    }
+
+    & .dropdown-content {
+        @include elevation-2;
+        display: none;
+        position: absolute;
+        padding: 15px 25px;
+        border-radius: 8px;
+        gap: 15px;
+        flex-direction: column;
+        white-space: nowrap;
+        top: 100%;
+        right: 0;
+
+        &::before {
+            content: "";
+            position: absolute;
+            right: 30px;
+            top: -15px;
+            border-top: none;
+            border-right: 15px solid transparent;
+            border-left: 15px solid transparent;
+            border-bottom: 15px solid $surface;
+        }
+    }
+
+    &:hover {
+
+        & .arrow {
+            position: static;
+            border: solid $primary;
+            border-width: 0 3px 3px 0;
+            padding: 3px;
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+    }
+}
+
 @media (max-width:767px) {
 
     nav {
@@ -499,6 +574,7 @@ nav {
             width: 100%;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
             position: absolute;
             background: $surface;
         }
@@ -517,7 +593,37 @@ nav {
         }
     }
 
+    .profile-container {
+        margin: 0;
+
+        & .avatar-container {
+            display: none;
+        }
+
+        & .arrow {
+            display: none;
+        }
+
+        & .dropdown-content {
+            display: flex !important;
+            padding-top: 50px;
+            align-items: center;
+            position: relative;
+            background: inherit;
+            box-shadow: inherit;
+            top: 0;
+            right: 0;
+            gap: 25px;
+
+            &::before {
+                display: none;
+            }
+        }
+    }
+
 }
+
+
 
 @media (min-width:768px) {
     .menu {

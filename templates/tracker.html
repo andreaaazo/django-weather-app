@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
 {% load compress %}
+{% load i18n %}
 
-{% block page_title %}Tracker{% endblock page_title %}
+{% block page_title %}{% translate "Tracker" %}{% endblock page_title %}
 
 {% block stylesheet %}
     {% compress css %}
@@ -13,9 +14,9 @@
 {% block content %}
 <div class="tracker section">
     <div class="container">
-        <h1>Tracker</h1>
+        <h1>{% translate "Tracker" %}</h1>
         <div class="city-form">
-            <p>Whats the weather in</p>
+            <p>{% translate "Whats the weather in" %}</p>
             <form method="POST">
                 {% csrf_token %}
                 {{search_city_form}}
@@ -26,14 +27,14 @@
         <div class="weather-card">
             <div class="head">
                 <div class="place">
-                    <p class="overline">City, Country</p>
+                    <p class="overline">{% translate "City, Country" %}</p>
                     <h3>{{current_weather.city}}, {{current_weather.country}}</h3>
                 </div>
                 <div class="time">
-                    <p class="overline">Time</p>
+                    <p class="overline">{% translate "Time" %}</p>
                     <p class="text-variant">GMT {{current_weather.timezone}}, {{current_weather.time}}</p>
                 </div>
-                <a href="{% url 'add_to_favourites' current_weather.city %}" class="btn-lg">Add to favorites</a>
+                <a href="{% url 'add_to_favourites' current_weather.city %}" class="btn-lg">{% translate "Add to favorites" %}</a>
             </div>
             <div class="body">
                 <div class="tracker-data">
@@ -42,7 +43,7 @@
                         <p>{{current_weather.description}}</p>
                     </div>
                     <div class="data-container">
-                        <p class="overline">Temperature</p>
+                        <p class="overline">{% translate "Temperature" %}</p>
                         <div class="multidata-wrapper">
                             <p class="main-data">{{current_weather.temp}}°</p>
                             <div class="temp-max-min">
@@ -50,25 +51,25 @@
                                 <p>L:{{current_weather.temp_min}}°</p>
                             </div>
                         </div>
-                        <p class="text-variant">Feels like: {{current_weather.temp_feel}}°</p>
+                        <p class="text-variant">{% translate "Feels like:" %} {{current_weather.temp_feel}}°</p>
                     </div>
                     <div class="data-container">
-                        <p class="overline">Wind</p>
+                        <p class="overline">{% translate "Wind" %}</p>
                         <div class="multidata-wrapper">
                             <p class="main-data">{{current_weather.wind}}</p>
                             <p>m/s</p>
                         </div>
-                        <p class="text-variant">deg: {{current_weather.wind_deg}}°</p>
+                        <p class="text-variant">{% translate "deg" %}: {{current_weather.wind_deg}}°</p>
                     </div>
                     <div class="data-container">
-                        <p class="overline">Humidity</p>
+                        <p class="overline">{% translate "Humidity" %}</p>
                         <div class="multidata-wrapper">
                             <p class="main-data">{{current_weather.humidity}}</p>
                             <p>%</p>
                         </div>
                     </div>
                 </div>
-                <p class="overline">All-Day Temperature</p>
+                <p class="overline">{% translate "All-Day Temperature" %}</p>
                 <div class="chart" id="chart-container">
                 </div>
                 <div class="background-image">
@@ -85,10 +86,11 @@
 <!--Features section-->
 <div class="favorites section">
     <div class="container">
-        <h2>Favorites</h2>
+        <h2>{% translate "Favorites" %}</h2>
         {% if user.is_authenticated %}
+            {% if not favourites == None %}
             <div class="favorites-group">
-                {% for city, values in  favourites.items%}
+                {% for city, values in favourites.items%}
                 <div class="favorite-card">
                     <div class="status-container">
                         <div class="circle">
@@ -99,7 +101,7 @@
                         <div class="head">
                             <h5>{{values.city}}, {{values.country}}</h5>
                             <p>GMT {{current_weather.timezone}}, {{current_weather.time}}</p>
-                            <a href="{% url 'remove_to_favourites' values.city %}" class="btn-lg">Remove</a>
+                            <a href="{% url 'remove_to_favourites' values.city %}" class="btn-lg">{% translate "Remove" %}</a>
                         </div>
                         <div class="tracker-data">
                             <div class="data-container">
@@ -110,7 +112,7 @@
                                         <p>L:{{values.temp_min}}°</p>
                                     </div>
                                 </div>
-                                <p class="text-variant">Feels like: {{values.temp_feel}}°</p>
+                                <p class="text-variant">{% translate "Feels like" %}: {{values.temp_feel}}°</p>
                             </div>
                             <div class="data-container">
                                 <div class="multidata-wrapper">
@@ -133,15 +135,22 @@
                 </div>
                 {% endfor %}
             </div>
+            {% else %}
+            <div class="empty">
+                <img src="{% static 'images/tracker/nothing_to_show.svg'%}" alt="">
+                <h3>{% translate "Nothing to show" %}</h3>
+                <p>{% translate "You can add an item to favorites by clicking on the green button that shows up when you search a city." %}</p>
+            </div>
+            {% endif %}
         {% else %}
             <div class="d-flex justify-content-center">
                 <div class="login-required">
                     <img src="{% static 'images/tracker/login_required.svg'%}" alt="">
-                    <h3>Log in required</h3>
-                    <p>Access to add your favorite cities.</p>
+                    <h3>{% translate "Log in required" %}</h3>
+                    <p>{% translate "Access to add your favorite cities." %}</p>
                     <div class="links">
-                        <a href="{% url 'login' %}" class="btn-text-lg">Log in</a>
-                        <a href="{% url 'signup' %}" class="btn-text-lg">Sign up</a>
+                        <a href="{% url 'login' %}" class="btn-text-lg">{% translate "Log in" %}</a>
+                        <a href="{% url 'signup' %}" class="btn-text-lg">{% translate "Sign up" %}</a>
                     </div>
                 </div>
             </div>

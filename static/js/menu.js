@@ -45,3 +45,21 @@ window.addEventListener("resize", function () {
     menu_container.style.marginRight = ""
     nav.style.padding = ""
 })
+
+
+// Navbar account 
+const dropdown_content = document.getElementsByClassName("dropdown-content")[0]
+const profile_container = document.getElementsByClassName("profile-container")[0];
+
+
+document.addEventListener('click', function handleClickOutsideBox(event) {
+
+    if (!dropdown_content.contains(event.target)) {
+        dropdown_content.style.display = 'none';
+    }
+
+    if (profile_container.contains(event.target)) {
+        dropdown_content.style.display = "flex";
+    }
+
+});
