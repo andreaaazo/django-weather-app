@@ -9,6 +9,7 @@
     {% compress css %}
         <link rel="stylesheet" href="{% static 'scss/home.scss' %}" type="text/x-scss">
     {% endcompress %}
+    <link rel="stylesheet" href="{% static 'css/swiper.css' %}">
 {% endblock stylesheet %}
 
 {% block content %}
@@ -51,9 +52,9 @@
     <div class="content-box section">
         <div class="container">
             <h2>{% translate "Popular cities" %}</h2>
-            <div class="row">
-                <div class="col">
-                    <div class="city-card">
+            <div class="card-container swiper">
+                <div class="swiper-wrapper">
+                    <div class="city-card swiper-slide">
                         <div class="content">
                             <div class="body">
                                 <h5>{{dubai.city}}, {{dubai.country}}</h5>
@@ -77,9 +78,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="city-card">
+                    <div class="city-card swiper-slide">
                         <div class="content">
                             <div class="body">
                                 <h5>{{new_york.city}}, {{new_york.country}}</h5>
@@ -103,9 +102,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="city-card">
+                    <div class="city-card swiper-slide">
                         <div class="content">
                             <div class="body">
                                 <h5>{{london.city}}, {{london.country}}</h5>
@@ -129,9 +126,79 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="city-card">
+                    <div class="city-card swiper-slide">
+                        <div class="content">
+                            <div class="body">
+                                <h5>{{rio_de_janeiro.city}}, {{rio_de_janeiro.country}}</h5>
+                                <p class="current-temperature">{{rio_de_janeiro.temp}}°</p>
+                                <div class="details">
+                                    <p class="max">H:{{rio_de_janeiro.temp_max}}°</p>
+                                    <p class="min">L:{{rio_de_janeiro.temp_min}}°</p>
+                                </div>
+                            </div>
+                            <div class="img-container" >
+                                <div class="circle">
+                                    <img src="{% static 'images/weather_status/'%}{{rio_de_janeiro.main}}_day.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="links">
+                                <form action="{% url 'tracker' %}" method="POST">
+                                    {% csrf_token %}
+                                    <input type="hidden" value="Rio De Janeiro" name="city">
+                                    <button class="btn-text-lg" type="submit">{% translate "Show more" %}</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="city-card swiper-slide">
+                        <div class="content">
+                            <div class="body">
+                                <h5>{{alaska.city}}, {{alaska.country}}</h5>
+                                <p class="current-temperature">{{alaska.temp}}°</p>
+                                <div class="details">
+                                    <p class="max">H:{{alaska.temp_max}}°</p>
+                                    <p class="min">L:{{alaska.temp_min}}°</p>
+                                </div>
+                            </div>
+                            <div class="img-container" >
+                                <div class="circle">
+                                    <img src="{% static 'images/weather_status/'%}{{alaska.main}}_day.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="links">
+                                <form action="{% url 'tracker' %}" method="POST">
+                                    {% csrf_token %}
+                                    <input type="hidden" value="Alaska" name="city">
+                                    <button class="btn-text-lg" type="submit">{% translate "Show more" %}</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="city-card swiper-slide">
+                        <div class="content">
+                            <div class="body">
+                                <h5>{{los_angeles.city}}, {{los_angeles.country}}</h5>
+                                <p class="current-temperature">{{los_angeles.temp}}°</p>
+                                <div class="details">
+                                    <p class="max">H:{{los_angeles.temp_max}}°</p>
+                                    <p class="min">L:{{los_angeles.temp_min}}°</p>
+                                </div>
+                            </div>
+                            <div class="img-container" >
+                                <div class="circle">
+                                    <img src="{% static 'images/weather_status/'%}{{los_angeles.main}}_day.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="links">
+                                <form action="{% url 'tracker' %}" method="POST">
+                                    {% csrf_token %}
+                                    <input type="hidden" value="Los Angeles" name="city">
+                                    <button class="btn-text-lg" type="submit">{% translate "Show more" %}</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="city-card swiper-slide">
                         <div class="content">
                             <div class="body">
                                 <h5>{{tokyo.city}}, {{tokyo.country}}</h5>
@@ -156,6 +223,7 @@
                         </div>
                     </div>
                 </div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </div>
@@ -281,7 +349,7 @@
                         <h2>{% translate "Remember to take the umbrella!" %}</h2>
                         <p>{% translate "We offer a completely free service suitable for your needs." %}</p>
                         <div class="wrapper">
-                            <a href="#" class="btn-lg">{% translate "Try it now!" %}</a>
+                            <a href="{% url 'tracker' %}" class="btn-lg">{% translate "Try it now!" %}</a>
                         </div>
                     </div>
                 </div>
@@ -469,5 +537,6 @@
 
 {% block script %}
 <script src="{% static 'js/accordion.js'%}"></script>
-<script src="{% static 'js/libs/swiper.min.js'%}"></script>
+<script src="{% static 'js/libs/swiper-bundle.min.js'%}"></script>
+<script src="{% static 'js/card.js'%}"></script>
 {% endblock script %}

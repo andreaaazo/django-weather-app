@@ -144,6 +144,25 @@
     background: $inverse-surface;
     border: 0px;
 
+    & .swiper {
+    padding-bottom: 30px !important;
+    }
+
+    & .swiper-pagination-bullet{
+        background: $secondary;
+        opacity: 1;
+    }
+
+    & .swiper-pagination-bullet-active {
+        background: $primary;
+    }
+
+    @media screen and (max-width: 768px) {
+        .swiper-btn {
+            display: none;
+        }
+    }
+
     & .content-box {
         background-color: $surface;
         border-radius: 79px;
@@ -163,6 +182,7 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            white-space: nowrap;
             
             & .content {
                 display: flex;
@@ -196,10 +216,6 @@
                     }
 
                 }
-
-
-
-
             }
 
             & .img-container {
