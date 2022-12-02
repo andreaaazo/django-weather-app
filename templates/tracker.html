@@ -92,43 +92,43 @@
                 <div class="favorite-card">
                     <div class="status-container">
                         <div class="circle">
-                            <img src="{% static  'images/tracker/icon_test.svg'%}" alt="">
+                            <img src="https://openweathermap.org/img/wn/{{values.icon}}@2x.png" alt="">
                         </div>
                     </div>
                     <div class="content-container">
                         <div class="head">
                             <h5>{{values.city}}, {{values.country}}</h5>
-                            <p>GMT 1.0, 2022-11-12 20:36:51</p>
+                            <p>GMT {{current_weather.timezone}}, {{current_weather.time}}</p>
                             <a href="{% url 'remove_to_favourites' values.city %}" class="btn-lg">Remove</a>
                         </div>
                         <div class="tracker-data">
                             <div class="data-container">
                                 <div class="multidata-wrapper">
-                                    <p class="main-data">26°</p>
+                                    <p class="main-data">{{values.temp}}°</p>
                                     <div class="temp-max-min">
-                                        <p>H:30°</p>
-                                        <p>L:22°</p>
+                                        <p>H:{{values.temp_max}}°</p>
+                                        <p>L:{{values.temp_min}}°</p>
                                     </div>
                                 </div>
-                                <p class="text-variant">Feels like: 27°</p>
+                                <p class="text-variant">Feels like: {{values.temp_feel}}°</p>
                             </div>
                             <div class="data-container">
                                 <div class="multidata-wrapper">
-                                    <p class="main-data">12</p>
+                                    <p class="main-data">{{values.wind}}</p>
                                     <p>m/s</p>
                                 </div>
-                                <p class="text-variant">deg: 260°</p>
+                                <p class="text-variant">deg: {{values.wind_deg}}°</p>
                             </div>
                             <div class="data-container">
                                 <div class="multidata-wrapper">
-                                    <p class="main-data">76</p>
+                                    <p class="main-data">{{values.humidity}}</p>
                                     <p>%</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="background-image">
-                        <img src="{% static 'images/weather_status/rainy_day.svg'%}" alt="">
+                        <img src="{% static 'images/weather_status/'%}{{values.main}}_day.svg" alt="">
                     </div>
                 </div>
                 {% endfor %}
