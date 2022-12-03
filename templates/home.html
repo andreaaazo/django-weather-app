@@ -38,8 +38,9 @@
         <div class="search-container">
             <div class="search">
                 <p class="text">{% translate "What's the weather like?" %}</p>
-                <form action="POST">
-                    <input type="text" placeholder="ex. London">
+                <form method="POST" action="{% url 'tracker' %}">
+                    {% csrf_token %}
+                    <input type="text" placeholder="{% translate "ex. London" %}" name="city">
                     <button action="submit"><img src="{% static 'images/home/lens.svg'%}" alt=""></button>
                 </form>
             </div>

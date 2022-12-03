@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-02 16:21+0000\n"
+"POT-Creation-Date: 2022-12-03 17:38+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -71,15 +71,15 @@ msgstr "© 2022 DATABERRY. Tutti i diritti riservati."
 msgid "Quick links"
 msgstr "Link veloci"
 
-#: templates/base.html:73 templates/home.html:53
+#: templates/base.html:73 templates/home.html:55
 msgid "Popular cities"
 msgstr "Città popolari"
 
-#: templates/base.html:74 templates/home.html:168
+#: templates/base.html:74 templates/home.html:237
 msgid "Features"
 msgstr "Caratteristiche"
 
-#: templates/base.html:75 templates/home.html:299
+#: templates/base.html:75 templates/home.html:368
 msgid "Our team"
 msgstr "Il nostro team"
 
@@ -112,11 +112,11 @@ msgstr ""
 msgid "Databerry - Keep track of the weather."
 msgstr "Databerry - Tieni traccia della meteo"
 
-#: templates/home.html:21
+#: templates/home.html:22
 msgid "Keep track of the weather."
 msgstr "Tieni traccia della meteo."
 
-#: templates/home.html:24
+#: templates/home.html:25
 msgid ""
 "We offer a free worldwide weather tracking service. We provide meteorologic "
 "and climatology data, and keep the meteorologic situation under control."
@@ -125,32 +125,37 @@ msgstr ""
 "mondo. Forniamo dati meteorologici e climatologici e teniamo sotto controllo "
 "la situazione meteorologica."
 
-#: templates/home.html:28
+#: templates/home.html:29
 msgid "Proudly made with"
 msgstr "Orgogliosamente fatto con"
 
-#: templates/home.html:29
+#: templates/home.html:30
 msgid "Raspberry PI"
 msgstr "Raspberry PI"
 
-#: templates/home.html:39
+#: templates/home.html:40
 msgid "What's the weather like?"
 msgstr "Com'è il tempo?"
 
-#: templates/home.html:75 templates/home.html:101 templates/home.html:127
-#: templates/home.html:153
+#: templates/home.html:43
+msgid "ex. London"
+msgstr "es. Londra"
+
+#: templates/home.html:77 templates/home.html:101 templates/home.html:125
+#: templates/home.html:149 templates/home.html:173 templates/home.html:197
+#: templates/home.html:221
 msgid "Show more"
 msgstr "Mostra di più"
 
-#: templates/home.html:167
+#: templates/home.html:236
 msgid "what we do"
 msgstr "Cosa facciamo"
 
-#: templates/home.html:173
+#: templates/home.html:242
 msgid "Daily forecast"
 msgstr "Previsione giornaliera"
 
-#: templates/home.html:174
+#: templates/home.html:243
 msgid ""
 "We provide an optimized daily forecast for your needs, with a reliable "
 "precision."
@@ -158,100 +163,100 @@ msgstr ""
 "Forniamo una previsione giornaliera ottimizzata per le vostre esigenze, con "
 "una precisione al decimo."
 
-#: templates/home.html:180
+#: templates/home.html:249
 msgid "Hystorical data"
 msgstr "Previsioni storiche"
 
-#: templates/home.html:181
+#: templates/home.html:250
 msgid "Search though our historical data up to 40 years back."
 msgstr "Cerca attraverso i nostri dati storici fino a 40 anni fa."
 
-#: templates/home.html:187
+#: templates/home.html:256
 msgid "Current weather"
 msgstr "Tempo attuale"
 
-#: templates/home.html:188
+#: templates/home.html:257
 msgid "Worldwide meteorologic and climatology data."
 msgstr "Monitoraggio mondiale dei dati meteorologici e climatologici."
 
-#: templates/home.html:194
+#: templates/home.html:263
 msgid "National alerts"
 msgstr "Segnalazioni nazionali"
 
-#: templates/home.html:195
+#: templates/home.html:264
 msgid "Rest safe with our national weather alerts."
 msgstr "Riposatevi al sicuro con i nostri allarmi meteorologici nazionali."
 
-#: templates/home.html:205
+#: templates/home.html:274
 msgid "We also provide"
 msgstr "Forniamo anche"
 
-#: templates/home.html:210
+#: templates/home.html:279
 msgid "sunset"
 msgstr "tramonto"
 
-#: templates/home.html:215
+#: templates/home.html:284
 msgid "sunrise"
 msgstr "alba"
 
-#: templates/home.html:220
+#: templates/home.html:289
 msgid "moonset"
 msgstr "moonset"
 
-#: templates/home.html:225
+#: templates/home.html:294
 msgid "moonrise"
 msgstr "alba della luna"
 
-#: templates/home.html:230
+#: templates/home.html:299
 msgid "moon phase"
 msgstr "fasi della luna"
 
-#: templates/home.html:235
+#: templates/home.html:304
 msgid "humidity"
 msgstr "umidità"
 
-#: templates/home.html:281
+#: templates/home.html:350
 msgid "Remember to take the umbrella!"
 msgstr "Ricordati di prendere l'ombrello!"
 
-#: templates/home.html:282
+#: templates/home.html:351
 msgid "We offer a completely free service suitable for your needs."
 msgstr ""
 "Offriamo un servizio completamente gratuito, perfetto per le tue esigenze."
 
-#: templates/home.html:284
+#: templates/home.html:353
 msgid "Try it now!"
 msgstr "Prova ora!"
 
-#: templates/home.html:298
+#: templates/home.html:367
 msgid "meet our staff"
 msgstr "Incontra lo staff"
 
-#: templates/home.html:305
+#: templates/home.html:374
 msgid "Developer & Designer"
 msgstr "Developer e Designer"
 
-#: templates/home.html:314
+#: templates/home.html:383
 msgid "Webserver & Database"
 msgstr "Server Web e Database"
 
-#: templates/home.html:326
+#: templates/home.html:395
 msgid "Built with"
 msgstr "Costruito con"
 
-#: templates/home.html:348
+#: templates/home.html:417
 msgid "Bootstrap Grid"
 msgstr "Griglia Bootstrap"
 
-#: templates/home.html:368
+#: templates/home.html:437
 msgid "questions"
 msgstr "domande"
 
-#: templates/home.html:369
+#: templates/home.html:438
 msgid "Frequently Asked Questions"
 msgstr "Domande frequenti"
 
-#: templates/home.html:371
+#: templates/home.html:440
 msgid ""
 "A frequently asked questions (FAQ) list is often used in articles, websites, "
 "email lists, and online forums where common questions tend to recur, asked "
@@ -261,11 +266,11 @@ msgstr ""
 "web, liste di email, e forum online dove le domande comuni tendono a "
 "ripetersi, e viene subito data una risposta."
 
-#: templates/home.html:383
+#: templates/home.html:452
 msgid "How often is the weather updated?"
 msgstr "Quanto spesso viene aggiornato il meteo?"
 
-#: templates/home.html:387
+#: templates/home.html:456
 msgid ""
 "The weather is updated every call. We use a public realtime database, which "
 "measures meteorological data."
@@ -273,16 +278,16 @@ msgstr ""
 "Il meteo viene aggiornato ad ogni chiamata. Usiamo un database pubblico in "
 "tempo reale, che misura i dati meteorologici."
 
-#: templates/home.html:388 templates/home.html:406 templates/home.html:424
-#: templates/home.html:442 templates/home.html:460
+#: templates/home.html:457 templates/home.html:475 templates/home.html:493
+#: templates/home.html:511 templates/home.html:529
 msgid "Learn more"
 msgstr "Per saperne di più"
 
-#: templates/home.html:401
+#: templates/home.html:470
 msgid "Is it totally free?"
 msgstr "E' completamente gratuito?"
 
-#: templates/home.html:405
+#: templates/home.html:474
 msgid ""
 "Yes! This is a free service with no advertisements. In fact this is a "
 "maturity work."
@@ -290,11 +295,11 @@ msgstr ""
 "Si! Si tratta di un servizio gratuito senza pubblicità. In realtà si tratta "
 "di un lavoro maturo."
 
-#: templates/home.html:419
+#: templates/home.html:488
 msgid "Is my data private?"
 msgstr "I miei dati sono privati?"
 
-#: templates/home.html:423
+#: templates/home.html:492
 msgid ""
 "Your data is totally private. Your personal data is encrypted so no one "
 "(including us) can access. Our server uses strong encryption, based on a "
@@ -304,11 +309,11 @@ msgstr ""
 "modo che nessuno (inclusi noi) possa accedervi. Il nostro server utilizza "
 "una crittografia forte, basata su una funzione hash: sha256"
 
-#: templates/home.html:437
+#: templates/home.html:506
 msgid "I have troubles to sign up"
 msgstr "Ho problemi a registrarmi"
 
-#: templates/home.html:441 templates/home.html:459
+#: templates/home.html:510 templates/home.html:528
 msgid ""
 "Feel free to contact our support team, so we can solve the problem and allow "
 "you to use the service immediately."
@@ -317,7 +322,7 @@ msgstr ""
 "risolvere il problema e potervi consentire immediatamente di utilizzare il "
 "servizio."
 
-#: templates/home.html:455
+#: templates/home.html:524
 msgid "I haven't received the email confirmation"
 msgstr "Non ho ricevuto l'email di conferma"
 
@@ -383,7 +388,8 @@ msgid ""
 "You can add an item to favorites by clicking on the green button that shows "
 "up when you search a city."
 msgstr ""
-"Puoi aggiungere una città ai preferiti facendo clic sul pulsante Aggiungi ai preferiti quando cerchi una città."
+"Puoi aggiungere una città ai preferiti facendo clic sul pulsante Aggiungi ai "
+"preferiti quando cerchi una città."
 
 #: templates/tracker.html:149
 msgid "Log in required"
@@ -392,6 +398,10 @@ msgstr "Accesso richiesto"
 #: templates/tracker.html:150
 msgid "Access to add your favorite cities."
 msgstr "Accedi per aggiungere le tue città preferite"
+
+#: tracker/forms.py:9
+msgid "London"
+msgstr "Londra"
 
 #: venv/lib/python3.11/site-packages/click/_termui_impl.py:496
 #, python-brace-format
