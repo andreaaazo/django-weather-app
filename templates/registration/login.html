@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
 {% load compress %}
+{% load i18n %}
 
-{% block page_title %}Log in{% endblock page_title %}
+{% block page_title %}{% translate "Log in" %}{% endblock page_title %}
 
 {% block stylesheet %}
     {% compress css %}
@@ -20,13 +21,13 @@
             </div>
             <div class="col-lg-5 col-12 mt-5 mt-lg-0">
                 <div class="auth-container">
-                    <h1>Log In</h1>
-                    <p class="text">Access to your account and see the beauties of the weather. Keep yourself updated.</p>
+                    <h1>{% translate "Log In" %}</h1>
+                    <p class="text">{% translate "Access to your account and see the beauties of the weather. Keep yourself updated." %}</p>
                     <form method="POST" class="auth-form">
                         {% csrf_token %}
                             {{form}}
-                            <a href="#" class="btn-text-lg auth-item">Forgot password</a>
-                            <button class="btn-lg">Log in</button>
+                            <a href="#" class="btn-text-lg auth-item">{% translate "Forgot password" %}</a>
+                            <button class="btn-lg">{% translate "Log in" %}</button>
                     </form>
                 </div>
             </div>

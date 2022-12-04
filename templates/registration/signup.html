@@ -2,7 +2,7 @@
 {% load static %}
 {% load compress %}
 
-{% block page_title %}Sign Up{% endblock page_title %}
+{% block page_title %}{% translate "Sign Up" %}{% endblock page_title %}
 
 {% block stylesheet %}
     {% compress css %}
@@ -20,12 +20,12 @@
             </div>
             <div class="col-lg-5 col-12 mt-5 mt-lg-0">
                 <div class="auth-container">
-                    <h1>Sign Up</h1>
-                    <p class="text">We are glad to welcome you in our community. Subscribe and enjoy the full experience of the service.</p>
+                    <h1>{% translate "Sign Up" %}</h1>
+                    <p class="text">{% translate "We are glad to welcome you in our community. Subscribe and enjoy the full experience of the service." %}</p>
                     <form method="POST" class="auth-form">
                         {% csrf_token %}
                             {{form}}
-                            <button class="btn-lg" type="submit">Sign up</button>
+                            <button class="btn-lg" type="submit">{% translate "Sign up" %}</button>
                     </form>
                 </div>
             </div>
