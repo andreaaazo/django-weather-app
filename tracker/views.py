@@ -28,12 +28,16 @@ class TrackerPageView(View):
 
     def get(self, request, *args, **kwargs):
         default_city_current_weather = get_current_weather("Zurich")
-        default_city_forecast_weather = get_3hrs_temperature_forecast("Zurich")
+        (
+            default_city_forecast_temperature,
+            default_city_forecast_icons,
+        ) = get_3hrs_temperature_forecast("Zurich")
 
         context = {
             "current_weather": default_city_current_weather,
             "search_city_form": SearchCityForm,
-            "city_forecast": default_city_forecast_weather,
+            "city_forecast": default_city_forecast_temperature,
+            "city_forecast_icons": default_city_forecast_icons,
             "favourites": kwargs["favourites"],
         }
 
@@ -46,10 +50,14 @@ class TrackerPageView(View):
 
             city_current_weather = get_current_weather(city)
 
-            city_forecast = get_3hrs_temperature_forecast(city)
+            (
+                default_city_forecast_temperature,
+                default_city_forecast_icons,
+            ) = get_3hrs_temperature_forecast(city)
 
             context = {
-                "city_forecast": city_forecast,
+                "city_forecast": default_city_forecast_temperature,
+                "city_forecast_icons": default_city_forecast_icons,
                 "current_weather": city_current_weather,
                 "search_city_form": SearchCityForm,
                 "favourites": kwargs["favourites"],

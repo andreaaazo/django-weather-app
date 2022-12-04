@@ -9,11 +9,13 @@ def get_3hrs_temperature_forecast(city: str):
     try:
 
         forecast_temperature = list()
+        forecast_icons = list()
 
         for i in range(0, 40):
             forecast_temperature.append(round(weather_data["list"][i]["main"]["temp"]))
+            forecast_icons.append(weather_data["list"][i]["weather"][0]["icon"])
 
-        return forecast_temperature
+        return forecast_temperature, forecast_icons
 
     except KeyError:
         return None

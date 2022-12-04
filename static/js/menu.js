@@ -4,7 +4,7 @@ const menu_container = document.getElementsByClassName("container-menu")[0]
 const navbar = document.getElementsByClassName("navbar")[0]
 const nav = document.getElementsByTagName("nav")[0]
 
-menu_button.addEventListener("click", function () {
+menu_button.addEventListener("click", function() {
 
     this.classList.toggle("active");
 
@@ -33,7 +33,7 @@ menu_button.addEventListener("click", function () {
     }
 });
 
-window.addEventListener("resize", function () {
+window.addEventListener("resize", function() {
     menu_button.classList.remove("active")
     menu.style.display = ""
     menu_button.style.margin = ""
@@ -52,14 +52,15 @@ const dropdown_content = document.getElementsByClassName("dropdown-content")[0]
 const profile_container = document.getElementsByClassName("profile-container")[0];
 
 
+
+profile_container.addEventListener("click", function toggle() {
+    this.classList.toggle("active")
+})
+
+
 document.addEventListener('click', function handleClickOutsideBox(event) {
 
-    if (!dropdown_content.contains(event.target)) {
-        dropdown_content.style.display = 'none';
+    if (!profile_container.contains(event.target)) {
+        profile_container.classList.remove("active");
     }
-
-    if (profile_container.contains(event.target)) {
-        dropdown_content.style.display = "flex";
-    }
-
 });

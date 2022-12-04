@@ -4,7 +4,7 @@ var i;
 
 for (i = 0; i < acc.length; i++) {
 
-    acc[i].addEventListener("mouseover", function () {
+    acc[i].addEventListener("mouseover", function() {
         var image = this.children[0]
 
         anime({
@@ -16,7 +16,7 @@ for (i = 0; i < acc.length; i++) {
     })
 
 
-    acc[i].addEventListener("mouseout", function () {
+    acc[i].addEventListener("mouseout", function() {
         var image = this.children[0]
 
         anime({
@@ -28,7 +28,7 @@ for (i = 0; i < acc.length; i++) {
 
     })
 
-    acc[i].addEventListener("click", function () {
+    acc[i].addEventListener("click", function() {
 
         // Disable every active accordion
         for (i = 0; i < acc.length; i++) {
@@ -38,13 +38,13 @@ for (i = 0; i < acc.length; i++) {
             if (acc[i].classList.contains("active")) {
 
                 if (!(acc[i] == this)) {
-                    
+
                     // animate all closings
                     anime({
                         duration: 1000,
                         targets: all_span_2,
-                        left: [{ value: 30 + "%"}],
-                        right: [{value: 30 + "%"}],
+                        left: [{ value: 30 + "%" }],
+                        right: [{ value: 30 + "%" }],
                     }).play()
 
                     acc_panels.style.maxHeight = null;
@@ -53,7 +53,7 @@ for (i = 0; i < acc.length; i++) {
             }
         }
 
-        
+
         // Toggle current panel 
         var panel = this.nextElementSibling;
         var span_2 = this.children[0].children[1]
@@ -61,13 +61,13 @@ for (i = 0; i < acc.length; i++) {
         this.classList.toggle("active");
 
         if (panel.style.maxHeight) {
-            
+
             // Close panel
             anime({
                 duration: 750,
                 targets: span_2,
-                left: [{ value: 30 + "%"}],
-                right: [{value: 30 + "%"}],
+                left: [{ value: 30 + "%" }],
+                right: [{ value: 30 + "%" }],
             }).play()
 
             panel.style.maxHeight = null;
@@ -78,10 +78,10 @@ for (i = 0; i < acc.length; i++) {
                 duration: 750,
                 targets: span_2,
                 left: [{ value: 50 + "%" }],
-                right: [{value: 50 + "%" }],
+                right: [{ value: 50 + "%" }],
             }).play()
 
             panel.style.maxHeight = panel.scrollHeight + "px";
         }
-  });
+    });
 }

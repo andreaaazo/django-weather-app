@@ -1,6 +1,6 @@
 $.ajax({
     type: "GET",
-    beforeSend: function () {
+    beforeSend: function() {
         $(".preloader").show()
         const animation = anime({
             targets: '.spinner path',
@@ -15,8 +15,8 @@ $.ajax({
         animation.play()
     },
 
-    complete: function () {
-        setTimeout(function () {
+    complete: function() {
+        setTimeout(function() {
             $(".preloader").fadeOut(500)
         }, 500)
     }

@@ -26,13 +26,15 @@
         </div>
         <div class="weather-card">
             <div class="head">
-                <div class="place">
-                    <p class="overline">{% translate "City, Country" %}</p>
-                    <h3>{{current_weather.city}}, {{current_weather.country}}</h3>
-                </div>
-                <div class="time">
-                    <p class="overline">{% translate "Time" %}</p>
-                    <p class="text-variant">GMT {{current_weather.timezone}}, {{current_weather.time}}</p>
+                <div class="city-info">
+                    <div class="place">
+                        <p class="overline">{% translate "City, Country" %}</p>
+                        <h3>{{current_weather.city}}, {{current_weather.country}}</h3>
+                    </div>
+                    <div class="time">
+                        <p class="overline">{% translate "Time" %}</p>
+                        <p class="text-variant">GMT {{current_weather.timezone}}, {{current_weather.time}}</p>
+                    </div>
                 </div>
                 <a href="{% url 'add_to_favourites' current_weather.city %}" class="btn-lg">{% translate "Add to favorites" %}</a>
             </div>
@@ -130,14 +132,14 @@
                         </div>
                     </div>
                     <div class="background-image">
-                        <img src="{% static 'images/weather_status/'%}{{values.main}}_day.svg" alt="">
+                        <img src="{% static 'images/weather_status/'%}{{values.main}}_day.svg" alt="" class="img-horizontal">
                     </div>
                 </div>
                 {% endfor %}
             </div>
             {% else %}
             <div class="empty">
-                <img src="{% static 'images/tracker/nothing_to_show.svg'%}" alt="">
+                <img src="{% static 'images/tracker/nothing_to_show.svg'%}" alt="" class="img-horizontal">
                 <h3>{% translate "Nothing to show" %}</h3>
                 <p>{% translate "You can add an item to favorites by clicking on the green button that shows up when you search a city." %}</p>
             </div>
@@ -161,6 +163,7 @@
 {% endblock content %}
 
 {% block script %}
-<script src="{% static 'js/libs/highcharts.js'%}"></script>
-<script src="{% static 'js/chart.js'%}" data-forecast-temperature="{{city_forecast}}" data-current-time="{{current_weather.time}}"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/pattern-fill.js"></script>
+<script src="{% static 'js/chart.js'%}" data-forecast-temperature="{{city_forecast}}" data-current-time="{{current_weather.time}}" data-forecast-icons="{{city_forecast_icons}}"></script>
 {% endblock script %}

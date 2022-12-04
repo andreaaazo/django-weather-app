@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-03 17:38+0000\n"
+"POT-Creation-Date: 2022-12-04 16:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -122,11 +122,11 @@ msgid ""
 msgstr ""
 
 #: templates/home.html:29
-msgid "Proudly made with"
+msgid "Discover the code"
 msgstr ""
 
 #: templates/home.html:30
-msgid "Raspberry PI"
+msgid "GitHub"
 msgstr ""
 
 #: templates/home.html:40

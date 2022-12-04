@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-03 17:38+0000\n"
+"POT-Creation-Date: 2022-12-04 16:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -126,12 +126,12 @@ msgstr ""
 "la situazione meteorologica."
 
 #: templates/home.html:29
-msgid "Proudly made with"
-msgstr "Orgogliosamente fatto con"
+msgid "Discover the code"
+msgstr "Scopri il codice"
 
 #: templates/home.html:30
-msgid "Raspberry PI"
-msgstr "Raspberry PI"
+msgid "GitHub"
+msgstr "GitHub"
 
 #: templates/home.html:40
 msgid "What's the weather like?"
@@ -365,7 +365,7 @@ msgstr "Umidità"
 
 #: templates/tracker.html:72
 msgid "All-Day Temperature"
-msgstr "Temperature nei giorni successivi"
+msgstr "Previsioni nei prossimi giorni"
 
 #: templates/tracker.html:89
 msgid "Favorites"
@@ -1881,3 +1881,9 @@ msgstr ""
 #: venv/lib/python3.11/site-packages/django/views/templates/default_urlconf.html:249
 msgid "Connect, get help, or contribute"
 msgstr ""
+
+#~ msgid "Proudly made with"
+#~ msgstr "Orgogliosamente fatto con"
+
+#~ msgid "Raspberry PI"
+#~ msgstr "Raspberry PI"

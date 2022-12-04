@@ -12,9 +12,9 @@ h1 {
     justify-content: space-between;
 
     & .overline {
-    @include overline;
-    color: $primary;
-    margin-bottom: 5px;
+        @include overline;
+        color: $primary;
+        margin-bottom: 5px;
     }
 
     & .data-container {
@@ -49,6 +49,7 @@ h1 {
         display: inline-flex;
         flex-direction: row;
         align-items: flex-start;
+        flex-wrap: wrap;
         color: $inverse-on-surface;
         overflow: hidden;
         margin-bottom: 25px;
@@ -65,7 +66,7 @@ h1 {
             box-sizing: content-box;
             margin: 0 15px;
             width: 200px;
-            color: $inverse-on-surface
+            color: $inverse-on-surface;
         }
 
         & input:focus {
@@ -73,7 +74,7 @@ h1 {
             border: 0px;
             background: none;
             border-bottom: 2px solid $primary;
-            @include simple_animation
+            @include simple_animation;
         }
 
         & input:hover {
@@ -92,14 +93,13 @@ h1 {
             align-items: center;
             border: 0px;
             background: none;
-            @include simple_animation
+            @include simple_animation;
         }
 
         & img {
             width: 25px;
             height: 25px;
         }
-
     }
 
     & .weather-card {
@@ -129,6 +129,12 @@ h1 {
             background: $surface-variant;
             padding: 25px;
             color: $on-surface;
+
+            & .city-info {
+                display: flex;
+                align-items: flex-start;
+                flex-wrap: wrap;
+            }
 
             & .place {
                 margin-right: 50px;
@@ -186,7 +192,7 @@ h1 {
                 width: 100%;
 
                 & .highcharts-scrolling::-webkit-scrollbar {
-                        height: 10px;
+                    height: 10px;
                 }
 
                 & .highcharts-scrolling::-webkit-scrollbar-thumb {
@@ -215,9 +221,7 @@ h1 {
                 width: 100%;
                 height: 100%;
                 opacity: 0.05;
-
             }
-
         }
     }
 }
@@ -227,7 +231,7 @@ h1 {
     display: block;
     height: 40px;
     background: $surface;
-    background-image: url('http://127.0.0.1:8000/static/images/home/waves.svg');
+    background-image: url("http://127.0.0.1:8000/static/images/home/waves.svg");
     background-repeat: repeat-x;
     background-position: center center;
 }
@@ -251,13 +255,13 @@ h1 {
             position: relative;
             flex-direction: row;
             padding: 25px;
-    
+
             & .status-container {
                 display: flex;
                 width: 15%;
                 height: 100%;
                 z-index: 2;
-    
+
                 & .circle {
                     display: flex;
                     position: relative;
@@ -265,7 +269,7 @@ h1 {
                     padding-top: 100%;
                     background: $neutral40;
                     border-radius: 50%;
-    
+
                     & img {
                         position: absolute;
                         height: 100%;
@@ -274,10 +278,8 @@ h1 {
                         left: 0;
                     }
                 }
-    
-    
             }
-    
+
             & .content-container {
                 display: flex;
                 flex-direction: column;
@@ -285,7 +287,7 @@ h1 {
                 height: 100%;
                 z-index: 2;
                 padding-left: 25px;
-    
+
                 & .head {
                     display: flex;
                     flex-direction: row;
@@ -294,7 +296,7 @@ h1 {
                     margin-bottom: 25px;
                 }
             }
-    
+
             & .background-image {
                 position: absolute;
                 display: flex;
@@ -304,7 +306,7 @@ h1 {
                 top: 0;
                 left: 0;
                 z-index: 1;
-    
+
                 & img {
                     margin: 0 auto;
                     height: 100%;
@@ -317,7 +319,6 @@ h1 {
             @include card_hover_animation;
         }
     }
-
 }
 
 /* Favorites login required */

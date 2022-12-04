@@ -10,7 +10,7 @@ h1 {
     display: flex;
     min-height: 100vh;
     align-items: center;
-    color: $on-surface
+    color: $on-surface;
 }
 
 .img-container {
@@ -43,18 +43,18 @@ h1 {
         padding: 5px 10px;
         border-radius: 8px;
         border: 1px solid $outline;
-        @include simple_animation
+        @include simple_animation;
     }
 
-    & input:focus, input:hover{
+    & input:focus,
+    input:hover {
         background: $surface;
         border: 1px solid $primary;
-        @include simple_animation
-    };
+        @include simple_animation;
+    }
 
     & .helptext {
         display: none;
-
     }
 
     & label {
@@ -65,5 +65,4 @@ h1 {
     & .auth-item {
         margin-bottom: 25px;
     }
-
 }
