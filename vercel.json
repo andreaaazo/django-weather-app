@@ -1,9 +1,9 @@
 {
     "version": 2,
     "builds": [{
-            "src": "databerry_project/wsgi.py",
+            "src": "run_server.sh",
             "use": "@vercel/python",
-            "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+            "config": { "maxLambdaSize": "15mb", "runtime": "python3.10" }
         },
         {
             "src": "build_files.sh",
