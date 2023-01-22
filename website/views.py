@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 
-from api.prevision import get_current_weather
+from _api.prevision import get_current_weather
 
 # Create your views here.
 class HomePageView(View):
