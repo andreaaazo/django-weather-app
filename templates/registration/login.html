@@ -26,7 +26,7 @@
                     <form method="POST" class="auth-form">
                         {% csrf_token %}
                             {{form}}
-                            <a href="#" class="btn-text-lg auth-item">{% translate "Forgot password" %}</a>
+                            <a href="mailto:zorzi.andrea@outlook.com?subject=Forgot password - Databerry&body=I forgot the password of my account on databerry. My account email: youremailhere" class="btn-text-lg auth-item">{% translate "Forgot password" %}</a>
                             <button class="btn-lg">{% translate "Log in" %}</button>
                     </form>
                 </div>

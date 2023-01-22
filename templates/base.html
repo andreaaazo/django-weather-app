@@ -25,18 +25,16 @@
                     <ul class="main-menu">
                         <li><a href="{% url 'home' %}" class="btn-menu-text {% if url_name == 'home' %}active{% endif %}">{% translate "Home" %}</a></li>
                         <li><a href="{% url 'tracker' %}" class="btn-menu-text {% if url_name == 'tracker' %}active{% endif %}">{% translate "Tracker" %}</a></li>
-                        <li><a href="#" class="btn-menu-text {% if url_name == 'about' %}active{% endif %}">{% translate "About" %}</a></li>
-                        <li><a href="#" class="btn-menu-text {% if url_name == 'contacts' %}active{% endif %}">{% translate "Contacts" %}</a></li>
+                        <li><a href="https://github.com/andreaaazo/" class="btn-menu-text {% if url_name == 'contacts' %}active{% endif %}">{% translate "Contacts" %}</a></li>
                     </ul>
                     {% if user.is_authenticated %}
                     <div class="profile-container">
                         <div class="avatar-container">
-                            <img src="{% static 'images/home/meet_our_team_andrea.png'%}" alt="">
+                            <img src="{% static 'images/account/avatar.svg'%}" alt="">
                         </div>
                         <div class="arrow">
                         </div>
                         <div class="dropdown-content">
-                            <a href="#" class="btn-menu-text">{% translate "Your profile" %}</a>
                             <a href="{% url 'logout'%}" class="btn-menu-text">{% translate "Log out" %}</a>
                         </div>
                     </div>

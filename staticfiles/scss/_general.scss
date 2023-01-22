@@ -1,0 +1,723 @@
+/* Bootstrap Grid*/
+
+@import "static/bootstrap/bootstrap-grid.scss";
+
+/* Fonts */
+
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@100;200;300;400;500;600;700;800;900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* Palette */
+
+$secondary: #525e7f;
+$on-secondary: #ffffff;
+$on-secondary-container: #0e1a38;
+$inverse-surface: #303034;
+$inverse-on-surface: #f2f0f4;
+$surface: #fefbff;
+$inverse-primary: #b2c5ff;
+$on-surface: #1b1b1f;
+$primary: #0055d3;
+$surface-variant: #e1e2ec;
+$outline: #757780;
+$on-surface-variant: #45464f;
+$on-primary-container: #001848;
+$primary-container: #dae2ff;
+$neutral40: #5e5e62;
+
+/* Typography */
+
+@mixin body1 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+@mixin body2 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+}
+
+@mixin body-temperature {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 4rem;
+    line-height: 5rem;
+}
+
+@mixin button-sm {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.813rem;
+    line-height: 1.375rem;
+}
+
+@mixin button-md {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+}
+
+@mixin button-lg {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.938rem;
+    line-height: 1.625rem;
+}
+
+@mixin h1 {
+    font-family: "Epilogue";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 4rem;
+    line-height: 5rem;
+}
+
+@mixin h2 {
+    font-family: "Epilogue";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 3rem;
+    line-height: 4rem;
+}
+
+@mixin h3 {
+    font-family: "Epilogue";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 3rem;
+}
+
+@mixin h4 {
+    font-family: "Epilogue";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+}
+
+@mixin h5 {
+    font-family: "Epilogue";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+}
+
+@mixin overline {
+    font-family: "Epilogue";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+@mixin subtitle1 {
+    font-family: "Epilogue";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+@mixin caption {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+}
+
+
+/* Elevation */
+
+@mixin elevation-1 {
+    background: linear-gradient(0deg, rgba(0, 85, 211, 0.05), rgba(0, 85, 211, 0.05)), #fefbff;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+}
+
+@mixin elevation-2 {
+    background: linear-gradient(0deg, rgba(0, 85, 211, 0.08), rgba(0, 85, 211, 0.08)), #fefbff;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+}
+
+@mixin elevation-3 {
+    background: linear-gradient(0deg, rgba(0, 85, 211, 0.11), rgba(0, 85, 211, 0.11)), #fefbff;
+    box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+@mixin elevation-4 {
+    background: linear-gradient(0deg, rgba(0, 85, 211, 0.12), rgba(0, 85, 211, 0.12)), #fefbff;
+    box-shadow: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+@mixin elevation-5 {
+    background: linear-gradient(0deg, rgba(0, 85, 211, 0.14), rgba(0, 85, 211, 0.14)), #fefbff;
+    box-shadow: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Animations */
+
+@mixin btn_hover_animation {
+    transition: all 0.3s ease 0s;
+    background-color: $primary;
+}
+
+@mixin link_hover_animation {
+    transition: all 0.3s ease 0s;
+    color: $primary;
+}
+
+@mixin card_hover_animation {
+    @include elevation-2;
+    transform: translateY(-7px) translateZ(0);
+    transition: all 0.3s ease 0s;
+}
+
+@mixin simple_animation {
+    transition: all 0.3s ease 0s;
+}
+
+
+/* General */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    @include h1;
+    cursor: default;
+}
+
+h2 {
+    @include h2;
+    margin: 0px;
+    padding-bottom: 50px;
+    cursor: default;
+}
+
+h3 {
+    @include h3;
+    margin: 0px;
+    cursor: default;
+}
+
+h4 {
+    @include h4;
+    margin: 0px;
+    cursor: default;
+}
+
+h5 {
+    @include h5;
+    margin: 0px;
+    cursor: default;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    font-family: "Epilogue", sans-serif;
+    margin: 0px;
+    display: block;
+}
+
+p {
+    margin: 0px;
+    cursor: default;
+    @include body1;
+}
+
+.section {
+    padding: 150px 0px;
+}
+
+.title-overline {
+    @include overline;
+    padding: 0px 0px 10px 0px;
+    color: $inverse-primary;
+    cursor: default;
+}
+
+.img-horizontal {
+    width: 100%;
+    height: auto;
+}
+
+.img-vertical {
+    height: 100%;
+    width: auto;
+}
+
+@media (max-width: 576px) {
+    .margin-auto {
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .container {
+        width: auto;
+    }
+}
+
+
+/* Buttons */
+
+$buttons: ("sm",
+"md",
+"lg");
+@each $var in $buttons {
+    .btn-#{$var} {
+        @if $var=="sm" {
+            @include button-sm;
+        }
+        @else if $var=="md" {
+            @include button-md;
+        }
+        @else {
+            @include button-lg;
+        }
+        display: flex;
+        padding: 10px 20px;
+        background: $secondary;
+        border-radius: 8px;
+        color: $on-secondary;
+        text-decoration: none;
+        transition: all 0.2s ease 0s;
+        border: 0px;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+    .btn-#{$var}:hover {
+        @include btn_hover_animation;
+    }
+}
+
+.btn-brand {
+    display: inline-flex;
+    flex-direction: row;
+    padding: 10px 20px;
+    gap: 10px;
+    background-color: $secondary;
+    border-radius: 8px;
+    transition: all 0.2s ease 0s;
+    text-decoration: none;
+    cursor: pointer;
+    & img {
+        height: auto;
+        width: auto;
+        aspect-ratio: auto;
+        color: $on-secondary;
+        margin-right: 15px;
+    }
+    & .title {
+        @include button-lg;
+        color: $on-secondary;
+        cursor: pointer;
+    }
+    & .text {
+        @include body1;
+        color: $on-secondary;
+        cursor: pointer;
+    }
+}
+
+.btn-brand:hover {
+    @include btn_hover_animation;
+}
+
+@each $var in $buttons {
+    .btn-text-#{$var} {
+        @if $var=="sm" {
+            @include button-sm;
+        }
+        @else if $var=="md" {
+            @include button-md;
+        }
+        @else {
+            @include button-lg;
+        }
+        text-decoration: none;
+        border: 0px;
+        background: none;
+        cursor: pointer;
+        color: $secondary;
+        padding-right: 12px;
+        transition: all 0.2s ease 0s;
+    }
+    .btn-text-#{$var}::after {
+        content: "->";
+        position: relative;
+        right: -4px;
+        transition: all 0.2s ease 0s;
+        white-space: nowrap;
+    }
+    .btn-text-#{$var}:hover::after {
+        right: -12px;
+        transition: all 0.2s ease 0s;
+        color: $primary;
+    }
+    .btn-text-#{$var}:hover {
+        transition: all 0.2s ease 0s;
+        color: $primary;
+    }
+}
+
+.btn-menu-text {
+    @include body1;
+    color: $secondary;
+    text-decoration: none;
+    transition: all 0.2s ease 0s;
+}
+
+.btn-menu-text:hover {
+    color: $primary;
+}
+
+
+/* Navbar */
+
+nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    padding: 25px 0;
+    @include elevation-2;
+    background: $surface;
+    z-index: 10000;
+    & .active {
+        color: $primary;
+    }
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    & li {
+        text-align: start;
+        display: block;
+    }
+    & ul {
+        display: flex;
+        align-items: center;
+    }
+    & .main-menu {
+        gap: 15px;
+        margin-left: 50px;
+    }
+    & .menu-links {
+        margin-left: auto;
+        gap: 15px;
+    }
+    & .brand {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.menu-button {
+    position: relative;
+    height: 22px;
+    width: 30px;
+    outline: none;
+    display: none;
+    & span,
+    span::before,
+    span::after {
+        position: absolute;
+        content: "";
+        width: 30px;
+        height: 3px;
+        background: $secondary;
+        transition: 500ms cubic-bezier(0.77, 0, 0.175, 1);
+    }
+    & span {
+        position: relative;
+        display: block;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+    & span::before {
+        top: -8px;
+    }
+    & span::after {
+        top: 8px;
+    }
+}
+
+.menu-button:hover {
+    &>span,
+    span::after,
+    span::before {
+        background: $primary;
+    }
+}
+
+.menu-button.active {
+    &>span {
+        background: transparent;
+    }
+    &>span:before {
+        transform: rotate(-225deg);
+        top: 0px;
+    }
+    &>span::after {
+        transform: rotate(225deg);
+        top: 0px;
+    }
+}
+
+.profile-container {
+    position: relative;
+    display: flex;
+    margin: auto 0 auto auto;
+    align-items: center;
+    gap: 10px;
+    & .avatar-container {
+        position: relative;
+        display: inline-block;
+        border-radius: 50%;
+        background: black;
+        width: 50px;
+        height: 50px;
+        overflow: hidden;
+        cursor: pointer;
+        & img {
+            top: 0;
+            left: 0;
+            max-width: 100%;
+            height: auto;
+            margin: auto 0;
+            position: absolute;
+        }
+    }
+    & .arrow {
+        @include simple_animation;
+        position: static;
+        border: solid $secondary;
+        border-width: 0 3px 3px 0;
+        padding: 3px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        cursor: pointer;
+    }
+    & .dropdown-content {
+        @include elevation-2;
+        display: none;
+        position: absolute;
+        padding: 15px 25px;
+        border-radius: 8px;
+        gap: 15px;
+        flex-direction: column;
+        white-space: nowrap;
+        top: 100%;
+        right: 0;
+        &::before {
+            content: "";
+            position: absolute;
+            right: 30px;
+            top: -15px;
+            border-top: none;
+            border-right: 15px solid transparent;
+            border-left: 15px solid transparent;
+            border-bottom: 15px solid $surface;
+        }
+    }
+    &.active {
+        & .dropdown-content {
+            display: flex;
+        }
+        & .avatar-container {
+            box-sizing: border-box;
+            border: 2px solid $primary;
+        }
+        & .arrow {
+            @include simple_animation;
+            transform: translateY(50%) rotate(225deg);
+            border-color: $primary;
+        }
+    }
+    &:hover {
+        & .avatar-container {
+            box-sizing: border-box;
+            border: 2px solid $primary;
+        }
+        & .arrow {
+            @include simple_animation;
+            border-color: $primary;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    nav {
+        position: sticky;
+        width: 100%;
+    }
+    .navbar {
+        justify-content: space-between;
+        align-items: center;
+        & .menu-button {
+            display: block;
+        }
+        & .menu {
+            display: none;
+            height: 100%;
+            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            background: $surface;
+        }
+        & .main-menu {
+            flex-direction: column;
+            margin: 0px;
+            gap: 25px;
+        }
+        & .menu-links {
+            flex-direction: column;
+            margin: 0px;
+            margin-top: 50px;
+            gap: 25px;
+        }
+    }
+    .profile-container {
+        margin: 0;
+        & .avatar-container {
+            display: none;
+        }
+        & .arrow {
+            display: none;
+        }
+        & .dropdown-content {
+            display: flex !important;
+            padding-top: 50px;
+            align-items: center;
+            position: relative;
+            background: inherit;
+            box-shadow: inherit;
+            top: 0;
+            right: 0;
+            gap: 25px;
+            &::before {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .menu {
+        display: flex !important;
+    }
+}
+
+@media (max-width: 576px) {
+    nav {
+        padding: 15px 0px;
+    }
+}
+
+
+/* Footer */
+
+footer {
+    @include elevation-1;
+    background: $surface;
+    color: $on-surface;
+    & h5 {
+        @include h5;
+        margin: 0;
+        margin-bottom: 15px;
+    }
+    & ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        & li {
+            margin-bottom: 5px;
+            & a {
+                @include body1;
+                color: $on-surface-variant;
+                text-decoration: none;
+            }
+        }
+    }
+    & p {
+        @include body1;
+    }
+    & img {
+        margin-right: auto;
+    }
+    & .desc {
+        padding: 15px 50px 15px 0;
+    }
+    & .copyright {
+        @include caption;
+    }
+    & .section {
+        display: flex;
+        flex-direction: column;
+        padding: 50px 25px;
+        & .links {
+            display: inline-flex;
+            margin-top: 15px;
+        }
+    }
+}
+
+
+/* Preloader */
+
+.preloader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10000000;
+    background: $inverse-surface;
+    opacity: 1;
+    overscroll-behavior-y: contain;
+    & .spinner {
+        overflow: visible;
+        position: relative;
+        display: flex;
+        height: 200px;
+    }
+    & .spinner path {
+        stroke-dashoffset: 0;
+        stroke-width: 15;
+        stroke-linejoin: round;
+        stroke-linecap: round;
+        stroke: $surface;
+        fill: none;
+    }
+}
