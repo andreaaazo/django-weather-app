@@ -5,8 +5,8 @@ from .forms import SearchCityForm
 
 from .models import FavouriteCity
 
-from .prevision import get_current_weather
-from .prevision import get_3hrs_temperature_forecast
+from weather_api.prevision import get_current_weather
+from weather_api.prevision import get_3hrs_temperature_forecast
 
 # Create your views here.
 class TrackerPageView(View):

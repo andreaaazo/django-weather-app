@@ -2,10 +2,21 @@ import requests
 import os
 from datetime import datetime, timedelta
 
-WEATHER_API_KEY = os.environ.get("WEATHER_API_KEY")
 
+def get_3hrs_temperature_forecast(city: str) -> list or None:
+    """Gets temperature of 7 days with a gap of 3 hours with OpenWeather
 
-def get_3hrs_temperature_forecast(city: str):
+    RETURNS: list or None if invalid city
+
+    INDEX: represents the gap of 3 hours
+
+    VALUES: temperature, icon_id
+
+    EXAMPLE: [[23, "2d"], [26, "4d"], ...]
+    """
+
+    WEATHER_API_KEY = os.environ.get("WEATHER_API_KEY")
+
     weather_data = requests.get(
         f"https://api.openweathermap.org/data/2.5/forecast?q={city}&appid={WEATHER_API_KEY}&units=metric"
     ).json()
@@ -25,7 +36,17 @@ def get_3hrs_temperature_forecast(city: str):
         return None
 
 
-def get_current_weather(city: str):
+def get_current_weather(city: str) -> dict or None:
+    """Gets current weather based on a city with OpenWeather
+
+    RETURNS: dict or None if invalid city
+
+    VALUES: city, country, main, icon, description, wind, wind_deg, humidity, temp, temp_feel, temp_min, temp_max, time(UTC)
+
+    """
+
+    WEATHER_API_KEY = os.environ.get("WEATHER_API_KEY")
+
     weather_data = requests.get(
         f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={WEATHER_API_KEY}&units=metric"
     ).json()
