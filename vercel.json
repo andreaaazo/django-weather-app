@@ -1,20 +1,24 @@
 {
     "version": 2,
     "builds": [{
-        "src": "build_files.sh",
-        "use": "@vercel/static-build",
-        "config": {
-            "distDir": "staticfiles"
+            "src": "run_server.sh",
+            "use": "@vercel/static-build"
+        },
+        {
+            "src": "build_files.sh",
+            "use": "@vercel/static-build",
+            "config": {
+                "distDir": "staticfiles"
+            }
         }
-    }],
+    ],
     "routes": [{
             "src": "/static/(.*)",
             "dest": "/static/$1"
         },
         {
             "src": "/(.*)",
-            "dest": "databerry_project/wsgi.py"
+            "dest": "https://localhost:8000/"
         }
-    ],
-    "devCommand": "gunicorn databerry_project.wsgi"
+    ]
 }
