@@ -5,7 +5,7 @@ from .forms import SearchCityForm
 
 from .models import FavouriteCity
 
-from _api.prevision import get_current_weather, get_3hrs_temperature_forecast
+from _api import prevision
 
 # Create your views here.
 class TrackerPageView(View):
@@ -14,7 +14,7 @@ class TrackerPageView(View):
             favourites = dict()
 
             for i in FavouriteCity.objects.filter(favourite=request.user).all():
-                favourites[i] = get_current_weather(i)
+                favourites[i] = prevision.get_current_weather(i)
 
             if favourites:
                 kwargs["favourites"] = favourites
@@ -26,11 +26,11 @@ class TrackerPageView(View):
         return super().dispatch(request, *args, **kwargs)
 
     def get(self, request, *args, **kwargs):
-        default_city_current_weather = get_current_weather("Zurich")
+        default_city_current_weather = prevision.get_current_weather("Zurich")
         (
             default_city_forecast_temperature,
             default_city_forecast_icons,
-        ) = get_3hrs_temperature_forecast("Zurich")
+        ) = prevision.get_3hrs_temperature_forecast("Zurich")
 
         context = {
             "current_weather": default_city_current_weather,
@@ -47,12 +47,12 @@ class TrackerPageView(View):
         if form.is_valid():
             city = form.cleaned_data["city"]
 
-            city_current_weather = get_current_weather(city)
+            city_current_weather = prevision.get_current_weather(city)
 
             (
                 default_city_forecast_temperature,
                 default_city_forecast_icons,
-            ) = get_3hrs_temperature_forecast(city)
+            ) = prevision.get_3hrs_temperature_forecast(city)
 
             context = {
                 "city_forecast": default_city_forecast_temperature,
