@@ -8,7 +8,7 @@ from django.views import View
 
 
 # Create your functions here.
-def get_3hrs_temperature_forecast(city: str) -> list or None:
+def get_3hrs_temperature_forecast(city) -> list:
     """Gets temperature of 7 days with a gap of 3 hours with OpenWeather
 
     RETURNS: list or None if invalid city
@@ -41,7 +41,7 @@ def get_3hrs_temperature_forecast(city: str) -> list or None:
         return None
 
 
-def get_current_weather(city: str) -> dict or None:
+def get_current_weather(city) -> dict:
     """Gets current weather based on a city with OpenWeather
 
     RETURNS: dict or None if invalid city
