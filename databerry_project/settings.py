@@ -28,7 +28,7 @@ SECRET_KEY = config("DJANGO_SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
+ALLOWED_HOSTS = [".vercel.app", ".now.sh", "localhost", "127.0.0.1"]
 
 
 # Application definition
@@ -83,13 +83,13 @@ WSGI_APPLICATION = "databerry_project.wsgi.application"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': config("DATABASE_USERNAME"),
-        'PASSWORD': config("DATABASE_PASSWORD"),
-        'HOST': 'db.lvmlxrhuobeimahmgxpf.supabase.co',
-        'PORT': '5432',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "postgres",
+        "USER": config("DATABASE_USERNAME"),
+        "PASSWORD": config("DATABASE_PASSWORD"),
+        "HOST": "db.lvmlxrhuobeimahmgxpf.supabase.co",
+        "PORT": "5432",
     }
 }
 
@@ -169,5 +169,5 @@ LOCALE_PATHS = [
 
 # Deploy for SCSS Compressor
 COMPRESS_OFFLINE = True
-LIBSASS_OUTPUT_STYLE = 'compressed'
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+LIBSASS_OUTPUT_STYLE = "compressed"
+STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
