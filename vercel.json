@@ -1,17 +1,15 @@
 {
     "version": 2,
+    "functions": {
+        "run_server.sh": { "runtime": "vercel-bash@4.1.0" }
+    },
     "builds": [{
-            "src": "run_server.sh",
-            "use": "@vercel/static-build"
-        },
-        {
-            "src": "build_files.sh",
-            "use": "@vercel/static-build",
-            "config": {
-                "distDir": "staticfiles"
-            }
+        "src": "build_files.sh",
+        "use": "@vercel/static-build",
+        "config": {
+            "distDir": "staticfiles"
         }
-    ],
+    }],
     "routes": [{
             "src": "/static/(.*)",
             "dest": "/static/$1"
