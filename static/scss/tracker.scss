@@ -1,37 +1,34 @@
 @import "_general.scss";
-
 h1 {
     color: $inverse-on-surface;
     margin-bottom: 50px;
 }
 
+
 /* Display data */
+
 .tracker-data {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
+    flex-wrap: wrap;
     & .overline {
         @include overline;
         color: $primary;
         margin-bottom: 5px;
     }
-
     & .data-container {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-
         & .multidata-wrapper {
             display: flex;
             flex-direction: row;
             align-items: center;
-
             & .main-data {
                 @include body-temperature;
                 margin-right: 10px;
             }
-
             & .temp-max-min {
                 display: flex;
                 flex-direction: column;
@@ -39,12 +36,49 @@ h1 {
             }
         }
     }
+    @media screen and (max-width: 768px) {
+        .data-container {
+            width: 50%;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+        .image {
+            width: 50%;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+        .image {
+            p {
+                padding: 0 25px 0 25px;
+                text-align: center;
+            }
+        }
+    }
+    @media screen and (max-width: 350px) {
+        .data-container {
+            width: 100%;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+        .image {
+            width: 100%;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+        .image {
+            p {
+                padding: 0 25px 0 25px;
+                text-align: center;
+            }
+        }
+    }
 }
 
+
 /* Tracker section */
+
 .tracker {
     background: $inverse-surface;
-
     & .city-form {
         display: inline-flex;
         flex-direction: row;
@@ -53,11 +87,9 @@ h1 {
         color: $inverse-on-surface;
         overflow: hidden;
         margin-bottom: 25px;
-
         & form {
             display: flex;
         }
-
         & input {
             @include body1;
             border: 0px;
@@ -68,7 +100,6 @@ h1 {
             width: 200px;
             color: $inverse-on-surface;
         }
-
         & input:focus {
             outline: none;
             border: 0px;
@@ -76,18 +107,15 @@ h1 {
             border-bottom: 2px solid $primary;
             @include simple_animation;
         }
-
         & input:hover {
             border: 0px;
             background: none;
             border-bottom: 2px solid $primary;
             @include simple_animation;
         }
-
         & p {
             margin-left: 15px;
         }
-
         & button {
             display: flex;
             align-items: center;
@@ -95,13 +123,17 @@ h1 {
             background: none;
             @include simple_animation;
         }
-
         & img {
             width: 25px;
             height: 25px;
         }
+        @media screen and (max-width: 420px) {
+            form {
+                margin-top: 25px;
+                margin-bottom: 50px;
+            }
+        }
     }
-
     & .weather-card {
         width: 100%;
         display: flex;
@@ -110,71 +142,66 @@ h1 {
         overflow: hidden;
         @include elevation-1;
         color: $on-surface;
-
         & .overline {
             @include overline;
             color: $primary;
             margin-bottom: 5px;
         }
-
         & .text-variant {
             color: $on-surface-variant;
         }
-
         & .head {
             display: flex;
             width: 100%;
             flex-direction: row;
             align-items: flex-start;
+            flex-wrap: wrap-reverse;
             background: $surface-variant;
             padding: 25px;
             color: $on-surface;
-
             & .city-info {
                 display: flex;
                 align-items: flex-start;
                 flex-wrap: wrap;
             }
-
             & .place {
                 margin-right: 50px;
+                margin-top: 25px;
             }
-
             & .time {
                 display: flex;
                 flex-direction: column;
                 align-self: stretch;
-
+                margin-top: 25px;
                 & .text-variant {
                     margin: auto 0;
                 }
             }
-
             & a {
                 display: inline-block;
                 margin: auto 0 auto auto;
             }
+            @media screen and (max-width: 768px) {
+                a {
+                    margin: 0 0 20px auto;
+                }
+            }
         }
-
         & .body {
             display: flex;
             flex-direction: column;
             position: relative;
             width: 100%;
             padding: 25px;
-
-            & > * {
+            &>* {
                 z-index: 2;
             }
-
             & .tracker-data {
                 padding-bottom: 50px;
-
                 & .image {
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
-
                     & img {
                         width: 100px;
                         height: 100px;
@@ -184,31 +211,25 @@ h1 {
                     }
                 }
             }
-
             & .chart {
                 @include elevation-2;
                 display: block;
                 border-radius: 8px;
                 width: 100%;
-
                 & .highcharts-scrolling::-webkit-scrollbar {
                     height: 10px;
                 }
-
                 & .highcharts-scrolling::-webkit-scrollbar-thumb {
                     background: $secondary;
                     border-radius: 8px;
                 }
-
                 & .highcharts-scrolling::-webkit-scrollbar-thumb:hover {
                     background: $primary;
                 }
-
                 & .highcharts-credits {
                     display: none;
                 }
             }
-
             .background-image {
                 position: absolute;
                 display: flex;
@@ -226,7 +247,9 @@ h1 {
     }
 }
 
+
 /* Waves */
+
 .waves {
     display: block;
     height: 40px;
@@ -236,16 +259,16 @@ h1 {
     background-position: center center;
 }
 
+
 /* Favorites */
+
 .favorites {
     background: $surface;
     color: $on-surface;
-
     & .favorites-group {
         display: flex;
         flex-direction: column;
         gap: 50px;
-
         & .favorite-card {
             @include elevation-1;
             @include simple_animation;
@@ -255,13 +278,11 @@ h1 {
             position: relative;
             flex-direction: row;
             padding: 25px;
-
             & .status-container {
                 display: flex;
                 width: 15%;
                 height: 100%;
                 z-index: 2;
-
                 & .circle {
                     display: flex;
                     position: relative;
@@ -269,7 +290,6 @@ h1 {
                     padding-top: 100%;
                     background: $neutral40;
                     border-radius: 50%;
-
                     & img {
                         position: absolute;
                         height: 100%;
@@ -279,7 +299,6 @@ h1 {
                     }
                 }
             }
-
             & .content-container {
                 display: flex;
                 flex-direction: column;
@@ -287,7 +306,6 @@ h1 {
                 height: 100%;
                 z-index: 2;
                 padding-left: 25px;
-
                 & .head {
                     display: flex;
                     flex-direction: row;
@@ -296,7 +314,6 @@ h1 {
                     margin-bottom: 25px;
                 }
             }
-
             & .background-image {
                 position: absolute;
                 display: flex;
@@ -306,7 +323,6 @@ h1 {
                 top: 0;
                 left: 0;
                 z-index: 1;
-
                 & img {
                     margin: 0 auto;
                     height: 100%;
@@ -314,47 +330,54 @@ h1 {
                 }
             }
         }
-
         & .favorite-card:hover {
             @include card_hover_animation;
         }
     }
 }
 
+
 /* Favorites login required */
+
 .login-required {
     display: flex;
     flex-direction: column;
-
+    align-items: center;
+    text-align: center;
     & h3 {
         margin: 25px 0;
     }
-
     & p {
         color: $on-surface-variant;
         margin-bottom: 10px;
     }
-
     & .links {
         display: flex;
+        width: 100%;
         justify-content: space-evenly;
+    }
+    img {
+        width: max-content;
     }
 }
 
+
 /* Favorites nothing to show */
+
 .empty {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-
     h3 {
         color: $on-surface;
         margin: 25px 0;
     }
-
     p {
         color: $outline;
         width: 40%;
+    }
+    img {
+        width: max-content;
     }
 }
