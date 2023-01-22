@@ -18,7 +18,6 @@ def get_3hrs_temperature_forecast(city):
     """
 
     WEATHER_API_KEY = os.environ.get("WEATHER_API_KEY")
-    WEATHER_API_KEY = "c40b441495d816083e64697672168f11"
 
     weather_data = requests.get(
         f"https://api.openweathermap.org/data/2.5/forecast?q={city}&appid={WEATHER_API_KEY}&units=metric"
@@ -49,7 +48,6 @@ def get_current_weather(city):
     """
 
     WEATHER_API_KEY = os.environ.get("WEATHER_API_KEY")
-    WEATHER_API_KEY = "c40b441495d816083e64697672168f11"
 
     weather_data = requests.get(
         f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={WEATHER_API_KEY}&units=metric"

@@ -26,9 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = [".vercel.app", ".now.sh", "127.0.0.1"]
+ALLOWED_HOSTS = [".vercel.app", ".now.sh"]
 
 
 # Application definition
@@ -165,6 +165,6 @@ LOCALE_PATHS = [
 ]
 
 # Deploy for SCSS Compressor
-# COMPRESS_OFFLINE = True
-# LIBSASS_OUTPUT_STYLE = "compressed"
-# STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
+COMPRESS_OFFLINE = True
+LIBSASS_OUTPUT_STYLE = "compressed"
+STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
